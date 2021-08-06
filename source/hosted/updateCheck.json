@@ -1,4 +1,6 @@
 {
-  "NewestVersion": "SAGE 2021 0.1.0-20 test",
-  "URL": "https://github.com/Halatnikov/linum-framework/releases/download/test1/updatetest.zip"
+  "LinumUpdateCheck" : {
+    "NewestVersion": "SAGE 2021 0.1.0-20 test",
+    "URL": "https://github.com/Halatnikov/linum-framework/releases/download/test1/updatetest.zip"
+  }
 }
