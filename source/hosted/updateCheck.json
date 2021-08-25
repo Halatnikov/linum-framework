@@ -1,7 +1,7 @@
 {
   "LinumUpdateCheck" : {
-    "NewestVersion": "SAGE 2021 0.1.1",
-    "URL": "https://github.com/Halatnikov/linum-framework/releases/download/0.1.1/update0.1.1.zip",
-    "Size": "26mb"
+    "NewestVersion": "SAGE 2021 0.1.2",
+    "URL": "https://github.com/Halatnikov/linum-framework/releases/download/0.1.2/update0.1.2.zip",
+    "Size": "29mb"
   }
 }
