@@ -1,17 +1,17 @@
 ## Linum Framework .gitignore
 
+# Ignore savefiles, configs and whatever
+LinumFramework/_latest_*
+LinumFramework/logs/*
+LinumFramework/temp/*
+LinumFramework/saves/editor/*
+
 # DO NOT ignore the directories themselves if they're empty
 !LinumFramework/.empty
 !LinumFramework/logs/.empty
 !LinumFramework/temp/.empty
 !LinumFramework/saves/.empty
 !LinumFramework/saves/editor/.empty
-
-# Ignore savefiles, configs and whatever
-LinumFramework/_latest_*
-LinumFramework/logs/*
-LinumFramework/temp/*
-LinumFramework/saves/editor/*
 
 # Ignore nw.js files
 *.dll
