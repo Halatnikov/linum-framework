@@ -6,8 +6,8 @@ LinumFramework/logs/*
 LinumFramework/temp/*
 LinumFramework/saves/editor/*
 
-# DO NOT ignore the directories themselves if they're empty
-.empty
+# An empty file to prevent ignoring of empty and ignored directories
+!.empty
 
 # Ignore nw.js files
 *.dll
