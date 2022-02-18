@@ -1,0 +1,18 @@
+{
+  "main": "index.html",
+  "name": "Node webkit gui plugin test",
+  "description": "test app for node-webkit-gui plugin and construct 2",
+  "version": "0.1",
+  "keywords": [ "demo", "plugin", "node-webkit", "Construct2" ],
+  "window": {
+    "icon": "logo.png",
+    "toolbar": false,
+    "width": 800,
+    "height": 500,
+    "position": "center",
+    "resizable": true
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

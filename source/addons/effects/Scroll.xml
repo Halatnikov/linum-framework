@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2effect>
+	<!-- About -->
+	<id>Scroll</id>			<!-- Never change the ID.  Change the name instead -->
+	<name>Scroll</name>
+	<category>Distortion</category>
+	<description>Seamlessly scroll the texture within a given amount of time</description>
+	<author>Somebody</author>
+	
+	<!-- Settings -->
+	
+	<!-- Extend the bounding box for effect processing by a number of pixels to show the edges
+		 of effects which go beyond the object edges, e.g. blur and warp. -->
+	<extend-box-horizontal>0</extend-box-horizontal>
+	<extend-box-vertical>0</extend-box-vertical>
+	
+	<!-- Set to true if the background is sampled (samplerBack is referenced at all in the shader) -->
+	<blends-background>false</blends-background>
+	
+	<!-- Set to true if the background is not sampled at 1:1 with the foreground (e.g. the
+		 background texture co-ordinates are modified in some way by the shader, as done
+		 by Glass and Lens) -->
+	<cross-sampling>false</cross-sampling>
+	
+	<!-- Set to true if the effect changes over time, e.g. Noise or Warp effects. -->
+	<animated>true</animated>
+	
+	<!-- Parameters -->
+	<parameters>
+		<param>
+			<name>X shift</name>
+			<description>Amount of time for a full horizontal shift</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>xshift</uniform>
+		</param>
+		<param>
+			<name>Y shift</name>
+			<description>Amount of time for a full vertical shift</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>yshift</uniform>
+		</param>
+	</parameters>
+</c2effect>

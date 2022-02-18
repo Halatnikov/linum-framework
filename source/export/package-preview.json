@@ -1,0 +1,14 @@
+{
+	"main": "[[[previewurl]]]",
+	"name": "Linum Framework",
+	"window": {
+		"width": [[[width]]],
+		"height": [[[height]]],
+		"position": "center",
+		"show": true
+	},
+	"node-remote": "[[[remotehost]]]",
+	"dom_storage_quota": 250,
+	"user-agent": "Linum Framework, NWjs/%nwver",
+	"chromium-args": "--disable-plugins --disable-internal-flash --disable-popup-blocking --enable-gamepad --enable-html5-camera --allow-file-access-from-files --ignore-gpu-blacklist --force-color-profile srgb  --limit-fps=60 --js-flags=--expose-gc --user-data-dir=browser_userdata"
+}

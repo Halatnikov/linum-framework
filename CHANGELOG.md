@@ -217,4 +217,5 @@
 > # 0.1.x starts ^^^
 
 > **neo_linum** changelog
-> this is like a third rework already lol (*h***e**~~l~~`p` **m***e*)
+
+> this is like a third rework already lol (*h***e**~~l~~*p* **m***e*)

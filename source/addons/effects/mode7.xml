@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2effect>
+	<!-- About -->
+	<id>mode7</id>			<!-- Never change the ID.  Change the name instead -->
+	<name>mode7</name>
+	<category>Color</category>
+	<description>Adds color outlines.</description>
+	<author>R0J0hound</author>
+	
+	<!-- Settings -->
+	
+	<!-- Extend the bounding box for effect processing by a number of pixels to show the edges
+		 of effects which go beyond the object edges, e.g. blur and warp. -->
+	<extend-box-horizontal>0</extend-box-horizontal>
+	<extend-box-vertical>0</extend-box-vertical>
+	
+	<!-- Set to true if the background is sampled (samplerBack is referenced at all in the shader) -->
+	<blends-background>false</blends-background>
+	
+	<!-- Set to true if the background is not sampled at 1:1 with the foreground (e.g. the
+		 background texture co-ordinates are modified in some way by the shader, as done
+		 by Glass and Lens) -->
+	<cross-sampling>false</cross-sampling>
+	
+	<!-- Set to true if the effect changes over time, e.g. Noise or Warp effects. -->
+	<animated>false</animated>
+	
+	<!-- Parameters -->
+	<parameters>
+        <param>
+			<name>pos_x</name>
+			<description>X position on texture (0.0-1.0).</description>
+			<type>float</type>
+			<initial>0.5</initial>
+			<uniform>pos_x</uniform>
+		</param>
+        <param>
+			<name>pos_y</name>
+			<description>Y position on texture (0.0-1.0).</description>
+			<type>float</type>
+			<initial>0.5</initial>
+			<uniform>pos_y</uniform>
+		</param>
+        <param>
+			<name>ang</name>
+			<description>View angle.</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>ang</uniform>
+		</param>
+        <param>
+			<name>horizon</name>
+			<description>Offset the horizon up or down. -0.5 to move to top of sprite.</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>horizon</uniform>
+		</param>
+		<param>
+			<name>fov</name>
+			<description>Can also be thought of as eye height.</description>
+			<type>float</type>
+			<initial>1.0</initial>
+			<uniform>fov</uniform>
+		</param>
+		<param>
+			<name>scale_x</name>
+			<description>...</description>
+			<type>float</type>
+			<initial>1.0</initial>
+			<uniform>scale_x</uniform>
+		</param>
+		<param>
+			<name>scale_y</name>
+			<description>...</description>
+			<type>float</type>
+			<initial>1.0</initial>
+			<uniform>scale_y</uniform>
+		</param>
+        <param>
+			<name>single image</name>
+			<description>Use 0 for infinite, 1 for just one.</description>
+			<type>float</type>
+			<initial>0.0</initial>
+			<uniform>single_image</uniform>
+		</param>
+	</parameters>
+</c2effect>
