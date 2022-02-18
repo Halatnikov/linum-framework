@@ -1,0 +1,5 @@
+## Linum Framework .gitattributes
+
+# auto-handle text stuff
+* text=auto
+* text eol=lf

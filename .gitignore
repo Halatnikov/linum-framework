@@ -1,29 +1,35 @@
 ## Linum Framework .gitignore
 
-######IGNORE
+###### IGNORE
 
 # Ignore savefiles, configs and whatever
+LinumFramework/api.ini
 LinumFramework/_latest_*
 LinumFramework/logs/*
 LinumFramework/temp/*
 LinumFramework/saves/editor/*
 
+# Ignore Construct 2 files
+*.autosave
+*.uistate.xml
+
 # Ignore nw.js files
-*.dll
-*.log
-*.exe
-*.dat
-*.bin
-*.pak
+/*.dll
+/*.log
+/*.exe
+/*.dat
+/*.bin
+/*.pak
 locales/
 swiftshader/
+
+browser_userdata/
 
 # Ignore other files from my other projects :eyes:
 savedata/
 warioware/
-srb2launcher/
 
-######NOT IGNORE
+###### DO NOT IGNORE
 
-# An empty file to prevent ignoring of empty and ignored directories
+# A file to prevent ignoring of empty directories
 !*.empty
