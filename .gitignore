@@ -1,0 +1,22 @@
+## Linum Framework .gitignore
+
+# Ignore savefiles, configs and whatever
+LinumFramework/_latest_*
+LinumFramework/logs/**
+LinumFramework/temp/**
+LinumFramework/saves/editor/**
+
+# Ignore nw.js files
+*.dll
+*.log
+*.exe
+*.dat
+*.bin
+*.pak
+locales/
+swiftshader/
+
+# Ignore other files from my other projects :eyes:
+savedata/
+warioware/
+srb2launcher/
