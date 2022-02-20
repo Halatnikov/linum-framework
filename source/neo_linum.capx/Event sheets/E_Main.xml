@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Main</name>
+    <events>
+        <include>E_GLOBAL</include>
+        <include>E_Editor_Backend</include>
+        <include>E_Editor_Frontend</include>
+        <include>E_Game_Player</include>
+        <include>E_Game_Level</include>
+        <include>E_Game_UI</include>
+        <comment>TEMPORARY</comment>
+        <event-block sid="208369350275868">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="392850092800236" type="System" />
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="219603448477151" type="BG_EditorDefault">
+                    <param id="0" name="Width">LayoutWidth</param>
+                    <param id="1" name="Height">LayoutHeight</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>=== Shared</comment>
+        <event-group description="" sid="565245704610368" title="Loading level">
+            <sub-events>
+                <event-block sid="748883226520958">
+                    <conditions>
+                        <condition id="0" name="On function" sid="290158217507815" type="Function">
+                            <param id="0" name="Name">&quot;Level_Unload&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="715594129188820" type="Level_Objects">
+                            <param id="0" name="Instance variable">MapID_</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="531497791252461" type="JSON_LevelMap" />
+                        <action id="-9" name="Destroy" sid="166018937984301" type="Level_Collisions" />
+                        <action id="-9" name="Destroy" sid="106588211124862" type="Level_Objects" />
+                    </actions>
+                </event-block>
+                <variable constant="0" name="LoadingState" sid="980712228601929" static="1" type="text"></variable>
+                <event-block sid="819128486173166">
+                    <conditions>
+                        <condition id="0" name="On function" sid="895825208579030" type="Function">
+                            <param id="0" name="Name">&quot;Level_Load&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="573704839081642" type="Function">
+                            <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&quot;{###}0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="728938447518175" type="Function">
+                            <param id="0" name="Name">&quot;Level_Unload&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="530701244187186" type="System">
+                            <param id="0" name="Variable">LoadingState</param>
+                            <param id="1" name="Value">&quot;LevelFiles&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="670290361444628" title="Load level files">
+                    <sub-events>
+                        <event-block sid="407771404425765">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="928848970208940" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LevelFiles&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="428341993192509" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="769808799430088" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;LOADING LEVEL DATA...&quot;{###}0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="337738825709168" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;FilesMetadata&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="631232925716810">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="467698639323000" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;FilesMetadata&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="118986703610785" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="546501153464017" type="Function">
+                                    <param id="0" name="Name">&quot;INI2JSON&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\_metadata.ini&quot;</param>
+                                </action>
+                                <action id="60" name="LoadJSON" sid="922813424171263" type="JSON_LevelMetadata">
+                                    <param id="0" name="JSON">Function.ReturnValue</param>
+                                    <param id="1" name="Reference point">1</param>
+                                    <param id="2" name="Key {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="203857199427163" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;FilesMusicData&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="504074186607183">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="653074406996839" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;FilesMusicData&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="259414428780648" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="143955690230145" type="Function">
+                                    <param id="0" name="Name">&quot;INI2JSON&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\music\_musicdata.ini&quot;</param>
+                                </action>
+                                <action id="60" name="LoadJSON" sid="269745965003202" type="JSON_MusicDataLevel">
+                                    <param id="0" name="JSON">Function.ReturnValue</param>
+                                    <param id="1" name="Reference point">1</param>
+                                    <param id="2" name="Key {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="854093014588953" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;FilesMapData&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="691193676240970">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="459441182025633" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;FilesMapData&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="608063677827542" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="844096432140059" type="Function">
+                                    <param id="0" name="Name">&quot;INI2JSON&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\leveldata\_mapdata.ini&quot;</param>
+                                </action>
+                                <action id="60" name="LoadJSON" sid="354493886931696" type="JSON_LevelDefaultMapData">
+                                    <param id="0" name="JSON">Function.ReturnValue</param>
+                                    <param id="1" name="Reference point">0</param>
+                                    <param id="2" name="Key {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="799300759405285" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;FilesLevelMaps&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Load level map from file</comment>
+                        <event-block sid="320327942692621">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="665750500589502" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;FilesLevelMaps&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="647918031313252" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="279699400334257">
+                                    <conditions />
+                                    <actions>
+                                        <action id="5" name="List files" sid="823363467922616" type="NWjs">
+                                            <param id="0" name="Path">NWjs.AppFolder&amp;&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\leveldata&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="501306114790182">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="235988742008624" type="System">
+                                                    <param id="0" name="Count">NWjs.ListCount</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Compare two values" sid="215930018802169" type="System">
+                                                    <param id="0" name="First value">NWjs.ListAt(loopindex)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;_mapdata.ini&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="232450021915768" type="System">
+                                                    <param id="0" name="Object to create">JSON_LevelMap</param>
+                                                    <param id="1" name="Layer">0</param>
+                                                    <param id="2" name="X">0</param>
+                                                    <param id="3" name="Y">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="397997142254168" type="Function">
+                                                    <param id="0" name="Name">&quot;INI2JSON&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\leveldata\&quot;&amp;NWjs.ListAt(loopindex)</param>
+                                                </action>
+                                                <action id="60" name="LoadJSON" sid="727649850583318" type="JSON_LevelMap">
+                                                    <param id="0" name="JSON">Function.ReturnValue</param>
+                                                    <param id="1" name="Reference point">0</param>
+                                                    <param id="2" name="Key {n}"></param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="699984966942867" type="JSON_LevelMap">
+                                                    <param id="0" name="Instance variable">IDsCount</param>
+                                                    <param id="1" name="Value">Self.Value(0,&quot;LinumLevelMap&quot;,&quot;count&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="154730678634776" type="JSON_LevelMap">
+                                                    <param id="0" name="Instance variable">Filename</param>
+                                                    <param id="1" name="Value">NWjs.ListAt(loopindex)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="432898786898897">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="511188732451968" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="937369874223164" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;Tiles&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="440752525760133" title="Load tiles">
+                    <sub-events>
+                        <event-block sid="957010935355859">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="582768670021809" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Tiles&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="461395049285109" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="531786649947143" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;TilesCreate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="123841507561840">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="716043684451248" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;TilesCreate&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="480831500451075" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="607973805616529" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CREATING TILES...&quot;{###}86</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="761607765191350">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="829920457793240" type="System">
+                                            <param id="0" name="Object">JSON_LevelMap</param>
+                                            <param id="1" name="Expression">JSON_LevelMap.Filename</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">JSON_LevelDefaultMapData.Value(0,&quot;DefaultMapData&quot;,&quot;tiles&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="504597602969976">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="429248138230610" type="System">
+                                                    <param id="0" name="First value">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;type&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;tiles&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="249548367824121">
+                                                    <conditions>
+                                                        <condition id="-12" name="Repeat" sid="829080660217502" type="System">
+                                                            <param id="0" name="Count">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;count&quot;)+1</param>
+                                                        </condition>
+                                                        <condition id="0" name="Is object" sid="593289705401777" type="JSON_LevelMap">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}">&quot;Tile&quot;&amp;loopindex</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Create object" sid="174907580014762" type="System">
+                                                            <param id="0" name="Object to create">Level_Tile</param>
+                                                            <param id="1" name="Layer">&quot;Level_&quot;&amp;str(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;layer&quot;))</param>
+                                                            <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                            <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="548581365208469" type="Level_Tile">
+                                                            <param id="0" name="Instance variable">MapID</param>
+                                                            <param id="1" name="Value">loopindex</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="367546792908946" type="Level_Tile">
+                                                            <param id="0" name="Instance variable">Filename</param>
+                                                            <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                        </action>
+                                                        <action id="5" name="Set frame" sid="561656269639112" type="Level_Tile">
+                                                            <param id="0" name="Frame number">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;id&quot;))</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="888644718294439" type="Level_Tile">
+                                                            <param id="0" name="Instance variable">Type</param>
+                                                            <param id="1" name="Value">str(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="937571057553939" type="Level_Tile">
+                                                            <param id="0" name="Width">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;width&quot;))</param>
+                                                            <param id="1" name="Height">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;height&quot;))</param>
+                                                        </action>
+                                                        <action id="-8" name="Set angle" sid="158161848735707" type="Level_Tile">
+                                                            <param id="0" name="Angle">float(JSON_LevelMap.Value(0,&quot;Tile&quot;&amp;loopindex,&quot;angle&quot;))</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="181735254593240">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="810292953317460" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="804650308228248" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;TilesLoadImages&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Load animations for tiles</comment>
+                        <event-block sid="883226267048390">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="766225971605008" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;TilesLoadImages&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="769501221606698" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="882107457216518" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;LOADING TILE IMAGES...&quot;{###}172</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="320439089108690">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="764834976620242" type="System">
+                                            <param id="0" name="Object">Level_Tile</param>
+                                            <param id="1" name="Instance">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="AnimationLoader" id="2" name="Load all animations" sid="378100191429126" type="Level_Tile">
+                                            <param id="0" name="Size">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="321703711985607">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="654684021118052" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="476649505932051" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;TilesCollisions&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="502672947688242">
+                            <conditions>
+                                <condition behavior="AnimationLoader" id="1" name="On get URL" sid="320825524098681" type="Level_Tile" />
+                            </conditions>
+                            <actions>
+                                <action behavior="AnimationLoader" id="1" name="Set URL" sid="562505085034027" type="Level_Tile">
+                                    <param id="0" name="URL">NWjs.AppFolder&amp;&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\tiles\&quot;&amp;Self.AnimationLoader.FrameIndex&amp;&quot;.png&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="367549908748757">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="578315102794057" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;TilesCollisions&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="733328563736037" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="330992210159634" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CREATING TILE COLLISIONS...&quot;{###}258</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="255898673850299">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="116653183921066" type="System">
+                                            <param id="0" name="Object">Level_Tile</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="555652113968586" type="System">
+                                            <param id="0" name="Object to create">Level_TileCollision</param>
+                                            <param id="1" name="Layer">Level_Tile.LayerName</param>
+                                            <param id="2" name="X">Level_Tile.X</param>
+                                            <param id="3" name="Y">Level_Tile.Y</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="565724737543593" type="Level_TileCollision">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="615850150530221" type="Level_TileCollision" />
+                                        <action id="-10" name="Set value" sid="641132077635821" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">MapID</param>
+                                            <param id="1" name="Value">Level_Tile.MapID</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="721652743328660" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">Type</param>
+                                            <param id="1" name="Value">Level_Tile.Type</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="640525222715368" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">Tile</param>
+                                            <param id="1" name="Value">Level_Tile.AnimationFrame</param>
+                                        </action>
+                                        <action id="5" name="Clear Polygon" sid="749658111565682" type="Level_TileCollision" />
+                                        <action id="-10" name="Set value" sid="247973380920343" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">VertexList</param>
+                                            <param id="1" name="Value">trim(NWjs.ReadFile(NWjs.AppFolder&amp;&quot;\&quot;&amp;JSON_ConfigFiles.ResourcesFolder&amp;&quot;\levels\&quot;&amp;Var_Game.Level&amp;&quot;\tiles\&quot;&amp;Self.Tile&amp;&quot;.txt&quot;))</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="763933006730296">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="253323424635639" type="System">
+                                                    <param id="0" name="Count">tokenCount(Level_TileCollision.VertexList,newline)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Add Vertex" sid="663096268286378" type="Level_TileCollision">
+                                                    <param id="0" name="X">float(tokenat(trim(tokenat(Self.VertexList,loopindex,newline)),0,&quot; &quot;))</param>
+                                                    <param id="1" name="Y">float(tokenat(trim(tokenat(Self.VertexList,loopindex,newline)),1,&quot; &quot;))</param>
+                                                    <param id="2" name="coordinate-system">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="122705833466382">
+                                            <conditions />
+                                            <actions>
+                                                <action id="2" name="Draw Polygon" sid="940520971124553" type="Level_TileCollision">
+                                                    <param id="0" name="fill Color">&quot;rgba(0,104,240,0.7)&quot;</param>
+                                                    <param id="1" name="line Width">1.0</param>
+                                                    <param id="2" name="line Color">&quot;black&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="557764122384496">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="702152245307484" type="System">
+                                                    <param id="0" name="First value">left(str(Level_Tile.Width),1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;-&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-5" name="Set width" sid="734769725731875" type="Level_TileCollision">
+                                                    <param id="0" name="Width">-Self.Width</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="623313415691524">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="730049478411151" type="System">
+                                                    <param id="0" name="First value">left(str(Level_Tile.Height),1)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;-&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-6" name="Set height" sid="506061825421909" type="Level_TileCollision">
+                                                    <param id="0" name="Height">-Self.Height</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="345317932055559">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-8" name="Set angle" sid="571489751952870" type="Level_TileCollision">
+                                                    <param id="0" name="Angle">Level_Tile.Angle</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="821013192600269">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="918120085620182" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="435110642357837" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;Objects&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="528509653398186" title="Load built-in objects">
+                    <sub-events>
+                        <event-block sid="406961155203817">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="124917347633839" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Objects&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="748489004757961" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="953524307992905" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;ObjectsCreate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="681024141401322">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="399188946922887" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;ObjectsCreate&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="438592745593274" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="534066595177845" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CREATING BUILT-IN OBJECTS...&quot;{###}344</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="104612269646250">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="903829746198353" type="System">
+                                            <param id="0" name="Object">JSON_LevelMap</param>
+                                            <param id="1" name="Expression">JSON_LevelMap.Filename</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">JSON_LevelDefaultMapData.Value(0,&quot;DefaultMapData&quot;,&quot;objects&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="110432909604501">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="297230807356965" type="System">
+                                                    <param id="0" name="First value">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;type&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;objects&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment></comment>
+                                                <event-block sid="908612025289335">
+                                                    <conditions>
+                                                        <condition id="0" name="Is object" sid="320344107980354" type="JSON_LevelMap">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}">&quot;FinishGeneral&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Set position" sid="141671935371625" type="Object_FinishGeneral">
+                                                            <param id="0" name="X">float(JSON_LevelMap.Value(0,&quot;FinishGeneral&quot;,&quot;x&quot;))</param>
+                                                            <param id="1" name="Y">float(JSON_LevelMap.Value(0,&quot;FinishGeneral&quot;,&quot;y&quot;))</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="987501736576128">
+                                                    <conditions>
+                                                        <condition id="-12" name="Repeat" sid="312417723672780" type="System">
+                                                            <param id="0" name="Count">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;count&quot;)+1</param>
+                                                        </condition>
+                                                        <condition id="0" name="Is object" sid="117990901738914" type="JSON_LevelMap">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}">&quot;Object&quot;&amp;loopindex</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <comment></comment>
+                                                        <event-block sid="566116051564245">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="674011176469903" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;SpringYellow&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="914520217391722" type="System">
+                                                                    <param id="0" name="Object to create">Object_SpringYellow</param>
+                                                                    <param id="1" name="Layer">&quot;Level_&quot;&amp;str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;layer&quot;))</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="155339675295426" type="Object_SpringYellow">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="972793836638059" type="Object_SpringYellow">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="-8" name="Set angle" sid="392399239410142" type="Object_SpringYellow">
+                                                                    <param id="0" name="Angle">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;angle&quot;))</param>
+                                                                </action>
+                                                                <action id="-7" name="Set size" sid="613745515756294" type="Object_SpringYellow">
+                                                                    <param id="0" name="Width">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;width&quot;))</param>
+                                                                    <param id="1" name="Height">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;height&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment></comment>
+                                                        <event-block sid="107628577409216">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="713370150639611" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;SpringDiagonalYellow&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="645495661731105" type="System">
+                                                                    <param id="0" name="Object to create">Object_SpringDiagonalYellow</param>
+                                                                    <param id="1" name="Layer">&quot;Level_&quot;&amp;str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;layer&quot;))</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="769117370016682" type="Object_SpringDiagonalYellow">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="381507760033250" type="Object_SpringDiagonalYellow">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="-8" name="Set angle" sid="767563875611037" type="Object_SpringDiagonalYellow">
+                                                                    <param id="0" name="Angle">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;angle&quot;))</param>
+                                                                </action>
+                                                                <action id="-7" name="Set size" sid="178804310610069" type="Object_SpringDiagonalYellow">
+                                                                    <param id="0" name="Width">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;width&quot;))</param>
+                                                                    <param id="1" name="Height">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;height&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment></comment>
+                                                        <event-block sid="305214160787295">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="770736750413307" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;SpringRed&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="213962486573852" type="System">
+                                                                    <param id="0" name="Object to create">Object_SpringRed</param>
+                                                                    <param id="1" name="Layer">&quot;Level_&quot;&amp;str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;layer&quot;))</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="550220898146858" type="Object_SpringRed">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="792956301237636" type="Object_SpringRed">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="-8" name="Set angle" sid="908483813539445" type="Object_SpringRed">
+                                                                    <param id="0" name="Angle">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;angle&quot;))</param>
+                                                                </action>
+                                                                <action id="-7" name="Set size" sid="977624702462170" type="Object_SpringRed">
+                                                                    <param id="0" name="Width">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;width&quot;))</param>
+                                                                    <param id="1" name="Height">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;height&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment></comment>
+                                                        <event-block sid="485482333445638">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="671151143699117" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;SpringDiagonalRed&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="563976180091185" type="System">
+                                                                    <param id="0" name="Object to create">Object_SpringDiagonalRed</param>
+                                                                    <param id="1" name="Layer">&quot;Level_&quot;&amp;str(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;layer&quot;))</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="787303812187492" type="Object_SpringDiagonalRed">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="734657853479710" type="Object_SpringDiagonalRed">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="-8" name="Set angle" sid="413907256854948" type="Object_SpringDiagonalRed">
+                                                                    <param id="0" name="Angle">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;angle&quot;))</param>
+                                                                </action>
+                                                                <action id="-7" name="Set size" sid="510847118210700" type="Object_SpringDiagonalRed">
+                                                                    <param id="0" name="Width">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;width&quot;))</param>
+                                                                    <param id="1" name="Height">float(JSON_LevelMap.Value(0,&quot;Object&quot;&amp;loopindex,&quot;height&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="335838347334525">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="119175553064462" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="959968665871052" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;Special&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="434209119964857" title="Load special objects">
+                    <sub-events>
+                        <event-block sid="877314537284162">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="431688984888631" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Special&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="974873711556599" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="997173245003742" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Value">&quot;SpecialCreate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="271811789714243">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="136535333138640" type="System">
+                                    <param id="0" name="Variable">LoadingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;SpecialCreate&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="645997452326197" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="687688576005592" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CREATING SPECIAL OBJECTS...&quot;{###}344</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="662609100414687">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="645988945633732" type="System">
+                                            <param id="0" name="Object">JSON_LevelMap</param>
+                                            <param id="1" name="Expression">JSON_LevelMap.Filename</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">JSON_LevelDefaultMapData.Value(0,&quot;DefaultMapData&quot;,&quot;special&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="857927827965105">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="656118258434963" type="System">
+                                                    <param id="0" name="First value">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;type&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;special&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment></comment>
+                                                <event-block sid="609994082490132">
+                                                    <conditions>
+                                                        <condition id="0" name="Is object" sid="428166069719830" type="JSON_LevelMap">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}">&quot;StartPosGeneral&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Set position" sid="556688747719333" type="Special_StartPosGeneral">
+                                                            <param id="0" name="X">float(JSON_LevelMap.Value(0,&quot;StartPosGeneral&quot;,&quot;x&quot;))</param>
+                                                            <param id="1" name="Y">float(JSON_LevelMap.Value(0,&quot;StartPosGeneral&quot;,&quot;y&quot;))</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="628813335048913">
+                                                    <conditions>
+                                                        <condition id="-12" name="Repeat" sid="790087767232734" type="System">
+                                                            <param id="0" name="Count">JSON_LevelMap.Value(0,&quot;LinumLevelMap&quot;,&quot;count&quot;)+1</param>
+                                                        </condition>
+                                                        <condition id="0" name="Is object" sid="233588676942338" type="JSON_LevelMap">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}">&quot;Special&quot;&amp;loopindex</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <comment></comment>
+                                                        <event-block sid="864425984244149">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="138205391099526" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;Layer0&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="224469170834334" type="System">
+                                                                    <param id="0" name="Object to create">Special_Layer0</param>
+                                                                    <param id="1" name="Layer">&quot;Level_Special&quot;</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="686311952656831" type="Special_Layer0">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="980363433755427" type="Special_Layer0">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="746248143336701" type="Special_Layer0">
+                                                                    <param id="0" name="Frame number">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;var1&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment></comment>
+                                                        <event-block sid="778626960813313">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="589265656212968" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;Layer1&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="696310492185140" type="System">
+                                                                    <param id="0" name="Object to create">Special_Layer1</param>
+                                                                    <param id="1" name="Layer">&quot;Level_Special&quot;</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="297044388348813" type="Special_Layer1">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="179656006754066" type="Special_Layer1">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="467238827487703" type="Special_Layer1">
+                                                                    <param id="0" name="Frame number">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;var1&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment></comment>
+                                                        <event-block sid="460055940626689">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="317007350423519" type="System">
+                                                                    <param id="0" name="First value">str(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;type&quot;))</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;LayerSwitch&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Create object" sid="685081778683911" type="System">
+                                                                    <param id="0" name="Object to create">Special_LayerSwitch</param>
+                                                                    <param id="1" name="Layer">&quot;Level_Special&quot;</param>
+                                                                    <param id="2" name="X">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;x&quot;))</param>
+                                                                    <param id="3" name="Y">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;y&quot;))</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="567574891896972" type="Special_LayerSwitch">
+                                                                    <param id="0" name="Instance variable">MapID_</param>
+                                                                    <param id="1" name="Value">loopindex</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="378815753635506" type="Special_LayerSwitch">
+                                                                    <param id="0" name="Instance variable">Filename_</param>
+                                                                    <param id="1" name="Value">JSON_LevelMap.Filename</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="321257008397882" type="Special_LayerSwitch">
+                                                                    <param id="0" name="Frame number">float(JSON_LevelMap.Value(0,&quot;Special&quot;&amp;loopindex,&quot;var1&quot;))</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="206883114722458">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="687726296939316" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="527063623269892" type="System">
+                                            <param id="0" name="Variable">LoadingState</param>
+                                            <param id="1" name="Value">&quot;Finish&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <comment></comment>
+                <event-block sid="506567924957875">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="234318196760820" type="System">
+                            <param id="0" name="Variable">LoadingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Finish&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="957492513104253" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="830367953055258" type="Function">
+                            <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;&quot;{###}426</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="914596292450077" type="System">
+                            <param id="0" name="Variable">LoadingState</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="179326586262317">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="143092937221320" type="Var_Game">
+                                    <param id="0" name="Instance variable">Gamemode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Editor&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="904695952020604" type="Var_Menus">
+                                    <param id="0" name="Instance variable">CurrentMenu</param>
+                                    <param id="1" name="Value">&quot;Editor&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="652242427096024" type="System">
+                                    <param id="0" name="Seconds">0.05</param>
+                                </action>
+                                <action id="0" name="Call function" sid="687770930778678" type="Function">
+                                    <param id="0" name="Name">&quot;Editor_Load&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="926664692658069">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="329137879933508" type="Var_Game">
+                                    <param id="0" name="Instance variable">Gamemode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween" id="14" name="Stop" sid="773059802337348" type="TransitionIn">
+                                    <param id="0" name="Stop Mode">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="108927079719725" type="Var_Menus">
+                                    <param id="0" name="Instance variable">TransitionActive</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="339839538749201" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="325259191029619" type="Var_Menus">
+                                    <param id="0" name="Instance variable">CurrentMenu</param>
+                                    <param id="1" name="Value">&quot;Game&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="438111681060592" type="Function">
+                                    <param id="0" name="Name">&quot;Engine_Prepare&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="714779497615007">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="627025370797898" type="Var_Game">
+                                    <param id="0" name="Instance variable">Gamemode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Multiplayer&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="387784182990214" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;WAITING FOR PLAYERS&quot;{###}0</param>
+                                </action>
+                                <action id="17" name="Raise event" sid="387144432862082" type="Photon">
+                                    <param id="0" name="Code">12</param>
+                                    <param id="1" name="Data">&quot;&quot;</param>
+                                    <param id="2" name="InterestGroup">0</param>
+                                    <param id="3" name="Cache">0</param>
+                                    <param id="4" name="Receivers">0</param>
+                                    <param id="5" name="TargetActors">&quot;&quot;</param>
+                                    <param id="6" name="WebForward">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

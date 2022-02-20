@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2layout>
+    <name>_launch</name>
+    <sid>672416030220240</sid>
+    <event-sheet>E_launch</event-sheet>
+    <size>
+        <width>426</width>
+        <height>240</height>
+    </size>
+    <margins>
+        <horizontal>500</horizontal>
+        <vertical>500</vertical>
+    </margins>
+    <unbounded-scrolling>0</unbounded-scrolling>
+    <layers>
+        <layer name="BG" sid="197123412712411">
+            <initially-visible>1</initially-visible>
+            <background-color>0,0,0</background-color>
+            <transparent>0</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="LinumLoading" uid="0">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>352</x>
+                        <y>218</y>
+                        <z>0</z>
+                        <width>117</width>
+                        <height>12</height>
+                        <depth>0</depth>
+                        <hotspotX>0.504273534</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="LoadingProgressBar" uid="182">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <ID></ID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>237</y>
+                        <z>0</z>
+                        <width>3</width>
+                        <height>3</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+    </layers>
+    <nonworld-instances>
+        <instance type="Var_Menus" uid="10">
+            <instance-variables>
+                <CurrentMenu>null</CurrentMenu>
+                <MenuPosition>1</MenuPosition>
+                <CanScrollUp>true</CanScrollUp>
+                <CanScrollDown>true</CanScrollDown>
+                <TransitionActive>false</TransitionActive>
+            </instance-variables>
+        </instance>
+        <instance type="Var_Input" uid="24">
+            <instance-variables>
+                <Up>false</Up>
+                <Down>false</Down>
+                <Left>false</Left>
+                <Right>false</Right>
+                <A>false</A>
+                <B>false</B>
+                <X>false</X>
+                <Y>false</Y>
+                <Start>false</Start>
+                <InputMode>Keyboard</InputMode>
+            </instance-variables>
+        </instance>
+        <instance type="Var_Game" uid="107">
+            <instance-variables>
+                <Level>null</Level>
+                <Gamemode>null</Gamemode>
+                <Gamemode2>null</Gamemode2>
+                <Pause>false</Pause>
+                <LevelTimer>0</LevelTimer>
+                <Skin>sonic</Skin>
+                <SkinColorscheme>rainbow</SkinColorscheme>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_EditorState" uid="157" />
+        <instance type="JSON_ConfigFiles" uid="160">
+            <instance-variables>
+                <ResourcesFolder>LinumDefault</ResourcesFolder>
+                <TempWindowSize>3</TempWindowSize>
+                <TempVolume>11</TempVolume>
+                <TempGamepadID>1</TempGamepadID>
+            </instance-variables>
+        </instance>
+        <instance type="EngineMovement" uid="228">
+            <instance-variables>
+                <X>0</X>
+                <Y>0</Y>
+                <XSpeed>0</XSpeed>
+                <YSpeed>0</YSpeed>
+                <Direction></Direction>
+                <Ground>false</Ground>
+                <Angle>0</Angle>
+                <AngleSmooth>0</AngleSmooth>
+                <FloorLandingState>0</FloorLandingState>
+                <CeilingLandingState>0</CeilingLandingState>
+                <SlopesControlLock>0</SlopesControlLock>
+                <OldX>0</OldX>
+                <OldY>0</OldY>
+                <OldPosChange>false</OldPosChange>
+                <Acceleration>0</Acceleration>
+                <Friction>0</Friction>
+                <AirAcceleration>0</AirAcceleration>
+                <Deceleration>0</Deceleration>
+                <Gravity>0</Gravity>
+                <XSoftMaxSpeed>0</XSoftMaxSpeed>
+                <XMaxSpeed>0</XMaxSpeed>
+                <YMaxSpeed>0</YMaxSpeed>
+                <SlopeAccelerationFactor>0</SlopeAccelerationFactor>
+                <SlopeDecelerationFactor>0</SlopeDecelerationFactor>
+                <AirDragRate>0</AirDragRate>
+                <LandingConversionFactor>0</LandingConversionFactor>
+                <MinimumFallSpeed>0</MinimumFallSpeed>
+                <Layer>0</Layer>
+            </instance-variables>
+        </instance>
+        <instance type="EngineActions" uid="229">
+            <instance-variables>
+                <Action></Action>
+                <SpinDashRev>0</SpinDashRev>
+                <Animation></Animation>
+                <AnimationSpeed>0</AnimationSpeed>
+                <AllowX>false</AllowX>
+                <AllowY>false</AllowY>
+                <AllowDirection>false</AllowDirection>
+                <JumpStrength>0</JumpStrength>
+                <JumpReleaseStrength>0</JumpReleaseStrength>
+                <JumpReleased>false</JumpReleased>
+                <SkidMinimumSpeed>0</SkidMinimumSpeed>
+                <SkidRate>0</SkidRate>
+                <RollingMinimumSpeed>0</RollingMinimumSpeed>
+                <RollingFriction>0</RollingFriction>
+                <RollingDeceleration>0</RollingDeceleration>
+                <RollingSlopeUpFactor>0</RollingSlopeUpFactor>
+                <RollingSlopeDownFactor>0</RollingSlopeDownFactor>
+                <RollingConversionFactor>0</RollingConversionFactor>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_LevelMap" uid="233">
+            <instance-variables>
+                <IDsCount>0</IDsCount>
+                <Filename></Filename>
+            </instance-variables>
+        </instance>
+        <instance type="Date" uid="82" />
+        <instance type="GameJoltAPI_Queue" uid="106" />
+        <instance type="GameJoltAPI_Cache" uid="112" />
+        <instance type="Var_Online" uid="148">
+            <instance-variables>
+                <Idle>false</Idle>
+                <Host>false</Host>
+                <TempError>0</TempError>
+                <TempErrorLeft>0</TempErrorLeft>
+                <TempJoined>false</TempJoined>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_QuickMenus" uid="163" />
+        <instance type="GameJoltAPI" uid="75">
+            <instance-variables>
+                <GAME_ID></GAME_ID>
+                <GAME_PRIVATE_KEY></GAME_PRIVATE_KEY>
+                <USER_CREDETENTIALS></USER_CREDETENTIALS>
+                <USER_NAME></USER_NAME>
+                <USER_TOKEN></USER_TOKEN>
+                <USER_STATUS></USER_STATUS>
+                <Enabled>false</Enabled>
+                <SessionPingTime>0</SessionPingTime>
+                <AllowStatsCollecting>false</AllowStatsCollecting>
+                <AllowChangeOnlineStatus>false</AllowChangeOnlineStatus>
+                <LoggedIn>false</LoggedIn>
+                <SessionOpen>false</SessionOpen>
+                <CachingDone>false</CachingDone>
+                <RequestType></RequestType>
+                <RequestID></RequestID>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_MusicData" uid="69" />
+        <instance type="Var_Audio" uid="208">
+            <instance-variables>
+                <NowPlaying>null</NowPlaying>
+                <CurrentSelection>null</CurrentSelection>
+                <PlaylistPosition>0</PlaylistPosition>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_TempUpdate" uid="268" />
+        <instance type="JSON_LevelDefaultMapData" uid="187" />
+        <instance type="JSON_MusicDataLevel" uid="300" />
+        <instance type="JSON_SkinColorscheme" uid="377">
+            <instance-variables>
+                <CurrentFrame>1</CurrentFrame>
+            </instance-variables>
+        </instance>
+        <instance type="JSON_PreloadCache" uid="379" />
+    </nonworld-instances>
+    <effects />
+</c2layout>

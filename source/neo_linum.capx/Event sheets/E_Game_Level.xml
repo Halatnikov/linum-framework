@@ -1,0 +1,2308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Game_Level</name>
+    <events>
+        <event-group description="" inactive="1" sid="986042778423356" title="Game Level">
+            <sub-events>
+                <event-block sid="730527157966074">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="855299353275518" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="803360949922047">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="248189666633660" type="Engine_PlayerSensors" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="812399136454381" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="260574988643790" type="Engine_PlayerSensors">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="526738184974611">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="131884421593411" type="Engine_PlayerSensors" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="295438166466328" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="743113325374305" type="Engine_PlayerSensors">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="244941602214578">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="277011671730390" type="System">
+                            <param id="0" name="Variable">DEBUG</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="696275053806795">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="936679263139417" type="Keyboard">
+                                    <param id="0" name="Key">16</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="229005828589490" type="EngineMovement">
+                                    <param id="0" name="Instance variable">X</param>
+                                    <param id="1" name="Value">Mouse.X</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="511780510382982" type="EngineMovement">
+                                    <param id="0" name="Instance variable">Y</param>
+                                    <param id="1" name="Value">Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="373239684152330">
+                    <conditions>
+                        <condition id="0" name="On function" sid="113001556970713" type="Function">
+                            <param id="0" name="Name">&quot;Engine_Prepare&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="361431586594577" type="EngineMovement">
+                            <param id="0" name="Instance variable">X</param>
+                            <param id="1" name="Value">Special_StartPosGeneral.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="387181405639853" type="EngineMovement">
+                            <param id="0" name="Instance variable">Y</param>
+                            <param id="1" name="Value">Special_StartPosGeneral.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="From Sonic Open Construct (Lite 1.2)" sid="672966631757104" title="Player camera">
+                    <sub-events>
+                        <comment>Camera startup</comment>
+                        <event-block sid="746442010634973">
+                            <conditions>
+                                <condition id="0" name="On function" sid="285126833936654" type="Function">
+                                    <param id="0" name="Name">&quot;Engine_Prepare&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="575637848717986" type="Camera">
+                                    <param id="0" name="Instance variable">PosX</param>
+                                    <param id="1" name="Value">EngineMovement.X</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="292680610023832" type="Camera">
+                                    <param id="0" name="Instance variable">PosY</param>
+                                    <param id="1" name="Value">EngineMovement.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="868216810409407" type="Camera">
+                                    <param id="0" name="Instance variable">MaxX</param>
+                                    <param id="1" name="Value">14</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="504596970086874" type="Camera">
+                                    <param id="0" name="Instance variable">MaxY</param>
+                                    <param id="1" name="Value">32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="194040503206215" type="Camera">
+                                    <param id="0" name="Instance variable">Lag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Camera loop</comment>
+                        <event-block sid="802848179624358">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="750283909088881" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="968668672687225" type="Function">
+                                    <param id="0" name="Name">&quot;Level_Camera&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="400921784524953">
+                            <conditions>
+                                <condition id="0" name="On function" sid="353223924341338" type="Function">
+                                    <param id="0" name="Name">&quot;Level_Camera&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Camera lag</comment>
+                                <event-block sid="953556844578868">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="493715809780004" type="Camera">
+                                            <param id="0" name="Instance variable">Lag</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="468274050979685" type="Camera">
+                                            <param id="0" name="Instance variable">Lag</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="203891442751781">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="475295071105735" type="Camera">
+                                            <param id="0" name="Instance variable">Lag</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="674261889763242">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="536437288216309" type="System">
+                                                    <param id="0" name="Count">15</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>Regular camera</comment>
+                                                <event-block sid="289145720363696">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="321388499950764" type="Camera">
+                                                            <param id="0" name="Instance variable">PosX</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">EngineMovement.X + Camera.MaxX</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-12" name="Subtract from" sid="644554386264979" type="Camera">
+                                                            <param id="0" name="Instance variable">PosX</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="558450152175495">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="499583294002204" type="Camera">
+                                                            <param id="0" name="Instance variable">PosX</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">EngineMovement.X</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Add to" sid="583556247134917" type="Camera">
+                                                            <param id="0" name="Instance variable">PosX</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="713676517165697">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="753351044770130" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">EngineMovement.Y + Camera.MaxY</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-12" name="Subtract from" sid="138075328502934" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="674201178652761">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="114841596224794" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">EngineMovement.Y - Camera.MaxY</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Add to" sid="551945584563064" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="359474236035938">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="182173557650872" type="System">
+                                                    <param id="0" name="Count">7</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="472828309115835" type="EngineMovement">
+                                                    <param id="0" name="Instance variable">Ground</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>Shift camera if moving up and down</comment>
+                                                <event-block sid="125633702314889">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="695650674783553" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">EngineMovement.Y</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-12" name="Subtract from" sid="234638267749398" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="504687461791238">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="591700818175293" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">EngineMovement.Y </param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Add to" sid="500901679181605" type="Camera">
+                                                            <param id="0" name="Instance variable">PosY</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>End camera loop</comment>
+                        <event-block sid="533569346200323">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="301025191856820" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="632851075848051" type="System">
+                                    <param id="0" name="X">floor(Camera.PosX)</param>
+                                </action>
+                                <action id="-6" name="Scroll to Y" sid="397526752537514" type="System">
+                                    <param id="0" name="Y">floor(Camera.PosY)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="399784116390427">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="589202900975665" type="Sensor_Animation">
+                            <param id="0" name="Object">Special_Layer0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="593174198774880" type="EngineMovement">
+                            <param id="0" name="Instance variable">Layer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="229941312038578">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="487252399079088" type="Sensor_Animation">
+                            <param id="0" name="Object">Special_Layer1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="991355152773632" type="EngineMovement">
+                            <param id="0" name="Instance variable">Layer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="763285012786443">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="654112568950974" type="Sensor_Animation">
+                            <param id="0" name="Object">Special_LayerSwitch</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="646861507563330">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="967874186339165" type="EngineMovement">
+                                    <param id="0" name="Instance variable">Layer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="773810754142050" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="730860735608920" type="EngineMovement">
+                                    <param id="0" name="Instance variable">Layer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="731241567040541">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="754808340425584" type="EngineMovement">
+                                    <param id="0" name="Instance variable">Layer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="311270099997919" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="462463166154088" type="EngineMovement">
+                                    <param id="0" name="Instance variable">Layer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="974195616268004">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="291695442195341" type="EngineMovement">
+                            <param id="0" name="Instance variable">Layer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="799403195668405">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="489064501833640" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;layer0&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="523477954125864" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Solid_</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="491324010252996">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="208628026762431" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;layer1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="950324457195177" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Solid_</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="221890573515045">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="718045431565807" type="EngineMovement">
+                            <param id="0" name="Instance variable">Layer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="652924532643709">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="890722486859166" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;layer0&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="107740983207895" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Solid_</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="370049785321060">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="617686212981932" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;layer1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="996925101701232" type="Level_TileCollision">
+                                    <param id="0" name="Instance variable">Solid_</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="370348474668524">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="526939377089758" type="Level_TileCollision">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;solid&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="486201234692451" type="Level_TileCollision">
+                            <param id="0" name="Instance variable">Solid_</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="694436269587949">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="115207788604091" type="System">
+                            <param id="0" name="Object">Level_TileCollision</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="947201790223743" type="Level_TileCollision">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;platform&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="783676432129609">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="351566342301360" type="System">
+                                    <param id="0" name="First value">Level_TileCollision.VertexCount</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="662608923745222">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="678209649560963" type="Sensor_Main">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Y co-ordinate">Level_TileCollision.Top</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="910231140677894" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">Solid_</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="302688599321155">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="946528624554685" type="Sensor_Main">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="Y co-ordinate">Level_TileCollision.Top</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="297154626123332" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">Solid_</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="361185081088252">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="987404131131357" type="System">
+                                    <param id="0" name="First value">Level_TileCollision.VertexCount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="787253913153992">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="690757223363964" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="838047214416876" type="Level_TileCollision">
+                                            <param id="0" name="Instance variable">Solid_</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="639282733498913">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="188401878916041" type="Var_Game">
+                            <param id="0" name="Instance variable">Pause</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="694256864297724">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="204166923396650" type="Var_Game">
+                                    <param id="0" name="Instance variable">Gamemode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Multiplayer&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="638962609169238" type="EngineActions">
+                                    <param id="0" name="Instance variable">AllowX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="641013084616668" type="EngineActions">
+                                    <param id="0" name="Instance variable">AllowY</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="202961627356257" type="EngineActions">
+                                    <param id="0" name="Instance variable">AllowDirection</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="734531637610687">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="468088485140646" type="Var_Game">
+                                    <param id="0" name="Instance variable">Gamemode</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Singleplayer&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="393425031602489" type="System">
+                                    <param id="0" name="Group name">&quot;LinumEngine&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="848704522131967">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="934248615341678" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="916444509002204" type="Function">
+                            <param id="0" name="Name">&quot;EnginePlayer_InterruptMovement&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="616712433346556">
+                    <conditions>
+                        <condition id="0" name="On function" sid="461154561729412" type="Function">
+                            <param id="0" name="Name">&quot;EnginePlayer_InterruptMovement&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>yellow</comment>
+                        <event-block sid="551293510971005">
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <comment>up</comment>
+                                <event-block sid="404156951216928">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="143482051528204" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="392829574552420" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="823343682473726" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="957914811331919" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="833404988419028" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="921397110706222" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="981956147123516" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="976784538102268" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-10</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="840816117467325" type="Object_SpringYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="330626976284870" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="425272409890949" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="638059115936538">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="498537123953789" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="727832859037139" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="688945661741648" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="145955934846497" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="633270783459319" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="398459225516528" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="555055939066360">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="221562741821922" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="811748149256895" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="549792203169744" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="557457452555018" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="299233181852996" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="960926510273192" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="521315545457148">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="328216013551728" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="338236274785489" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="307313403159491" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="370088437875917" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="695974918268108" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="833022115682520" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>down</comment>
+                                <event-block sid="510402900380505">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="701031759529311" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="673721669332308" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="914826284672709" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="193189204856971" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="690859129369134" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="285786202991051" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="859622984600037" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="195415503482152" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="166595241176195" type="Object_SpringYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="838805973313171" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="295681782689299" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="100285149953659">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="831926945882382" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="810381509808815" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="888442169220727" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="289682068804329" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="819525760740568" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="723816741240002" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="558730358172710">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="924272427253347" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="358589694127921" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="945415935494718" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="811500714055701" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="443129822269325" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="386401386195623" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="128059753166303">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="828726838751087" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="844191398921751" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="106372024536325" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="336540284380286" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="123573413490901" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="342168236706997" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="480372270323527" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>left</comment>
+                                <event-block sid="379502852920790">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="853325816729601" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="665244518331768" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="394592126015059" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="186541854055530" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="635961289898876" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="339380746143604" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="991862043573277" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-10</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="194841688207363" type="Object_SpringYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="185213494779898" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="806772889179883" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="424872952549119" type="EngineMovement">
+                                            <param id="0" name="Instance variable">SlopesControlLock</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="375542505752249">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="585011108022974" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="835965634590763" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="595184326889357" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="567193697997161" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="827349318116333" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="464064097916850" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="601296811516956">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="579336792342286" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="674168547745177" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="218618576600843" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="259206046446090" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="745252670115824" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="472035431811798" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="636172348822631">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="439511196197958" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="110837887499207" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="844993745781738" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="809775419219611" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="434820329296335" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="532398226770773" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="864636068713678" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>right</comment>
+                                <event-block sid="245957760932155">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="705450385945688" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="112463264156090" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="249412504833343" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="542381561196812" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="476524848446866" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="309749121981911" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="622181472557553" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="995670575753994" type="Object_SpringYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="692265592893818" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="323218869564677" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="439283418858681" type="EngineMovement">
+                                            <param id="0" name="Instance variable">SlopesControlLock</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="458296735929291">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="297663232813795" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="688939261623940" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="965723952197369" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="534196586545489" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="255707499180677" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="220795667747749" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="510734813259704">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="800200302531509" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="562757311469556" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="146355540604984" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="378095610957371" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="468367711267739" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="950223537593125" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="736563451951391">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="104798582821864" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="296623990190800" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringYellow</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="290741724445356" type="System">
+                                            <param id="0" name="First value">Object_SpringYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="390789169034584" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="460669350543329" type="Object_SpringYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="131490448714798" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="413079871388487" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>red</comment>
+                        <event-block sid="499834464040389">
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <comment>up</comment>
+                                <event-block sid="355303716595040">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="248070575052130" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="530615958367035" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="468326566099598" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="498693092354021" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="541911536324864" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="572728452509129" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="100060183758082" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="349785094006989" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-16</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="204988313157637" type="Object_SpringRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="517948605765681" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="245681603213958" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="869458365122685">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="723721363735727" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="125032520648392" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="720071533219086" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="696091845200830" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="570192752247568" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="598588936155198" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="427498794988822">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="352081872524861" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="791172869565446" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="981496152185552" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="502185141256140" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="315794055935108" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="702039935947344" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="573162239340238">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="922780596256059" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="944343626746838" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="977184621287813" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="849685754883886" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="235393845087227" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="520304649893404" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>down</comment>
+                                <event-block sid="952160578491020">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="215976509532697" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="567134081385286" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="357355880197076" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="807993724812416" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="156048626950398" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="410311934260467" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="893952480388280" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="291331166168895" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="133618287659833" type="Object_SpringRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="274167952635561" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="532045472722482" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="701457418268832">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="931607626253419" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="335800265264049" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="673540607674615" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="281591465003915" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="173007973505950" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="585443352666936" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="254614274808723">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="727104991567374" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="118967695056221" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="618167788698230" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="198013514346032" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="461407747774228" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="869699995017511" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="932167823099503">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="939081734366978" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="483118044806146" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="988483496717078" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="909602331723881" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="948661465022376" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">-16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="940867180393423" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="972573863924033" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>left</comment>
+                                <event-block sid="431500627812788">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="259876606240591" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="127812861590888" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="264556445841417" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="265594346108675" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="738571710292689" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="637334310288914" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="181651150929717" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-16</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="152137419208164" type="Object_SpringRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="192124133346810" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="405356071724688" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="761661998900385" type="EngineMovement">
+                                            <param id="0" name="Instance variable">SlopesControlLock</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="982250797058112">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="905147993929618" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="600745648931263" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="201320536811104" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="418307173772814" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="948152716926996" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="245186567851746" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="325240053375494">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="894307140851410" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="261438862900973" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="377517596963257" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="244536133457852" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="448387903329134" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="544196444496777" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="802946631057918">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="519838669446829" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="952239529764030" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="690597238265768" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="378748292482677" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="578917899323926" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="299592553099464" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="702975959938383" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>right</comment>
+                                <event-block sid="917636860134510">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="108112116288256" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="314581314029009" type="Sensor_LeftBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="307249327081795" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="235943420180900" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="340415201493629" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="990198978092454" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="343450225667152" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="343399974226233" type="Object_SpringRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="903002501614556" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="261246619621906" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="897525534997732" type="EngineMovement">
+                                            <param id="0" name="Instance variable">SlopesControlLock</param>
+                                            <param id="1" name="Value">16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="228460589452219">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="653077258925784" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="836604275585534" type="Sensor_RightBig">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="610677064262924" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="680987075801733" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="885388631557278" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="596666529388017" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="777032788677482">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="876335658995813" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="881711290091460" type="Sensor_Top">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="492288793973458" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="130302138562375" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="733983381848197" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="650392050169089" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="370108352121987">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="269142861817025" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="925740438458716" type="Sensor_Bottom">
+                                            <param id="0" name="Object">Object_SpringRed</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="899322116790149" type="System">
+                                            <param id="0" name="First value">Object_SpringRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="521537794594261" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="774154354922392" type="Object_SpringRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="263585585328344" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="385996219154553" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>diagonal yellow</comment>
+                        <event-block sid="219902575935320">
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <comment>upleft</comment>
+                                <event-block sid="335385774285947">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="508179244893154" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="866864714644284" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="877076910952018" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="602472738281613" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="273115683675847" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="810329568680404" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="693239276872539" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="597018938197489" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-7</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="387276866817184" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-7</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="785687842862569" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="877347772188516" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="867795792730751" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="155164167320956" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>upright</comment>
+                                <event-block sid="735015265691999">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="513885532727427" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="734103851783573" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="617552329567909" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="678247307499775" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="755718934713515" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="500906647599696" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="941244965154006" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="861459164912773" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="961937747812627" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-7</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="240806021455742" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="123769649139303" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="898495581689655" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="100151242204640" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>downleft</comment>
+                                <event-block sid="960269738196681">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="807454588634415" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="575976435674417" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="101081807770712" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="635886921549085" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="943494896722870" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="574970555805442" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="721650949561185" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="234923826967956" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-7</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="841721517094113" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="149401040963130" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="694492755124107" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="328864800479209" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="912837066910833" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>downright</comment>
+                                <event-block sid="260930841760694">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="556544791348136" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="816529488346000" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalYellow</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="349453275555179" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="485923168443969" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalYellow.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="969321840352362" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="470622399392410" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="577630749579994" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="100551673377437" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="540639745839299" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="946444821664257" type="Object_SpringDiagonalYellow">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="616285674868710" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="586237702878331" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="474060066006244" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>diagonal red</comment>
+                        <event-block sid="855492734473132">
+                            <conditions />
+                            <actions />
+                            <sub-events>
+                                <comment>upleft</comment>
+                                <event-block sid="393194364022635">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="644099391290573" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="268480473849898" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="895242853005123" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="847042660493681" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="987786892516922" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="664658588016629" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="339130318902687" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="420362842689223" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-11</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="131370540727080" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-11</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="351564360424720" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="577788184480107" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="960359277149492" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="907554814426392" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>upright</comment>
+                                <event-block sid="102249163789190">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="979275600755751" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="385883530635716" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="851010353649142" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="762418301684084" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="373179489283628" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="111237278476401" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="130476862997830" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="626613097847007" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">11</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="225478967111742" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">-11</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="296857518939345" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="314997804199545" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="608355906951215" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="732889183748420" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>downleft</comment>
+                                <event-block sid="341359138338590">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="786108719039128" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="391193703539420" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="208263157754988" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="400321940114940" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">270</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="321718143680429" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="819816919910477" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="949582200690720" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="605491793809810" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">-11</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="681954971298580" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">11</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="933390149607753" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="314039487967951" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="492901597811463" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="167134377547832" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>downright</comment>
+                                <event-block sid="149717724383522">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="972937217695009" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="438878696903406" type="Sensor_Animation">
+                                            <param id="0" name="Object">Object_SpringDiagonalRed</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="676651389748869" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="426439623916534" type="System">
+                                            <param id="0" name="First value">Object_SpringDiagonalRed.Angle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">90</param>
+                                        </condition>
+                                        <condition id="-5" name="Compare width" sid="806384565383068" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Width">-32</param>
+                                        </condition>
+                                        <condition id="-6" name="Compare height" sid="498754869280502" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Height">32</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="870594574757304" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Ground</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="732801744600692" type="EngineMovement">
+                                            <param id="0" name="Instance variable">XSpeed</param>
+                                            <param id="1" name="Value">11</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="961853845031725" type="EngineMovement">
+                                            <param id="0" name="Instance variable">YSpeed</param>
+                                            <param id="1" name="Value">11</param>
+                                        </action>
+                                        <action id="3" name="Start" sid="915274493484314" type="Object_SpringDiagonalRed">
+                                            <param id="0" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="363360574573195" type="EngineActions">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="246635008083252" type="EngineActions">
+                                            <param id="0" name="Instance variable">JumpReleased</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="516986730507437" type="EngineMovement">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Value">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

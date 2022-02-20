@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_InitialSetup</name>
+    <events>
+        <include>E_GLOBAL</include>
+        <comment>TEMPORARY</comment>
+        <comment>code by André</comment>
+        <event-block sid="129784575418740">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="765620432565570" type="System" />
+            </conditions>
+            <actions>
+                <action id="24" name="Set resizable" sid="909496889730309" type="NWjs">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="14" name="Set width" sid="226275720440105" type="NWjs">
+                    <param id="0" name="Width">1280</param>
+                </action>
+                <action id="15" name="Set height" sid="282026823315647" type="NWjs">
+                    <param id="0" name="Height">720+4</param>
+                </action>
+                <action id="-16" name="Wait" sid="122192100753466" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="12" name="Set X" sid="980600316460509" type="NWjs">
+                    <param id="0" name="X">int((Browser.ScreenWidth/2)-(Browser.WindowOuterWidth/2))</param>
+                </action>
+                <action id="13" name="Set Y" sid="312044221927769" type="NWjs">
+                    <param id="0" name="Y">int((Browser.ScreenHeight/2)-(Browser.WindowOuterHeight/2))</param>
+                </action>
+                <action id="24" name="Set resizable" sid="767546751008557" type="NWjs">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="950615296014362">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="969058507165134" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;InitialSetup&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="509483767085467" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="379768399405032" type="Function">
+                    <param id="0" name="Name">&quot;Log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;verbose&quot;{###}&quot;Initial game setup...&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="366988816677568" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Value">&quot;CacheLevels&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="728122351061418" title="Temporary auto-updater">
+            <sub-events>
+                <variable constant="1" name="GithubStuff" sid="278332159830716" static="0" type="text">Halatnikov/linum-framework</variable>
+                <comment></comment>
+                <event-block sid="242202059959814">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="841043963399422" type="Var_Menus">
+                            <param id="0" name="Instance variable">CurrentMenu</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;TempUpdate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="423488805364289">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="129138733815224" type="Keyboard">
+                                    <param id="0" name="Key">27</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="844075679203866" type="Var_Menus">
+                                    <param id="0" name="Instance variable">CurrentMenu</param>
+                                    <param id="1" name="Value">&quot;InitialDisclaimer&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="571023352343156" type="QuickMenu_Item" />
+                                <action id="-9" name="Destroy" sid="717365390839066" type="QuickMenu_Cursor" />
+                                <action id="-9" name="Destroy" sid="397345592744786" type="QuickMenu_BG" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="944941251827610">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="650930109374235" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="140084048688697" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CHECKING FOR UPDATES&quot;{###}0</param>
+                                </action>
+                                <action id="0" name="Request URL" sid="723173394744213" type="AJAX">
+                                    <param id="0" name="Tag">&quot;TempUpdate&quot;</param>
+                                    <param id="1" name="URL">&quot;https://raw.githubusercontent.com/&quot;&amp;GITHUBSTUFF&amp;&quot;/master/source/hosted/updateCheck.json&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="512382999677151" type="Dummy">
+                                    <param id="0" name="Duration">10</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;Timeout&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="344560836006929" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Checking for updates... (https://raw.githubusercontent.com/&quot;&amp;GITHUBSTUFF&amp;&quot;/master/source/hosted/updateCheck.json)&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388407781440777">
+                            <conditions>
+                                <condition id="70" inverted="1" name="Is Empty" sid="819781186755765" type="JSON_TempUpdate">
+                                    <param id="0" name="Reference point">0</param>
+                                    <param id="1" name="Key {n}"></param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="402214210347039" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="485182072855541">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="159248487532951" type="System">
+                                            <param id="0" name="First value">JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;NewestVersion&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">projectversion</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="978674804364623" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="701432873340500" type="System">
+                                            <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="320446397767910" type="Var_Menus">
+                                            <param id="0" name="Instance variable">CurrentMenu</param>
+                                            <param id="1" name="Value">&quot;InitialDisclaimer&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="692715215857813" type="Function">
+                                            <param id="0" name="Name">&quot;Log&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Up-to-date!&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="811431004920703">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="153390850749865" type="System">
+                                            <param id="0" name="First value">JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;NewestVersion&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">projectversion</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="299624582813046" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="789599742258540" type="System">
+                                            <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="767793402449071" type="Function">
+                                            <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;TempUpdate&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="341222421280263" type="Var_Menus">
+                                            <param id="0" name="Instance variable">CurrentMenu</param>
+                                            <param id="1" name="Value">&quot;null2&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="117312034667148" type="Function">
+                                            <param id="0" name="Name">&quot;Log&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] New version found! (&quot;&amp;JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;NewestVersion&quot;)&amp;&quot; - &quot;&amp;JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;Size&quot;)&amp;&quot;, you&apos;re on &quot;&amp;projectversion&amp;&quot;)&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="144693233027991" type="Function">
+                                            <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                            <param id="1" name="Parameter {n}">uppercase(JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;NewestVersion&quot;))</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="946265720435087" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="442925673245376" type="Function">
+                                            <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;SIZE:&quot;&amp;uppercase(JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;Size&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="443331877385148">
+                            <conditions>
+                                <condition id="0" name="On completed" sid="796605668515573" type="AJAX">
+                                    <param id="0" name="Tag">&quot;TempUpdate&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="60" name="LoadJSON" sid="218820768057410" type="JSON_TempUpdate">
+                                    <param id="0" name="JSON">AJAX.LastData</param>
+                                    <param id="1" name="Reference point">0</param>
+                                    <param id="2" name="Key {n}"></param>
+                                </action>
+                                <action behavior="Timer" id="1" name="Stop timer" sid="519937027026884" type="Dummy">
+                                    <param id="0" name="Tag">&quot;Timeout&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="781641403244875">
+                            <conditions>
+                                <condition id="1" name="On error" sid="957174862549645" type="AJAX">
+                                    <param id="0" name="Tag">&quot;TempUpdate&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="129607266152927" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="724499269205872" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="248239420573527" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="562771678238468" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;ERROR RETRIEVING INFO&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="810526077795625" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Error retrieving info (generic)&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="1" name="Stop timer" sid="365268373574594" type="Dummy">
+                                    <param id="0" name="Tag">&quot;Timeout&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="215444802434221">
+                            <conditions>
+                                <condition id="200" name="On JSON Parse Error" sid="886217178585119" type="JSON_TempUpdate" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="799997333548581" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="560471414778037" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="714368312317491" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="942772072963022" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;INFO CORRUPTED&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="949151971117278" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Response corrupted&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="1" name="Stop timer" sid="735867080754542" type="Dummy">
+                                    <param id="0" name="Tag">&quot;Timeout&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="532532962662433">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="On timer" sid="165838467860897" type="Dummy">
+                                    <param id="0" name="Tag">&quot;Timeout&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="112570235220213" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="920067044569341" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="860711948314885" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TIMEOUT&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="540952626824613" type="Var_Menus">
+                                    <param id="0" name="Instance variable">CurrentMenu</param>
+                                    <param id="1" name="Value">&quot;null2&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="336311040821594" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Timed out&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="845336097118384">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="573748100221286" type="Var_Menus">
+                            <param id="0" name="Instance variable">CurrentMenu</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;TempUpdateDownload&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="795883607909889">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="654435461134578" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Load Zip from URL" sid="503809544552550" type="jsZip">
+                                    <param id="0" name="URL">JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;URL&quot;)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="122886057947138" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Downloading update... (&quot;&amp;JSON_TempUpdate.Value(0,&quot;LinumUpdateCheck&quot;,&quot;URL&quot;)&amp;&quot;)&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="529622709688377">
+                            <conditions>
+                                <condition id="6" name="Is Loading" sid="896646765261360" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="975322357664736" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;DOWNLOADING UPDATE - &quot;&amp;round(jsZip.LoadProgress*100)&amp;&quot;%&quot;{###}jsZip.LoadProgress*426</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="536384695266917">
+                            <conditions>
+                                <condition id="0" name="On Zip Loaded" sid="623796429902761" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Download zip to path" sid="850881379622932" type="jsZip">
+                                    <param id="0" name="Path">NWjs.AppFolder&amp;&quot;\LinumFramework\temp\update.zip&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="978305080383373" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Saving zip... (&quot;&amp;NWjs.AppFolder&amp;&quot;\LinumFramework\temp\update.zip)&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="643410195905570">
+                            <conditions>
+                                <condition id="7" name="Is Downloading" sid="561290661860533" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="545608627598839" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;SAVING UPDATE - &quot;&amp;round(jsZip.DownloadProgress*100)&amp;&quot;%&quot;{###}jsZip.DownloadProgress*426</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="504705128201943">
+                            <conditions>
+                                <condition id="4" name="On Download" sid="380651272615770" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Unzip to path" sid="586051846076496" type="jsZip">
+                                    <param id="0" name="Path">NWjs.AppFolder</param>
+                                </action>
+                                <action id="0" name="Call function" sid="382152510967260" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Extracting update...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="697079104761233">
+                            <conditions>
+                                <condition id="8" name="Is Unzipping" sid="337497280650418" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="829865647657155" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;EXTRACTING UPDATE - &quot;&amp;round(jsZip.UnzipProgress*100)&amp;&quot;%&quot;{###}jsZip.UnzipProgress*426</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block sid="740695450415879">
+                            <conditions>
+                                <condition id="2" name="On Unzip" sid="547547040823124" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="326165799798565" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;info&quot;{###}&quot;[UpdateCheck] Update finished, cleaning up...&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="871697181098443" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;verbose&quot;{###}&quot;[UpdateCheck] Deleting update.zip&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="302570276769986" type="Function">
+                                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;FINISHING&quot;{###}426</param>
+                                </action>
+                                <action id="2" name="Delete file" sid="859567511700303" type="NWjs">
+                                    <param id="0" name="Path">NWjs.AppFolder&amp;&quot;\LinumFramework\temp\update.zip&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="683929332476617" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="102757034963564" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="583684469496185" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateFinish&quot;</param>
+                                </action>
+                                <action id="21" name="Request attention" sid="946748282510160" type="NWjs">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="20" name="Restore" sid="457780651021038" type="NWjs" />
+                            </actions>
+                        </event-block>
+                        <comment></comment>
+                        <event-block any="1" sid="863531051880649">
+                            <conditions>
+                                <condition id="1" name="On Zip Load Fail" sid="212860463664841" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="690643320270699" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="413825671835659" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">uppercase(jsZip.LoadError)</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="422291674873565" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="852664857377447" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Update download failed!&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="245211682062456" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;jsZip: &quot;&amp;jsZip.LoadError</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="357084473209324">
+                            <conditions>
+                                <condition id="5" name="On Download Fail" sid="826523695247503" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="320401152930797" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="574429820960757" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">uppercase(jsZip.DownloadError)</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="320891443389816" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="746520222957416" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Saving zip failed!&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="784727549682848" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;jsZip: &quot;&amp;jsZip.DownloadError</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="344362278592847">
+                            <conditions>
+                                <condition id="3" name="On Unzip Fail" sid="464153158297005" type="jsZip" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="293255835189403" type="Function">
+                                    <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TempUpdateError&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="980987961269252" type="Function">
+                                    <param id="0" name="Name">&quot;UI_SystemMessage&quot;</param>
+                                    <param id="1" name="Parameter {n}">uppercase(jsZip.UnzipError)</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="104612650041552" type="System">
+                                    <param id="0" name="Layer">&quot;GLOBAL_Loading&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="20" name="Restore" sid="965849199736105" type="NWjs" />
+                                <action id="0" name="Call function" sid="122949325417743" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;[UpdateCheck] Extracting zip failed!&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="143911595336998" type="Function">
+                                    <param id="0" name="Name">&quot;Log&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;error&quot;{###}&quot;jsZip: &quot;&amp;jsZip.UnzipError</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="478488550347745">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="783722494125362" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;CacheLevels&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="802769914832304" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="451083201019467" type="Function">
+                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;CACHING LEVELS&quot;{###}0</param>
+                </action>
+                <action id="0" name="Call function" sid="314431372818712" type="Function">
+                    <param id="0" name="Name">&quot;Cache_Levels&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="284667154236296" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-10" name="Set value" sid="233317635642913" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Value">&quot;CacheSkins&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="470927335231249">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="494927666806497" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;CacheSkins&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="981672934178665" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="810829157279705" type="Function">
+                    <param id="0" name="Name">&quot;UI_Loading&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;CACHING SKINS&quot;{###}0</param>
+                </action>
+                <action id="0" name="Call function" sid="486217244623581" type="Function">
+                    <param id="0" name="Name">&quot;Cache_Skins&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="168055736711735" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-10" name="Set value" sid="243160335058879" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Value">&quot;TempWebGL&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="219998803649830">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="754372506207913" type="Var_Menus">
+                    <param id="0" name="Instance variable">CurrentMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;TempWebGL&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="819096752013801" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="544127118713319">
+                    <conditions>
+                        <condition id="-27" name="Effects are supported" sid="641186573365126" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="259362542596130" type="Var_Menus">
+                            <param id="0" name="Instance variable">CurrentMenu</param>
+                            <param id="1" name="Value">&quot;TempUpdate&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="990483650795207" type="Function">
+                            <param id="0" name="Name">&quot;Log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;verbose&quot;{###}&quot;WebGL check passed&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="831588791243901">
+                    <conditions>
+                        <condition id="-27" inverted="1" name="Effects are supported" sid="687098372510636" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="861555559348092" type="Function">
+                            <param id="0" name="Name">&quot;QuickMenuCreate&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;TempErrorWebGL&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="291213371611460" type="Function">
+                            <param id="0" name="Name">&quot;Log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;warn&quot;{###}&quot;WebGL renderer is unable to be initialized!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -2,18 +2,19 @@
 
 ###### IGNORE
 
-# Ignore savefiles, configs and whatever
+# Savefiles, configs and whatever
 LinumFramework/api.ini
 LinumFramework/_latest_*
 LinumFramework/logs/*
 LinumFramework/temp/*
 LinumFramework/saves/editor/*
 
-# Ignore Construct 2 files
+# Construct 2 files
 *.autosave
+*.backup1
 *.uistate.xml
 
-# Ignore nw.js files
+# Nw.js files
 /*.dll
 /*.log
 /*.exe
@@ -25,9 +26,12 @@ swiftshader/
 
 browser_userdata/
 
-# Ignore other files from my other projects :eyes:
+# Other files from my other projects :eyes:
 savedata/
 warioware/
+
+# Generic Windows files
+desktop.ini
 
 ###### DO NOT IGNORE
 

@@ -1,10 +1,13 @@
-# 0.2.0-6 `(2022-02-18)`
+# Linum Framework
+[![repo link](https://img.shields.io/static/v1?logo=github&label=GitHub&message=linum-framework&color=white)](https://github.com/Halatnikov/linum-framework)
+
+# 0.2.0-6 `(2022-02-20)`
 ### Added:
 - Counter on level select
 - *Early steps* at **grid view in level select** and an **alternative audio visualiser**
 ### Changed:
 - *WIP* updated language file a teeny bit
-- **Moved to GitHub**, i think that means i have to document *every* slight change now? ~~i'm sorry in advance~~
+- **Moved to GitHub**, this is kinda big, i think that means i have to document *every* slight change now? ~~i'm sorry in advance~~
 
 # 0.2.0-5 `(2022-02-12)`
 ### Added:
@@ -86,7 +89,7 @@
 - *Temp* **object properties** and **level layers** sub-menus in editor
 - Different tile types are now **highlighted with different colors** in editor, a toggle in editor settings sub-menu
 > Miscellanious
-- System messages in bottom left corner
+- **System messages** in bottom left corner
 - Debug mode global variable for indev versions
 - More stuff i forgot and lots of unused code probably
 ### Changed:

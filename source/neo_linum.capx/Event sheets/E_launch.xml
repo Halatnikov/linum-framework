@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_launch</name>
+    <events>
+        <comment>As simple as that</comment>
+        <event-block sid="603100220035908">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="280393703409581" type="System" />
+            </conditions>
+            <actions>
+                <action id="24" name="Set resizable" sid="111401754883622" type="NWjs">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="412471295512278">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="419498321263591" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="799889602358850" type="LoadingProgressBar">
+                    <param id="0" name="Width">loadingprogress*426</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="563032519854329">
+            <conditions>
+                <condition id="-25" name="On loader layout complete" sid="337639185800663" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="276078887658222" type="System">
+                    <param id="0" name="Layout">InitialSetup</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
