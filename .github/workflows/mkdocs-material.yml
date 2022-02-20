@@ -1,4 +1,4 @@
-# version 2
+# version 3
 name: mkdocs-material 
 on:
   push:
@@ -9,11 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+#       --- fix for mkdocs-git-revision-date ---
+        with:
+          fetch-depth: 0
+#       --- fix for mkdocs-git-revision-date --- 
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
       - run: pip install mkdocs-material 
-#            --- custom plugins ---
+#       --- custom plugins ---
       - run: pip install mkdocs-git-revision-date-localized-plugin
-#            --- custom plugins ---
+#       --- custom plugins ---
       - run: mkdocs gh-deploy --force

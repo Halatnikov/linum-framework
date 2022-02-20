@@ -1,13 +1,25 @@
+# General metadata
 site_name: Linum Framework Wiki
 
-repo_name: halatnikov/linum-framework
-edit_uri: edit/master/docs/
+# GitHub repo settings
+repo_url: https://github.com/Halatnikov/linum-framework
+edit_uri: blob/master/docs/
 
-
+# Theme edits
 theme:
     name: material
     
+    # feature flags
+    features:
+        - navigation.indexes
+
+    # logo
+    logo: _assets/linumsmall_ayleen-seraph.png
+    favicon: _assets/linumsmall_ayleen-seraph.png
+    
+    # colorschemes, dark is default
     palette:
+
         - scheme: slate
           primary: blue
           accent: blue
@@ -22,11 +34,14 @@ theme:
             icon: material/lightbulb
             name: Switch to dark mode
     
+    # icons
     icon:
-        repo: fontawesome/brands/github-alt
+        repo: fontawesome/brands/github
 
+# Custom plugins
 plugins:
     - git-revision-date-localized
 
+# --- Navigation bar ---
 nav:
     - Index: index.md
