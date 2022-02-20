@@ -3,6 +3,7 @@ site_name: Linum Framework Wiki
 
 # GitHub repo settings
 repo_url: https://github.com/Halatnikov/linum-framework
+repo_name: Halatnikov/linum-framework
 edit_uri: blob/master/docs/
 
 # Theme edits
@@ -14,8 +15,8 @@ theme:
         - navigation.indexes
 
     # logo
-    logo: _assets/linumsmall_ayleen-seraph.png
-    favicon: _assets/linumsmall_ayleen-seraph.png
+    logo: assets/linumsmall_ayleen-seraph.png
+    favicon: assets/linumsmall_ayleen-seraph.png
     
     # colorschemes, dark is default
     palette:
