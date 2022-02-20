@@ -14,9 +14,9 @@ theme:
     features:
         - navigation.indexes
 
-    # logo
-    logo: assets/linumsmall_ayleen-seraph.png
-    favicon: assets/linumsmall_ayleen-seraph.png
+    # logo (this is dumb, but github doesn't want my pngs)
+    logo: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png
+    favicon: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png
     
     # colorschemes, dark is default
     palette:
