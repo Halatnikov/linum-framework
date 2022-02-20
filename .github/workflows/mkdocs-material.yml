@@ -1,3 +1,4 @@
+# version 2
 name: mkdocs-material 
 on:
   push:
@@ -12,4 +13,7 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material 
+#            --- custom plugins ---
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+#            --- custom plugins ---
       - run: mkdocs gh-deploy --force

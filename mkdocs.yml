@@ -1,5 +1,32 @@
-site_name: 'Linum Framework Wiki'
+site_name: Linum Framework Wiki
+
+repo_name: halatnikov/linum-framework
+edit_uri: edit/master/docs/
+
+
 theme:
-    name: 'material'
+    name: material
+    
+    palette:
+        - scheme: slate
+          primary: blue
+          accent: blue
+          toggle:
+            icon: material/lightbulb-outline
+            name: Switch to light mode
+
+        - scheme: default
+          primary: blue
+          accent: blue
+          toggle:
+            icon: material/lightbulb
+            name: Switch to dark mode
+    
+    icon:
+        repo: fontawesome/brands/github-alt
+
+plugins:
+    - git-revision-date-localized
+
 nav:
-    - 'Index': 'index.md'
+    - Index: index.md
