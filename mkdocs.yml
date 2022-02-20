@@ -6,6 +6,8 @@ repo_url: https://github.com/Halatnikov/linum-framework
 repo_name: Halatnikov/linum-framework
 edit_uri: blob/master/docs/
 
+announce: test
+
 # Theme edits
 theme:
     name: material
@@ -13,8 +15,11 @@ theme:
     # feature flags
     features:
         - navigation.indexes
+        - navigation.top
+        - search.suggest
+        - search.highlight
 
-    # logo (this is dumb, but github doesn't want my pngs)
+    # logo (this is stupid, but github doesn't want my pngs!!!)
     logo: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png
     favicon: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png
     
@@ -42,7 +47,14 @@ theme:
 # Custom plugins
 plugins:
     - git-revision-date-localized
+    - search
+    - tags:
+        tags_file: tags.md
+
+markdown_extensions:
+    - meta
 
 # --- Navigation bar ---
 nav:
-    - Index: index.md
+    - index.md
+    - tags.md
