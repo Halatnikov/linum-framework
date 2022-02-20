@@ -1,0 +1,5 @@
+site_name: 'Linum Framework Wiki'
+theme:
+    name: 'material'
+nav:
+    - 'Index': 'index.md'
