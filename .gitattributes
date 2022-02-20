@@ -3,3 +3,5 @@
 # auto-handle text stuff
 * text=auto
 * text eol=lf
+
+*.caproj text diff=xml

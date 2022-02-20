@@ -25,7 +25,7 @@
 
 ## 0.2.0 goals sorta
 
-*See issue* #1 *for a checklist*
+*See [issue #1](https://github.com/Halatnikov/linum-framework/issues/1) for a checklist*
 
 ## Changelog
 
