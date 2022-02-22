@@ -45,6 +45,8 @@ Quick rundown through syntax available with extensions
 
 `uses extensions: pymdownx.keys`
 
+A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
+
 !!! note ""
 	++ctrl+alt+delete++
 	
@@ -53,8 +55,6 @@ Quick rundown through syntax available with extensions
 	++alt+f4++
 	
 	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
-
-A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
 
 #### Superscript 
 
@@ -188,7 +188,7 @@ Also known as call-outs
 
 `uses extensions: attr_list`
 
-[Empty button](docs/index.md){ .md-button }
+[Empty button](../index.md){ .md-button }
 
-[Filled button](docs/index.md){ .md-button .md-button--primary }
+[Filled button](../index.md){ .md-button .md-button--primary }
 
