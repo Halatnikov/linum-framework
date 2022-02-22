@@ -55,7 +55,7 @@ Also known as call-outs
 !!! info inline "Inline"
     This is an inline admonition
 
-This is the text after it
+This is the text after an inline admonition\
 
 **Types:**
 
