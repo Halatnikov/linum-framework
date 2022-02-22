@@ -1,7 +1,7 @@
 # Linum Framework
 [![repo link](https://img.shields.io/static/v1?logo=github&label=GitHub&message=linum-framework&color=white)](https://github.com/Halatnikov/linum-framework)
 
-Please note that this is currently in early development and not very usable
+***Please note that this is currently in early development and not very usable***
 
 > **Linum Framework** is a Sonic framework for *Construct 2* with level editor, online multiplayer and skins
 
@@ -10,7 +10,7 @@ Please note that this is currently in early development and not very usable
 ![commits since last release](https://img.shields.io/github/commits-since/halatnikov/linum-framework/latest?logo=github) 
 ![repo size](https://img.shields.io/github/repo-size/halatnikov/linum-framework?logo=github)
 ![total downloads](https://img.shields.io/github/downloads/halatnikov/linum-framework/total?logo=github)
-![mkdocs-material github actions status](https://img.shields.io/github/workflow/status/halatnikov/linum-framework/mkdocs-material?label=docs%20status&logo=github)
+![mkdocs-material github actions status](https://img.shields.io/github/workflow/status/halatnikov/linum-framework/mkdocs-material?label=wiki%20status&logo=github)
 
 ###### versions:
 

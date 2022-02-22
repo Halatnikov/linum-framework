@@ -1,12 +1,23 @@
+## Linum Framework settings for Wiki
+# https://squidfunk.github.io/mkdocs-material/setup
+# https://www.mkdocs.org/user-guide/configuration/
+
 # General metadata
 site_name: Linum Framework Wiki
+copyright: idk
 
 # GitHub repo settings
 repo_url: https://github.com/Halatnikov/linum-framework
-repo_name: Halatnikov/linum-framework
+repo_name: halatnikov/linum-framework
 edit_uri: blob/master/docs/
 
-announce: test
+# Extra
+extra:
+    social:
+        - icon: material/web
+          link: https://halatnikov.github.io
+          name: my "website"
+
 
 # Theme edits
 theme:
@@ -26,14 +37,14 @@ theme:
     # colorschemes, dark is default
     palette:
 
-        - scheme: slate
+        - scheme: slate     # dark bg
           primary: blue
           accent: blue
           toggle:
             icon: material/lightbulb-outline
             name: Switch to light mode
 
-        - scheme: default
+        - scheme: default   # light bg
           primary: blue
           accent: blue
           toggle:
@@ -44,17 +55,48 @@ theme:
     icon:
         repo: fontawesome/brands/github
 
-# Custom plugins
+# Plugins
 plugins:
     - git-revision-date-localized
     - search
     - tags:
         tags_file: tags.md
 
+# Markdown extensions
+# there's a lot, but how could i not??
 markdown_extensions:
-    - meta
+    # BUILT-IN
+    - meta                  # add .yml at the start of page to customise stuff (use with tags plugin to do tags)
+    - footnotes             # footnote[^1] and [^1]: it's content
+    - def_list              # `word` : definition
+    - abbr                  # *[SCA]: Super Cool Abbreviation
+    - admonition            # !!! Note! and there's like an icon and color
+    - attr_list             # [Can do buttons](#){ .md-button .md-button--primary } and also { align=right } images
+    - md_in_html            # image caption <figcaption> and idk
+    - toc:                  # table of contents, get links to headers/sections
+        permalink: true
+    - tables                # well tables |:-:|-|
+    
+    # SUPPORTED
+    - pymdownx.tasklist:    # - [x] checkmarks
+        custom_checkbox: true
+    - pymdownx.snippets     # --8<-- "snippet", can embed external files (use with abbr to add glossary)
+    - pymdownx.betterem     # improvements for **bold** *italic* to allow stacking
+    - pymdownx.caret        # ^^underscores^^ and ^small\ up\ symbols^
+    - pymdownx.mark         # ==fill with yellow==
+    - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
+    - pymdownx.critic       # {~~red~~} {++green++} {==yellow==} {>>comment<<} can do blocks too
+    - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
+    - pymdownx.details      # ??? collapsible blocks, + to open (use with admonition)
+    - pymdownx.emoji:       # :emoji: and mkdocs icons :material/lightbulb-outline: and custom too??
+        emoji_index: !!python/name:materialx.emoji.twemoji 
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+     
+    # EXPERIMENTAL
+    - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
 
 # --- Navigation bar ---
 nav:
     - index.md
-    - tags.md
+    - Special pages:
+        - special/tags.md
