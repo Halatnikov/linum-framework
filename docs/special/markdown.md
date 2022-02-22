@@ -2,7 +2,7 @@
 
 Click "Edit" to see how all of the things here are written
 
-*[Material-MKDocs guide](https://squidfunk.github.io/mkdocs-material/reference/)*
+[Guide from *Material for MKDocs*](https://squidfunk.github.io/mkdocs-material/reference/)
 
 *[Abbreviations]: abbr
 *[Admonitions]: admonition
@@ -11,6 +11,8 @@ Click "Edit" to see how all of the things here are written
 *[Snippets]: pymdownx.snippets
 
 ## Built-in
+
+---
 
 ### Abbreviations
 
@@ -50,12 +52,14 @@ Also known as call-outs
 
 **Inline blocks:**
 
-`inline` or `inline end`
-
 !!! info inline "Inline"
     This is an inline admonition
+	
+	`inline` or `inline end`
 
 This is the text after an inline admonition
+
+---
 
 **Types:**
 
@@ -96,6 +100,12 @@ This is the text after an inline admonition
 
 ## Supported extensions
 
+---
+
 ## Supported Python extensions
 
+---
+
 ## Experimental Python extensions
+
+---
