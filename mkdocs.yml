@@ -98,5 +98,3 @@ markdown_extensions:
 # --- Navigation bar ---
 nav:
     - index.md
-    - 'Special pages':
-        - special/tags.md
