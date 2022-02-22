@@ -74,6 +74,7 @@ markdown_extensions:
     - attr_list             # [Can do buttons](#){ .md-button .md-button--primary } and also { align=right } images
     - md_in_html            # image caption <figcaption> and idk
     - toc:                  # table of contents, get links to headers/sections
+        title: Table of contents:
         permalink: true
         toc_depth: 3
     - tables                # well tables |:-:|-|
