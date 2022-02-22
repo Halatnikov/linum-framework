@@ -182,22 +182,13 @@ Also known as call-outs
 ???+ success "Open"
 	This is an open collapsible block
 
-### Inline blocks
-
-!!! info inline "Inline"
-    This is an inline admonition
-	
-	`inline` or `inline end`
-
-This is the text after an inline admonition
-
 ## Buttons
 
 ---
 
 `uses extensions: attr_list`
 
-[Empty button](linum-framework/index.md){ .md-button }
+[Empty button](docs/index.md){ .md-button }
 
-[Filled button](linum-framework/index.md){ .md-button .md-button--primary }
+[Filled button](docs/index.md){ .md-button .md-button--primary }
 
