@@ -1,6 +1,10 @@
 # Markdown template
 
+[TOC]
+
 Click "Edit" to see how all of the things here are written
+
+*[Material-MKDocs guide](https://squidfunk.github.io/mkdocs-material/reference/)*
 
 *[Abbreviations]: abbr
 *[Admonitions]: admonition
@@ -14,13 +18,13 @@ Click "Edit" to see how all of the things here are written
 
 Only plain text is supported
 
-###### Regular:
+#### Regular:
 
 > This can technically be any word whatsoever
 
 *[any word]: Yes, this one
 
-###### With a glossary (with Snippets extension):
+#### With a glossary (with Snippets extension):
 
 > The INI files that Linum uses are actually converted to JSON in-engine
 
@@ -30,7 +34,7 @@ Only plain text is supported
 
 Also known as call-outs
 
-###### Regular:
+#### Regular:
 
 !!! note "This is a title"
     This is a text
@@ -38,7 +42,7 @@ Also known as call-outs
 !!! note ""
     Look, there's no title
 	
-###### Collapsible blocks (with Details extension):
+#### Collapsible blocks (with Details extension):
 
 ??? note "Closed"
 	This is a closed collapsible block
@@ -46,7 +50,7 @@ Also known as call-outs
 ???+ note "Open"
 	This is an open collapsible block
 
-###### Inline blocks:
+#### Inline blocks:
 
 `inline` or `inline end`
 
@@ -55,7 +59,7 @@ Also known as call-outs
 
 This is the text after an inline admonition
 
-###### Types:
+#### Types:
 
 ??? summary "Click to open"
 	Built-in:
