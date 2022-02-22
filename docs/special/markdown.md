@@ -18,37 +18,41 @@ Quick rundown through syntax available with extensions
 
 `uses extensions: pymdownx.mark`
 
-> ==This is a marked text==
->
-> A ==word== can be ==highlighted== too
+!!! note ""
+	==This is a marked text==
+	
+	A ==word== can be ==highlighted== too
 
 #### Inserting (underscoring)
 
 `uses extensions: pymdownx.caret`
 
-> ^^This is an inserted text^^
->
-> A ^^word^^ can be ^^underscored^^ too
+!!! note ""
+	^^This is an inserted text^^
+	
+	A ^^word^^ can be ^^underscored^^ too
 
 #### Deleting (strike-through)
 
 `uses extensions: pymdownx.tilde`
 
-> ~~This is a deleted text~~
->
-> A ~~word~~ can be ~~striked-through~~ too
+!!! note ""
+	~~This is a deleted text~~
+	
+	A ~~word~~ can be ~~striked-through~~ too
 
 #### Keyboard keys
 
 `uses extensions: pymdownx.keys`
 
-> ++ctrl+alt+delete++
->
-> ++z++
->
-> ++alt+f4++
->
-> ++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
+!!! note ""
+	++ctrl+alt+delete++
+	
+	++z++
+	
+	++alt+f4++
+	
+	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
 
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
 
@@ -58,9 +62,10 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 
 Small symbols facing up
 
-> H^2^0
->
-> this is^a superscript^
+!!! note ""
+	H^2^0
+	
+	this is^a\ superscript^
 
 #### Subscript
 
@@ -68,9 +73,10 @@ Small symbols facing up
 
 Small symbols facing down
 
-> CH~3~CH~2~OH
->
-> this is~a subscript~
+!!! note ""
+	CH~3~CH~2~OH
+	
+	this is~a\ subscript~
 
 #### Highlighting changes
 
@@ -78,15 +84,16 @@ Small symbols facing down
 
 This has a somewhat limited use scope
 
-> You can make {--striked-through text red--} and {++underscored text green++}
->
-> And also {>>make comments inline<<}
->
-> {==
->
-> You can do blocks too!
->
-> ==}
+!!! note ""
+	You can make {--striked-through text red--} and {++underscored text green++}
+	
+	And also {>>make comments inline<<}
+	
+	{==
+	
+	You can do blocks too!
+	
+	==}
 
 ## Abbreviations
 
@@ -98,7 +105,8 @@ Only plain text is supported
 
 ### Regular
 
-> This can technically be any word whatsoever
+!!! note ""
+	This can technically be any word whatsoever
 
 *[any word]: Yes, this one
 
@@ -106,7 +114,8 @@ Only plain text is supported
 
 `uses extensions: pymdownx.snippets`
 
-> The INI files that Linum uses are actually converted to JSON in-engine
+!!! note ""
+	The INI files that Linum uses are actually converted to JSON in-engine
 
 --8<-- "docs/_assets/abbreviations.md"
 

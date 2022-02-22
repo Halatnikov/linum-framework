@@ -4,7 +4,7 @@
 
 # General metadata
 site_name: Linum Framework Wiki
-site_url: https://halatnikov.github.io/linum-framework
+#site_url: https://halatnikov.github.io/linum-framework
 copyright: idk
 
 # GitHub repo settings
@@ -87,7 +87,7 @@ markdown_extensions:
     - pymdownx.caret        # ^^underscores^^ and ^small\ up\ symbols^
     - pymdownx.mark         # ==fill with yellow==
     - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
-    - pymdownx.critic       # {~~red~~} {++green++} {==yellow==} {>>comment<<} can do blocks too
+    - pymdownx.critic       # {--red--} {++green++} {==yellow==} {>>comment<<} can do blocks too
     - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
     - pymdownx.details      # ??? collapsible blocks, + to open (use with admonition)
     - pymdownx.emoji:       # :emoji: and mkdocs icons :material/lightbulb-outline: and custom too??
