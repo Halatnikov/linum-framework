@@ -10,10 +10,9 @@ Click "Edit" to see how all of the things here are written
 *[Details]: pymdownx.details
 *[Snippets]: pymdownx.snippets
 
-Built-in
----
+## Built-in
 
-## Abbreviations
+### Abbreviations
 
 Only plain text is supported
 
@@ -23,17 +22,17 @@ Only plain text is supported
 
 *[any word]: Yes, this one
 
-#### With a glossary (with Snippets extension):
+**With a glossary (with Snippets extension):**
 
 > The INI files that Linum uses are actually converted to JSON in-engine
 
 --8<-- "docs/special/includes/abbreviations.md"
 
-## Admonitions
+### Admonitions
 
 Also known as call-outs
 
-#### Regular:
+**Regular:**
 
 !!! note "This is a title"
     This is a text
@@ -41,7 +40,7 @@ Also known as call-outs
 !!! note ""
     Look, there's no title
 	
-#### Collapsible blocks (with Details extension):
+**Collapsible blocks (with Details extension):**
 
 ??? note "Closed"
 	This is a closed collapsible block
@@ -49,7 +48,7 @@ Also known as call-outs
 ???+ note "Open"
 	This is an open collapsible block
 
-#### Inline blocks:
+**Inline blocks:**
 
 `inline` or `inline end`
 
@@ -58,7 +57,7 @@ Also known as call-outs
 
 This is the text after an inline admonition
 
-#### Types:
+**Types:**
 
 ??? summary "Click to open"
 	Built-in:
@@ -95,11 +94,8 @@ This is the text after an inline admonition
 
 	!!! quote
 
-Supported extensions
----
+## Supported extensions
 
-Supported Python extensions
----
+## Supported Python extensions
 
-Experimental Python extensions
----
+## Experimental Python extensions

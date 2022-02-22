@@ -82,7 +82,6 @@ markdown_extensions:
     - pymdownx.tasklist:    # - [x] checkmarks
         custom_checkbox: true
     - pymdownx.snippets     # --8<-- "snippet", can embed external files (use with abbr to add glossary)
-    - pymdownx.betterem     # improvements for **bold** *italic* to allow stacking
     - pymdownx.caret        # ^^underscores^^ and ^small\ up\ symbols^
     - pymdownx.mark         # ==fill with yellow==
     - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
