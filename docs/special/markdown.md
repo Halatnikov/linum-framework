@@ -1,4 +1,6 @@
-# Markdown template
+---
+title: Markdown template
+---
 
 Click "Edit" to see how all of the things here are written
 
@@ -6,15 +8,15 @@ Click "Edit" to see how all of the things here are written
 
 ---
 
-## Basic syntax
+# Basic syntax
 
 ---
 
-## Extended syntax
+# Extended syntax
 
 Quick rundown through syntax available with extensions
 
-### Marking
+## Marking
 
 `uses extensions: pymdownx.mark`
 
@@ -23,7 +25,7 @@ Quick rundown through syntax available with extensions
 	
 	A ==word== can be ==highlighted== too
 
-### Inserting (underscoring)
+## Inserting (underscoring)
 
 `uses extensions: pymdownx.caret`
 
@@ -32,7 +34,7 @@ Quick rundown through syntax available with extensions
 	
 	A ^^word^^ can be ^^underscored^^ too
 
-### Deleting (strike-through)
+## Deleting (strike-through)
 
 `uses extensions: pymdownx.tilde`
 
@@ -41,7 +43,7 @@ Quick rundown through syntax available with extensions
 	
 	A ~~word~~ can be ~~striked-through~~ too
 
-### Keyboard keys
+## Keyboard keys
 
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
 
@@ -56,7 +58,7 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 	
 	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
 
-### Superscript 
+## Superscript 
 
 Small symbols facing up
 
@@ -67,7 +69,7 @@ Small symbols facing up
 	
 	this is^a\ superscript^
 
-### Subscript
+## Subscript
 
 Small symbols facing down
 
@@ -78,7 +80,7 @@ Small symbols facing down
 	
 	this is~a\ subscript~
 
-### Highlighting changes
+## Highlighting changes
 
 This has a somewhat limited use scope
 
@@ -97,20 +99,20 @@ This has a somewhat limited use scope
 
 ---
 
-## Abbreviations
+# Abbreviations
 
 Only plain text is supported
 
 `uses extensions: abbr`
 
-### Regular
+## Regular
 
 !!! note ""
 	This can technically be any word whatsoever
 
 *[any word]: Yes, this one
 
-### With a glossary
+## With a glossary
 
 `uses extensions: pymdownx.snippets`
 
@@ -121,13 +123,13 @@ Only plain text is supported
 
 ---
 
-## Admonitions
+# Admonitions
 
 Also known as call-outs
 
 `uses extensions: admonition`
 
-### Regular blocks
+## Regular blocks
 
 !!! note "This is a title"
     This is a text
@@ -135,7 +137,7 @@ Also known as call-outs
 !!! note ""
     Look, there's no title
 
-### Collapsible blocks
+## Collapsible blocks
 
 `uses extensions: pymdownx.details`
 
@@ -145,7 +147,7 @@ Also known as call-outs
 ???+ success "Open"
 	This is an open collapsible block
 
-### Types of blocks
+## Types of blocks
 
 ??? summary "Click to open"
 	Built-in:
@@ -184,7 +186,7 @@ Also known as call-outs
 
 ---
 
-## Buttons
+# Buttons
 
 `uses extensions: attr_list`
 

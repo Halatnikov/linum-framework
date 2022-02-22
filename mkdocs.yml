@@ -78,6 +78,7 @@ markdown_extensions:
     - toc:                  # table of contents, get links to headers/sections
         title: 'Table of contents:'
         permalink: true
+        baselevel: 2
         toc_depth: 3
     - tables                # well tables |:-:|-|
     
