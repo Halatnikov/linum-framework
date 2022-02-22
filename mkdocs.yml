@@ -60,40 +60,40 @@ plugins:
     - git-revision-date-localized
     - search
     - tags:
-        tags_file: tags.md
+        tags_file: special/tags.md
 
 # Markdown extensions
 # there's a lot, but how could i not??
-# markdown_extensions:
-    # # BUILT-IN
-    # - meta                  # add .yml at the start of page to customise stuff (use with tags plugin to do tags)
-    # - footnotes             # footnote[^1] and [^1]: it's content
-    # - def_list              # `word` : definition
-    # - abbr                  # *[SCA]: Super Cool Abbreviation
-    # - admonition            # !!! Note! and there's like an icon and color
-    # - attr_list             # [Can do buttons](#){ .md-button .md-button--primary } and also { align=right } images
-    # - md_in_html            # image caption <figcaption> and idk
-    # - toc:                  # table of contents, get links to headers/sections
-        # permalink: true
-    # - tables                # well tables |:-:|-|
+markdown_extensions:
+    # BUILT-IN
+    - meta                  # add .yml at the start of page to customise stuff (use with tags plugin to do tags)
+    - footnotes             # footnote[^1] and [^1]: it's content
+    - def_list              # `word` : definition
+    - abbr                  # *[SCA]: Super Cool Abbreviation
+    - admonition            # !!! Note! and there's like an icon and color
+    - attr_list             # [Can do buttons](#){ .md-button .md-button--primary } and also { align=right } images
+    - md_in_html            # image caption <figcaption> and idk
+    - toc:                  # table of contents, get links to headers/sections
+        permalink: true
+    - tables                # well tables |:-:|-|
     
-    # # SUPPORTED
-    # - pymdownx.tasklist:    # - [x] checkmarks
-        # custom_checkbox: true
-    # - pymdownx.snippets     # --8<-- "snippet", can embed external files (use with abbr to add glossary)
-    # - pymdownx.betterem     # improvements for **bold** *italic* to allow stacking
-    # - pymdownx.caret        # ^^underscores^^ and ^small\ up\ symbols^
-    # - pymdownx.mark         # ==fill with yellow==
-    # - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
-    # - pymdownx.critic       # {~~red~~} {++green++} {==yellow==} {>>comment<<} can do blocks too
-    # - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
-    # - pymdownx.details      # ??? collapsible blocks, + to open (use with admonition)
-    # - pymdownx.emoji:       # :emoji: and mkdocs icons :material/lightbulb-outline: and custom too??
-        # emoji_index: !!python/name:materialx.emoji.twemoji 
-        # emoji_generator: !!python/name:materialx.emoji.to_svg
+    # SUPPORTED
+    - pymdownx.tasklist:    # - [x] checkmarks
+        custom_checkbox: true
+    - pymdownx.snippets     # --8<-- "snippet", can embed external files (use with abbr to add glossary)
+    - pymdownx.betterem     # improvements for **bold** *italic* to allow stacking
+    - pymdownx.caret        # ^^underscores^^ and ^small\ up\ symbols^
+    - pymdownx.mark         # ==fill with yellow==
+    - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
+    - pymdownx.critic       # {~~red~~} {++green++} {==yellow==} {>>comment<<} can do blocks too
+    - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
+    - pymdownx.details      # ??? collapsible blocks, + to open (use with admonition)
+    - pymdownx.emoji:       # :emoji: and mkdocs icons :material/lightbulb-outline: and custom too??
+        emoji_index: !!python/name:materialx.emoji.twemoji 
+        emoji_generator: !!python/name:materialx.emoji.to_svg
      
-    # # EXPERIMENTAL
-    # - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
+    # EXPERIMENTAL
+    - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
 
 # --- Navigation bar ---
 nav:
