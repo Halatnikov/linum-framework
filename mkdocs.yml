@@ -94,9 +94,18 @@ markdown_extensions:
      
     # EXPERIMENTAL
     - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
+    - pymdownx.magiclink:
+        hide_protocol: true
+        repo_url_shortener: true
+        repo_url_shorthand: true
+        social_url_shortener: true
+        social_url_shorthand: true
+        user: halatnikov
+        repo: linum-framework
+        
 
 # --- Navigation bar ---
 nav:
     - index.md
-    - 'Special pages':
+    - Special pages:
         - special/tags.md
