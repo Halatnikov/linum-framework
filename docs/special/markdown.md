@@ -14,7 +14,7 @@ Click "Edit" to see how all of the things here are written
 
 Quick rundown through syntax available with extensions
 
-#### Marking
+### Marking
 
 `uses extensions: pymdownx.mark`
 
@@ -23,7 +23,7 @@ Quick rundown through syntax available with extensions
 	
 	A ==word== can be ==highlighted== too
 
-#### Inserting (underscoring)
+### Inserting (underscoring)
 
 `uses extensions: pymdownx.caret`
 
@@ -32,7 +32,7 @@ Quick rundown through syntax available with extensions
 	
 	A ^^word^^ can be ^^underscored^^ too
 
-#### Deleting (strike-through)
+### Deleting (strike-through)
 
 `uses extensions: pymdownx.tilde`
 
@@ -41,11 +41,11 @@ Quick rundown through syntax available with extensions
 	
 	A ~~word~~ can be ~~striked-through~~ too
 
-#### Keyboard keys
-
-`uses extensions: pymdownx.keys`
+### Keyboard keys
 
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
+
+`uses extensions: pymdownx.keys`
 
 !!! note ""
 	++ctrl+alt+delete++
@@ -56,33 +56,33 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 	
 	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
 
-#### Superscript 
-
-`uses extensions: pymdownx.caret`
+### Superscript 
 
 Small symbols facing up
+
+`uses extensions: pymdownx.caret`
 
 !!! note ""
 	H^2^0
 	
 	this is^a\ superscript^
 
-#### Subscript
-
-`uses extensions: pymdownx.tilde`
+### Subscript
 
 Small symbols facing down
+
+`uses extensions: pymdownx.tilde`
 
 !!! note ""
 	CH~3~CH~2~OH
 	
 	this is~a\ subscript~
 
-#### Highlighting changes
-
-`uses extensions: pymdownx.critic`
+### Highlighting changes
 
 This has a somewhat limited use scope
+
+`uses extensions: pymdownx.critic`
 
 !!! note ""
 	You can make {--striked-through text red--} and {++underscored text green++}
@@ -135,6 +135,16 @@ Also known as call-outs
 !!! note ""
     Look, there's no title
 
+### Collapsible blocks
+
+`uses extensions: pymdownx.details`
+
+??? fail "Closed"
+	This is a closed collapsible block
+	
+???+ success "Open"
+	This is an open collapsible block
+
 ### Types of blocks
 
 ??? summary "Click to open"
@@ -171,16 +181,6 @@ Also known as call-outs
 	!!! example
 
 	!!! quote
-
-### Collapsible blocks
-
-`uses extensions: pymdownx.details`
-
-??? fail "Closed"
-	This is a closed collapsible block
-	
-???+ success "Open"
-	This is an open collapsible block
 
 ## Buttons
 
