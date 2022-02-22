@@ -33,74 +33,59 @@ Also known as call-outs
 **Regular:**
 
 !!! note "This is a title"
-
     This is a text
 	
 !!! note ""
-
     Look, there's no title
 	
 **Collapsible blocks (with Details extension):**
 
 `pymdownx.details`
 
-??? note
-
+??? note "Closed"
 	This is a closed collapsible block
 	
-???+ note
-
+???+ note "Open"
 	This is an open collapsible block
 
 **Inline blocks:**
 
 `inline` or `inline end`
 
-!!! note inline
+!!! info inline "Inline"
+    This is an inline admonition
 
-	This is an inline admonition
-	
 This is the text after it
-
 
 **Types:**
 
 ??? summary "Click to open"
-
 	Built-in:
 
 	!!! note
 
 	!!! summary
-
 		`abstract`, `tldr`
 
 	!!! info
-
 		`todo`
 
 	!!! hint
-
 		`tip`, `important`
 
 	!!! success
-
 		`check`, `done`
 		
 	!!! help
-
 		`question`, `faq`
 		
 	!!! warning
-
 		`caution`, `attention`
 		
 	!!! fail
-
 		`missing`
 		
 	!!! danger
-
 		`error`
 		
 	!!! bug
