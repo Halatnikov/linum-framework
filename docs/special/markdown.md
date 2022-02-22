@@ -58,9 +58,10 @@ Also known as call-outs
 
 !!! note inline
 
-	This is an admonition
+	This is an inline admonition
 	
 This is the text after it
+
 
 **Types:**
 
