@@ -29,6 +29,7 @@ theme:
         - navigation.indexes
         - navigation.top
         - search.suggest
+        - search.highlight
 
     # logo (this is stupid, but github doesn't want my pngs!!!)
     logo: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png

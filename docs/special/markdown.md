@@ -4,13 +4,13 @@ Click "Edit" to see how all of the things here are written
 
 [Guide from *Material for MKDocs*](https://squidfunk.github.io/mkdocs-material/reference/)
 
+---
+
 ## Basic syntax
 
 ---
 
 ## Extended syntax
-
----
 
 Quick rundown through syntax available with extensions
 
@@ -95,9 +95,9 @@ This has a somewhat limited use scope
 	
 	==}
 
-## Abbreviations
-
 ---
+
+## Abbreviations
 
 Only plain text is supported
 
@@ -119,9 +119,9 @@ Only plain text is supported
 
 --8<-- "docs/_assets/abbreviations.md"
 
-## Admonitions
-
 ---
+
+## Admonitions
 
 Also known as call-outs
 
@@ -182,9 +182,9 @@ Also known as call-outs
 
 	!!! quote
 
-## Buttons
-
 ---
+
+## Buttons
 
 `uses extensions: attr_list`
 
