@@ -1,7 +1,5 @@
 # Markdown template
 
-[TOC]
-
 Click "Edit" to see how all of the things here are written
 
 *[Material-MKDocs guide](https://squidfunk.github.io/mkdocs-material/reference/)*
@@ -12,13 +10,14 @@ Click "Edit" to see how all of the things here are written
 *[Details]: pymdownx.details
 *[Snippets]: pymdownx.snippets
 
-# Built-in
+Built-in
+---
 
 ## Abbreviations
 
 Only plain text is supported
 
-#### Regular:
+**Regular:**
 
 > This can technically be any word whatsoever
 
@@ -96,8 +95,11 @@ This is the text after an inline admonition
 
 	!!! quote
 
-# Supported extensions
+Supported extensions
+---
 
-# Supported Python extensions
+Supported Python extensions
+---
 
-# Experimental Python extensions
+Experimental Python extensions
+---
