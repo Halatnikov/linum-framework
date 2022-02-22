@@ -4,6 +4,7 @@
 
 # General metadata
 site_name: Linum Framework Wiki
+site_url: https://halatnikov.github.io/linum-framework
 copyright: idk
 
 # GitHub repo settings
@@ -28,7 +29,6 @@ theme:
         - navigation.indexes
         - navigation.top
         - search.suggest
-        - search.highlight
 
     # logo (this is stupid, but github doesn't want my pngs!!!)
     logo: https://cdn.discordapp.com/attachments/406052265963683840/945003686151733299/linumlogo_ayleen-seraph.png
@@ -58,7 +58,8 @@ theme:
 # Plugins
 plugins:
     - git-revision-date-localized
-    - search
+    - search:
+        min_search_length: 2
     - tags:
         tags_file: special/tags.md
 
@@ -92,6 +93,7 @@ markdown_extensions:
     - pymdownx.emoji:       # :emoji: and mkdocs icons :material/lightbulb-outline: and custom too??
         emoji_index: !!python/name:materialx.emoji.twemoji 
         emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.superfences
      
     # EXPERIMENTAL
     - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
