@@ -10,7 +10,7 @@
 ![commits since last release](https://img.shields.io/github/commits-since/halatnikov/linum-framework/latest?logo=github) 
 ![repo size](https://img.shields.io/github/repo-size/halatnikov/linum-framework?logo=github)
 ![total downloads](https://img.shields.io/github/downloads/halatnikov/linum-framework/total?logo=github)
-![mkdocs-material github actions status](https://img.shields.io/github/workflow/status/halatnikov/linum-framework/mkdocs-material?label=wiki%20status&logo=github)
+[![mkdocs-material github actions status](https://img.shields.io/github/workflow/status/halatnikov/linum-framework/mkdocs-material?label=wiki%20status&logo=github)](https://halatnikov.github.io/linum-framework)
 
 ###### versions:
 

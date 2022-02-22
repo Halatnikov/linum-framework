@@ -22,7 +22,7 @@ Only plain text is supported
 
 > The INI files that Linum uses are actually converted to JSON in-engine
 
---8<-- "special/includes/abbreviations.md"
+--8<-- "docs/special/includes/abbreviations.md"
 
 ## Admonitions
 
@@ -60,11 +60,13 @@ Also known as call-outs
 
 	This is an admonition
 	
-	This is the text after it
+This is the text after it
 
 **Types:**
 
 ??? summary "Click to open"
+
+	Built-in:
 
 	!!! note
 
