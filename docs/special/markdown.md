@@ -203,7 +203,7 @@ Also known as call-outs
 	# comment
 	```
 	you can also mark them:
-	``` { .ini .hl_lines="2 3" .linenums="1 1 2" }
+	```{.ini hl_lines="1 1 2"}
 	[Section]
 	key=value
 	key2=value2
