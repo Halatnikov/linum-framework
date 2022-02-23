@@ -808,8 +808,9 @@
 <div class="admonition note">
 <blockquote>
 <p>this is a quote<br />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>a code block
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>inside a quote
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>this is a code block
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>inside a quote
 </code></pre></div></p>
 </blockquote>
 </div>
@@ -839,9 +840,11 @@ Full list of supported emoji and icons can be found <a href="https://squidfunk.g
 icon (replace all / with -): <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 352c37.2 0 63.2-17.5 78.4-33.9 8.9-9.7 24.1-10.4 33.9-1.4 9.7 9 10.3 24.2 1.3 33.9C347.7 374.5 309.7 400 256 400c-53.7 0-91.7-25.5-113.6-49.4-9-9.7-9.3-24.9 1.3-33.9 9.8-9 25-8.3 33.9 1.4 15.2 16.4 41.2 33.9 78.4 33.9zm-47.6-144c0 17.7-14.4 32-32 32-17.7 0-32-14.3-32-32s14.3-32 32-32c17.6 0 32 14.3 32 32zm96 0c0-17.7 14.3-32 32-32 17.6 0 32 14.3 32 32s-14.4 32-32 32c-17.7 0-32-14.3-32-32zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/></svg></span></p>
 </div>
 <h3 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">&para;</a></h3>
-<p><code>uses extension: attr_list</code><br />
-<a class="md-button" href="../..">Empty button</a></p>
+<p><code>uses extension: attr_list</code></p>
+<div class="admonition note">
+<p><a class="md-button" href="../..">Empty button</a></p>
 <p><a class="md-button md-button--primary" href="../..">Filled button</a></p>
+</div>
 <h3 id="keyboard-keys">Keyboard keys<a class="headerlink" href="#keyboard-keys" title="Permanent link">&para;</a></h3>
 <p>A full list can be found <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index">here</a><br />
 <code>uses extension: pymdownx.keys</code></p>
@@ -972,11 +975,11 @@ You can do blocks too!<br />
 <h3 id="syntax-highlighting">Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">&para;</a></h3>
 <p><code>uses extensions: pymdownx.highlight, pymdownx.inlinehilite</code></p>
 <div class="admonition note">
-<p>in an inline code block <code class="highlight"><span class="k">[Section]</span><span class="w"></span></code><br />
-in a regular code block<br />
+<p>in an inline code block: <code class="highlight"><span class="k">[Section]</span><span class="w"></span></code><br />
+in a regular code block:<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[Section]</span><span class="w"></span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#comment</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># comment</span><span class="w"></span>
 </code></pre></div></p>
 </div>
 <h3 id="adding-a-title">Adding a title<a class="headerlink" href="#adding-a-title" title="Permanent link">&para;</a></h3>
@@ -990,7 +993,7 @@ in a regular code block<br />
 <div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[Section]</span><span class="w"></span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#comment (1)</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># comment (1)</span><span class="w"></span>
 </code></pre></div>
 </div>
 <ol>
@@ -999,29 +1002,29 @@ in a regular code block<br />
 <h3 id="line-numbers">Line numbers<a class="headerlink" href="#line-numbers" title="Permanent link">&para;</a></h3>
 <p><code>uses extension: pymdownx.highlight</code></p>
 <div class="admonition note">
-<p>can start from any line<br />
+<p>can start from any line:<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-10">10</a></span>
 <span class="normal"><a href="#__codelineno-5-11">11</a></span>
 <span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">[Section]</span><span class="w"></span>
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="c1">#comment</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="c1"># comment</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table><br />
-you can also mark them<br />
+you can also mark them:<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="special"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[Section]</span><span class="w"></span>
+<span class="special"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[Section]</span><span class="w"></span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="hll"><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
 </span><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="hll"><span class="na">key2</span><span class="o">=</span><span class="s">value2</span><span class="w"></span>
-</span><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">#comment</span><span class="w"></span>
+</span><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1"># comment</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table></p>
 </div>
 <h3 id="embedding-external-files">Embedding external files<a class="headerlink" href="#embedding-external-files" title="Permanent link">&para;</a></h3>
 <p><code>uses extension: pymdownx.snippets</code></p>
 <div class="admonition note">
-<div class="highlight"><span class="filename">_mapdata.ini</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">--8&lt;--​ &quot;LinumDefault\levels\example\leveldata\_mapdata.ini&quot;</span><span class="w"></span>
+<div class="highlight"><span class="filename">_mapdata.ini</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </code></pre></div>
 </div>
 
