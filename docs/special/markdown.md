@@ -14,7 +14,7 @@ Click "Edit" to see how all of the things here are written
 Quick rundown through syntax available with extensions, which can be explained quickly
 
 ## Nesting elements
-`uses extension: pymdownx.superfcences
+`uses extension: pymdownx.superfcences`
 !!! note ""
 	> this is a quote
 	> ```
@@ -172,7 +172,7 @@ Also known as call-outs
 	``` ini
 	[Section]
 	key=value
-	;comment
+	; comment
 	```
 
 ## Adding a title
@@ -188,7 +188,7 @@ Also known as call-outs
 	``` ini
 	[Section]
 	key=value
-	;comment (1)
+	; (1)
 	```
 
 1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
@@ -200,14 +200,14 @@ Also known as call-outs
 	``` ini linenums="10"
 	[Section]
 	key=value
-	# comment
+	; comment
 	```
 	you can also mark them:
 	```{.ini .hl_lines="2 3" .linenums="1 1 2"}
 	[Section]
 	key=value
 	key2=value2
-	;comment
+	; comment
 	```
 
 ## Embedding external files
