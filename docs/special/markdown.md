@@ -11,7 +11,16 @@ Click "Edit" to see how all of the things here are written
 ---
 
 # Extended syntax
-Quick rundown through syntax available with extensions
+Quick rundown through syntax available with extensions, which can be explained quickly
+
+## Nesting elements
+`uses extension: pymdownx.superfcences
+!!! note ""
+	> this is a quote
+	> ```
+	> a code block
+	> inside a quote
+	> ```
 
 ## Marking
 `uses extension: pymdownx.mark`
@@ -33,6 +42,16 @@ Quick rundown through syntax available with extensions
 
 ## Emoji and icons
 `uses extension: pymdownx.emoji`
+Full list of supported emoji and icons can be found [here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)
+!!! note ""
+	emoji: :smile:
+	icon (replace all / with -): :fontawesome-regular-face-smile:
+
+## Buttons
+`uses extension: attr_list`
+[Empty button](../index.md){ .md-button }
+
+[Filled button](../index.md){ .md-button .md-button--primary }
 
 ## Keyboard keys
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
@@ -63,6 +82,7 @@ This has a somewhat limited use scope
 !!! note ""
 	You can make {--striked-through text red--} and {++underscored text green++}
 	And also {>>make comments inline<<}
+	
 	{==
 	You can do blocks too!
 	==}
@@ -131,8 +151,66 @@ Also known as call-outs
 
 ---
 
-# Buttons
-`uses extension: attr_list`
-[Empty button](../index.md){ .md-button }
-[Filled button](../index.md){ .md-button .md-button--primary }
+# Code blocks
 
+## Regular
+!!! note ""
+	this is an `inline code block`
+	```
+	this is a code block
+		line 2
+			line 3
+	```
+
+## Syntax highlighting
+`uses extensions: pymdownx.highlight, pymdownx.inlinehilite`
+!!! note ""
+	in an inline code block `#!ini [Section]`
+	in a regular code block
+	``` ini
+	[Section]
+	key=value
+	#comment
+	```
+
+## Adding a title
+`uses extension: pymdownx.highlight`
+!!! note ""
+	``` title="This is a title"
+	indeed it is
+	```
+
+## Code annotations
+`uses feature flag: content.code.annotate`
+!!! note ""
+	``` ini
+	[Section]
+	key=value
+	#comment (1)
+	```
+
+1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
+
+## Line numbers
+`uses extension: pymdownx.highlight`
+!!! note ""
+	can start from any line
+	``` ini linenums="10"
+	[Section]
+	key=value
+	#comment
+	```
+	you can also mark them
+	``` ini hl_lines="2 3" linenums="1"
+	[Section]
+	key=value
+	key2=value2
+	#comment
+	```
+
+## Embedding external files
+`uses extension: pymdownx.snippets`
+!!! note ""
+	``` ini title="_mapdata.ini"
+	--8<--​ "LinumDefault\levels\example\leveldata\_mapdata.ini"
+	```
