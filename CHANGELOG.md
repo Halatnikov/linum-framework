@@ -1,6 +1,10 @@
 # Linum Framework
 [![repo link](https://img.shields.io/static/v1?logo=github&label=GitHub&message=linum-framework&color=white)](https://github.com/Halatnikov/linum-framework)
 
+# 0.2.0-7 `(2022-02-24)`
+### Docs:
+- Added, powered by `Material for MKDocs`
+
 # 0.2.0-6 `(2022-02-20)`
 ### Added:
 - Counter on level select

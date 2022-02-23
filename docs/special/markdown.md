@@ -18,7 +18,8 @@ Quick rundown through syntax available with extensions, which can be explained q
 !!! note ""
 	> this is a quote
 	> ```
-	> a code block
+	> this is a code block
+	> 
 	> inside a quote
 	> ```
 
@@ -49,9 +50,10 @@ Full list of supported emoji and icons can be found [here](https://squidfunk.git
 
 ## Buttons
 `uses extension: attr_list`
-[Empty button](../index.md){ .md-button }
-
-[Filled button](../index.md){ .md-button .md-button--primary }
+!!! note ""
+	[Empty button](../index.md){ .md-button }
+	
+	[Filled button](../index.md){ .md-button .md-button--primary }
 
 ## Keyboard keys
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
@@ -165,12 +167,12 @@ Also known as call-outs
 ## Syntax highlighting
 `uses extensions: pymdownx.highlight, pymdownx.inlinehilite`
 !!! note ""
-	in an inline code block `#!ini [Section]`
-	in a regular code block
+	in an inline code block: `#!ini [Section]`
+	in a regular code block:
 	``` ini
 	[Section]
 	key=value
-	#comment
+	# comment
 	```
 
 ## Adding a title
@@ -186,7 +188,7 @@ Also known as call-outs
 	``` ini
 	[Section]
 	key=value
-	#comment (1)
+	# comment (1)
 	```
 
 1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
@@ -194,23 +196,23 @@ Also known as call-outs
 ## Line numbers
 `uses extension: pymdownx.highlight`
 !!! note ""
-	can start from any line
+	can start from any line:
 	``` ini linenums="10"
 	[Section]
 	key=value
-	#comment
+	# comment
 	```
-	you can also mark them
-	``` ini hl_lines="2 3" linenums="1"
+	you can also mark them:
+	``` ini hl_lines="2 3" linenums="1 1 2"
 	[Section]
 	key=value
 	key2=value2
-	#comment
+	# comment
 	```
 
 ## Embedding external files
 `uses extension: pymdownx.snippets`
 !!! note ""
 	``` ini title="_mapdata.ini"
-	--8<--​ "LinumDefault\levels\example\leveldata\_mapdata.ini"
+	--8<-- "LinumDefault\levels\example\leveldata\_mapdata.ini"
 	```
