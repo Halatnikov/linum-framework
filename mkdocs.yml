@@ -121,9 +121,6 @@ markdown_extensions:
         repo: linum-framework
     - pymdownx.escapeall
     - pymdownx.saneheaders
-    - pymdownx.pathconverter:
-        base_path: /linum-framework/
-        absolute: true
         
 
 # --- Navigation bar ---
