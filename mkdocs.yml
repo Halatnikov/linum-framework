@@ -74,8 +74,8 @@ markdown_extensions:
     - def_list              # `word` : definition
     - abbr                  # *[SCA]: Super Cool Abbreviation
     - admonition            # !!! Note! and there's like an icon and color
-    - attr_list             # [Can do buttons](#){ .md-button .md-button--primary } and also { align=right } images
-    - md_in_html            # image caption <figcaption> and idk
+    - attr_list             # [Can do buttons](){ .md-button } and also { align=right } images
+    - md_in_html            # image caption <figcaption> and idk, other html stuff
     - toc:                  # table of contents, get links to headers/sections
         title: 'Table of contents:'
         permalink: true
@@ -84,6 +84,8 @@ markdown_extensions:
     - tables                # well tables |:-:|-|
     
     # SUPPORTED
+    - pymdownx.betterem:
+        smart_enable: all
     - pymdownx.tasklist:    # - [x] checkmarks
         custom_checkbox: true
     - pymdownx.snippets     # --8<-- "snippet", can embed external files (use with abbr to add glossary)
@@ -99,6 +101,7 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.highlight
     - pymdownx.inlinehilite
+    - pymdownx.smartsymbols
     - pymdownx.tabbed:
         alternate_style: true 
      
@@ -107,10 +110,6 @@ markdown_extensions:
         smart_angled_quotes: true
     - nl2br
     - sane_lists
-    - wikilinks:
-        base_url: https://halatnikov.github.io/linum-framework/
-    - pymdownx.betterem:
-        smart_enable: all
     - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
     - pymdownx.magiclink:
         hide_protocol: true
@@ -123,7 +122,7 @@ markdown_extensions:
     - pymdownx.escapeall
     - pymdownx.saneheaders
     - pymdownx.pathconverter:
-        base_path: linum-framework/
+        base_path: /linum-framework/
         absolute: true
         
 
