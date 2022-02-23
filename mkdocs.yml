@@ -70,7 +70,7 @@ markdown_extensions:
     # BUILT-IN
     - meta                  # add .yml at the start of page to customise stuff (use with tags plugin to do tags)
     - footnotes:            # footnote[^1] and [^1]: it's content
-        place_marker: [FOOTNOTES]
+        PLACE_MARKER: [FOOTNOTES]
     - def_list              # `word` : definition
     - abbr                  # *[SCA]: Super Cool Abbreviation
     - admonition            # !!! Note! and there's like an icon and color
