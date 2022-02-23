@@ -18,7 +18,7 @@ Quick rundown through syntax available with extensions
 
 ## Marking
 
-`uses extensions: pymdownx.mark`
+`uses extension: pymdownx.mark`
 
 !!! note ""
 	==This is a marked text==
@@ -27,7 +27,7 @@ Quick rundown through syntax available with extensions
 
 ## Inserting (underscoring)
 
-`uses extensions: pymdownx.caret`
+`uses extension: pymdownx.caret`
 
 !!! note ""
 	^^This is an inserted text^^
@@ -36,18 +36,22 @@ Quick rundown through syntax available with extensions
 
 ## Deleting (strike-through)
 
-`uses extensions: pymdownx.tilde`
+`uses extension: pymdownx.tilde`
 
 !!! note ""
 	~~This is a deleted text~~
 	
 	A ~~word~~ can be ~~striked-through~~ too
 
+## Emoji and icons
+
+`uses extension: pymdownx.emoji`
+
 ## Keyboard keys
 
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
 
-`uses extensions: pymdownx.keys`
+`uses extension: pymdownx.keys`
 
 !!! note ""
 	++ctrl+alt+delete++
@@ -62,7 +66,7 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 
 Small symbols facing up
 
-`uses extensions: pymdownx.caret`
+`uses extension: pymdownx.caret`
 
 !!! note ""
 	H^2^0
@@ -73,7 +77,7 @@ Small symbols facing up
 
 Small symbols facing down
 
-`uses extensions: pymdownx.tilde`
+`uses extension: pymdownx.tilde`
 
 !!! note ""
 	CH~3~CH~2~OH
@@ -84,7 +88,7 @@ Small symbols facing down
 
 This has a somewhat limited use scope
 
-`uses extensions: pymdownx.critic`
+`uses extension: pymdownx.critic`
 
 !!! note ""
 	You can make {--striked-through text red--} and {++underscored text green++}
@@ -103,7 +107,7 @@ This has a somewhat limited use scope
 
 Only plain text is supported
 
-`uses extensions: abbr`
+`uses extension: abbr`
 
 ## Regular
 
@@ -114,7 +118,7 @@ Only plain text is supported
 
 ## With a glossary
 
-`uses extensions: pymdownx.snippets`
+`uses extension: pymdownx.snippets`
 
 !!! note ""
 	The INI files that Linum uses are actually converted to JSON in-engine
@@ -127,7 +131,7 @@ Only plain text is supported
 
 Also known as call-outs
 
-`uses extensions: admonition`
+`uses extension: admonition`
 
 ## Regular blocks
 
@@ -139,7 +143,7 @@ Also known as call-outs
 
 ## Collapsible blocks
 
-`uses extensions: pymdownx.details`
+`uses extension: pymdownx.details`
 
 ??? fail "Closed"
 	This is a closed collapsible block
@@ -188,7 +192,7 @@ Also known as call-outs
 
 # Buttons
 
-`uses extensions: attr_list`
+`uses extension: attr_list`
 
 [Empty button](../index.md){ .md-button }
 
