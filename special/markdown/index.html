@@ -228,7 +228,7 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Index
+        Homepage
       </a>
     </li>
   
@@ -353,6 +353,13 @@
           <li class="md-nav__item">
   <a href="#deleting-strike-through" class="md-nav__link">
     Deleting (strike-through)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emoji-and-icons" class="md-nav__link">
+    Emoji and icons
   </a>
   
 </li>
@@ -536,6 +543,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#emoji-and-icons" class="md-nav__link">
+    Emoji and icons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#keyboard-keys" class="md-nav__link">
     Keyboard keys
   </a>
@@ -659,7 +673,7 @@
 
   <h1>Markdown template</h1>
 
-<p>Click "Edit" to see how all of the things here are written</p>
+<p>Click &ldquo;Edit&rdquo; to see how all of the things here are written</p>
 <p><a href="https://squidfunk.github.io/mkdocs-material/reference/">Guide from <em>Material for MKDocs</em></a></p>
 <hr />
 <h2 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h2>
@@ -667,26 +681,28 @@
 <h2 id="extended-syntax">Extended syntax<a class="headerlink" href="#extended-syntax" title="Permanent link">&para;</a></h2>
 <p>Quick rundown through syntax available with extensions</p>
 <h3 id="marking">Marking<a class="headerlink" href="#marking" title="Permanent link">&para;</a></h3>
-<p><code>uses extensions: pymdownx.mark</code></p>
+<p><code>uses extension: pymdownx.mark</code></p>
 <div class="admonition note">
 <p><mark>This is a marked text</mark></p>
 <p>A <mark>word</mark> can be <mark>highlighted</mark> too</p>
 </div>
 <h3 id="inserting-underscoring">Inserting (underscoring)<a class="headerlink" href="#inserting-underscoring" title="Permanent link">&para;</a></h3>
-<p><code>uses extensions: pymdownx.caret</code></p>
+<p><code>uses extension: pymdownx.caret</code></p>
 <div class="admonition note">
 <p><ins>This is an inserted text</ins></p>
 <p>A <ins>word</ins> can be <ins>underscored</ins> too</p>
 </div>
 <h3 id="deleting-strike-through">Deleting (strike-through)<a class="headerlink" href="#deleting-strike-through" title="Permanent link">&para;</a></h3>
-<p><code>uses extensions: pymdownx.tilde</code></p>
+<p><code>uses extension: pymdownx.tilde</code></p>
 <div class="admonition note">
 <p><del>This is a deleted text</del></p>
 <p>A <del>word</del> can be <del>striked-through</del> too</p>
 </div>
+<h3 id="emoji-and-icons">Emoji and icons<a class="headerlink" href="#emoji-and-icons" title="Permanent link">&para;</a></h3>
+<p><code>uses extension: pymdownx.emoji</code></p>
 <h3 id="keyboard-keys">Keyboard keys<a class="headerlink" href="#keyboard-keys" title="Permanent link">&para;</a></h3>
 <p>A full list can be found <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index">here</a></p>
-<p><code>uses extensions: pymdownx.keys</code></p>
+<p><code>uses extension: pymdownx.keys</code></p>
 <div class="admonition note">
 <p><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span></p>
 <p><span class="keys"><kbd class="key-z">Z</kbd></span></p>
@@ -695,21 +711,21 @@
 </div>
 <h3 id="superscript">Superscript<a class="headerlink" href="#superscript" title="Permanent link">&para;</a></h3>
 <p>Small symbols facing up</p>
-<p><code>uses extensions: pymdownx.caret</code></p>
+<p><code>uses extension: pymdownx.caret</code></p>
 <div class="admonition note">
 <p>H<sup>2</sup>0</p>
 <p>this is<sup>a superscript</sup></p>
 </div>
 <h3 id="subscript">Subscript<a class="headerlink" href="#subscript" title="Permanent link">&para;</a></h3>
 <p>Small symbols facing down</p>
-<p><code>uses extensions: pymdownx.tilde</code></p>
+<p><code>uses extension: pymdownx.tilde</code></p>
 <div class="admonition note">
 <p>CH<sub>3</sub>CH<sub>2</sub>OH</p>
 <p>this is<sub>a subscript</sub></p>
 </div>
 <h3 id="highlighting-changes">Highlighting changes<a class="headerlink" href="#highlighting-changes" title="Permanent link">&para;</a></h3>
 <p>This has a somewhat limited use scope</p>
-<p><code>uses extensions: pymdownx.critic</code></p>
+<p><code>uses extension: pymdownx.critic</code></p>
 <div class="admonition note">
 <p>You can make <del class="critic">striked-through text red</del> and <ins class="critic">underscored text green</ins></p>
 <p>And also <span class="critic comment">make comments inline</span></p>
@@ -720,30 +736,30 @@
 <hr />
 <h2 id="abbreviations">Abbreviations<a class="headerlink" href="#abbreviations" title="Permanent link">&para;</a></h2>
 <p>Only plain text is supported</p>
-<p><code>uses extensions: abbr</code></p>
+<p><code>uses extension: abbr</code></p>
 <h3 id="regular">Regular<a class="headerlink" href="#regular" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p>This can technically be <abbr title="Yes, this one">any word</abbr> whatsoever</p>
 </div>
 <h3 id="with-a-glossary">With a glossary<a class="headerlink" href="#with-a-glossary" title="Permanent link">&para;</a></h3>
-<p><code>uses extensions: pymdownx.snippets</code></p>
+<p><code>uses extension: pymdownx.snippets</code></p>
 <div class="admonition note">
 <p>The <abbr title="Initialization file">INI</abbr> files that Linum uses are actually converted to <abbr title="JavaScript Object Notation">JSON</abbr> in-engine</p>
 </div>
 <hr />
 <h2 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">&para;</a></h2>
 <p>Also known as call-outs</p>
-<p><code>uses extensions: admonition</code></p>
+<p><code>uses extension: admonition</code></p>
 <h3 id="regular-blocks">Regular blocks<a class="headerlink" href="#regular-blocks" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">This is a title</p>
 <p>This is a text</p>
 </div>
 <div class="admonition note">
-<p>Look, there's no title</p>
+<p>Look, there&rsquo;s no title</p>
 </div>
 <h3 id="collapsible-blocks">Collapsible blocks<a class="headerlink" href="#collapsible-blocks" title="Permanent link">&para;</a></h3>
-<p><code>uses extensions: pymdownx.details</code></p>
+<p><code>uses extension: pymdownx.details</code></p>
 <details class="fail">
 <summary>Closed</summary>
 <p>This is a closed collapsible block</p>
@@ -803,16 +819,16 @@
 </details>
 <hr />
 <h2 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">&para;</a></h2>
-<p><code>uses extensions: attr_list</code></p>
-<p><a class="md-button" href="../..">Empty button</a></p>
-<p><a class="md-button md-button--primary" href="../..">Filled button</a></p>
+<p><code>uses extension: attr_list</code></p>
+<p><a class="md-button" href="/https%3A">Empty button</a></p>
+<p><a class="md-button md-button--primary" href="/https%3A">Filled button</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2022</span>
       
     
   </small>
@@ -872,7 +888,7 @@
   
     
     
-    <a href="https://halatnikov.github.io" target="_blank" rel="noopener" title="my &#34;website&#34;" class="md-social__link">
+    <a href="https://halatnikov.github.io/" target="_blank" rel="noopener" title="my &#34;website&#34;" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
     </a>
   
