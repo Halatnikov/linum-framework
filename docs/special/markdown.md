@@ -195,13 +195,13 @@ Also known as call-outs
 `uses extension: pymdownx.highlight`
 !!! note ""
 	can start from any line:
-	``` ini linenums="10 1 2"
+	``` ini linenums="10"
 	[Section]
 	key=value
 	# comment
 	```
 	you can also mark them:
-	``` ini hl_lines="2 3"
+	``` ini hl_lines="2 3" linenums="1 1 2"
 	[Section]
 	key=value
 	key2=value2
