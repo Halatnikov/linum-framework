@@ -190,7 +190,7 @@ Also known as call-outs
 		- content.code.annotate # (1)
 	```
 
-1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
+	1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
 
 ## Line numbers
 `uses extension: pymdownx.highlight`
