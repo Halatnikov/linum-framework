@@ -337,6 +337,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#nesting-elements" class="md-nav__link">
+    Nesting elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#marking" class="md-nav__link">
     Marking
   </a>
@@ -360,6 +367,13 @@
           <li class="md-nav__item">
   <a href="#emoji-and-icons" class="md-nav__link">
     Emoji and icons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    Buttons
   </a>
   
 </li>
@@ -459,9 +473,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buttons" class="md-nav__link">
-    Buttons
+  <a href="#code-blocks" class="md-nav__link">
+    Code blocks
   </a>
+  
+    <nav class="md-nav" aria-label="Code blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular_1" class="md-nav__link">
+    Regular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-highlighting" class="md-nav__link">
+    Syntax highlighting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-title" class="md-nav__link">
+    Adding a title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-annotations" class="md-nav__link">
+    Code annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-numbers" class="md-nav__link">
+    Line numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-external-files" class="md-nav__link">
+    Embedding external files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -522,6 +584,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#nesting-elements" class="md-nav__link">
+    Nesting elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#marking" class="md-nav__link">
     Marking
   </a>
@@ -545,6 +614,13 @@
           <li class="md-nav__item">
   <a href="#emoji-and-icons" class="md-nav__link">
     Emoji and icons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    Buttons
   </a>
   
 </li>
@@ -644,9 +720,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buttons" class="md-nav__link">
-    Buttons
+  <a href="#code-blocks" class="md-nav__link">
+    Code blocks
   </a>
+  
+    <nav class="md-nav" aria-label="Code blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular_1" class="md-nav__link">
+    Regular
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-highlighting" class="md-nav__link">
+    Syntax highlighting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-title" class="md-nav__link">
+    Adding a title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-annotations" class="md-nav__link">
+    Code annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-numbers" class="md-nav__link">
+    Line numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-external-files" class="md-nav__link">
+    Embedding external files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -673,12 +797,22 @@
 
   <h1>Markdown template</h1>
 
-<p>Click &ldquo;Edit&rdquo; to see how all of the things here are written</p>
+<p>Click "Edit" to see how all of the things here are written</p>
 <hr />
 <h2 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h2>
 <hr />
 <h2 id="extended-syntax">Extended syntax<a class="headerlink" href="#extended-syntax" title="Permanent link">&para;</a></h2>
-<p>Quick rundown through syntax available with extensions</p>
+<p>Quick rundown through syntax available with extensions, which can be explained quickly</p>
+<h3 id="nesting-elements">Nesting elements<a class="headerlink" href="#nesting-elements" title="Permanent link">&para;</a></h3>
+<p>`uses extension: pymdownx.superfcences</p>
+<div class="admonition note">
+<blockquote>
+<p>this is a quote<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>a code block
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>inside a quote
+</code></pre></div></p>
+</blockquote>
+</div>
 <h3 id="marking">Marking<a class="headerlink" href="#marking" title="Permanent link">&para;</a></h3>
 <p><code>uses extension: pymdownx.mark</code></p>
 <div class="admonition note">
@@ -698,7 +832,16 @@ A <ins>word</ins> can be <ins>underscored</ins> too</p>
 A <del>word</del> can be <del>striked-through</del> too</p>
 </div>
 <h3 id="emoji-and-icons">Emoji and icons<a class="headerlink" href="#emoji-and-icons" title="Permanent link">&para;</a></h3>
-<p><code>uses extension: pymdownx.emoji</code></p>
+<p><code>uses extension: pymdownx.emoji</code><br />
+Full list of supported emoji and icons can be found <a href="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search">here</a></p>
+<div class="admonition note">
+<p>emoji: <img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:" /><br />
+icon (replace all / with -): <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 352c37.2 0 63.2-17.5 78.4-33.9 8.9-9.7 24.1-10.4 33.9-1.4 9.7 9 10.3 24.2 1.3 33.9C347.7 374.5 309.7 400 256 400c-53.7 0-91.7-25.5-113.6-49.4-9-9.7-9.3-24.9 1.3-33.9 9.8-9 25-8.3 33.9 1.4 15.2 16.4 41.2 33.9 78.4 33.9zm-47.6-144c0 17.7-14.4 32-32 32-17.7 0-32-14.3-32-32s14.3-32 32-32c17.6 0 32 14.3 32 32zm96 0c0-17.7 14.3-32 32-32 17.6 0 32 14.3 32 32s-14.4 32-32 32c-17.7 0-32-14.3-32-32zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"/></svg></span></p>
+</div>
+<h3 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">&para;</a></h3>
+<p><code>uses extension: attr_list</code><br />
+<a class="md-button" href="../..">Empty button</a></p>
+<p><a class="md-button md-button--primary" href="../..">Filled button</a></p>
 <h3 id="keyboard-keys">Keyboard keys<a class="headerlink" href="#keyboard-keys" title="Permanent link">&para;</a></h3>
 <p>A full list can be found <a href="https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index">here</a><br />
 <code>uses extension: pymdownx.keys</code></p>
@@ -727,8 +870,8 @@ this is<sub>a subscript</sub></p>
 <code>uses extension: pymdownx.critic</code></p>
 <div class="admonition note">
 <p>You can make <del class="critic">striked-through text red</del> and <ins class="critic">underscored text green</ins><br />
-And also <span class="critic comment">make comments inline</span><br />
-<mark class="critic"><br />
+And also <span class="critic comment">make comments inline</span></p>
+<p><mark class="critic"><br />
 You can do blocks too!<br />
 </mark></p>
 </div>
@@ -755,7 +898,7 @@ You can do blocks too!<br />
 <p>This is a text</p>
 </div>
 <div class="admonition note">
-<p>Look, there&rsquo;s no title</p>
+<p>Look, there's no title</p>
 </div>
 <h3 id="collapsible-blocks">Collapsible blocks<a class="headerlink" href="#collapsible-blocks" title="Permanent link">&para;</a></h3>
 <p><code>uses extension: pymdownx.details</code></p>
@@ -817,10 +960,70 @@ You can do blocks too!<br />
 </div>
 </details>
 <hr />
-<h2 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permanent link">&para;</a></h2>
-<p><code>uses extension: attr_list</code><br />
-<a class="md-button" href="../..">Empty button</a><br />
-<a class="md-button md-button--primary" href="../..">Filled button</a></p>
+<h2 id="code-blocks">Code blocks<a class="headerlink" href="#code-blocks" title="Permanent link">&para;</a></h2>
+<h3 id="regular_1">Regular<a class="headerlink" href="#regular_1" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p>this is an <code>inline code block</code><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>this is a code block
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>	line 2
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>		line 3
+</code></pre></div></p>
+</div>
+<h3 id="syntax-highlighting">Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">&para;</a></h3>
+<p><code>uses extensions: pymdownx.highlight, pymdownx.inlinehilite</code></p>
+<div class="admonition note">
+<p>in an inline code block <code class="highlight"><span class="k">[Section]</span><span class="w"></span></code><br />
+in a regular code block<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[Section]</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#comment</span><span class="w"></span>
+</code></pre></div></p>
+</div>
+<h3 id="adding-a-title">Adding a title<a class="headerlink" href="#adding-a-title" title="Permanent link">&para;</a></h3>
+<p><code>uses extension: pymdownx.highlight</code></p>
+<div class="admonition note">
+<div class="highlight"><span class="filename">This is a title</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>indeed it is
+</code></pre></div>
+</div>
+<h3 id="code-annotations">Code annotations<a class="headerlink" href="#code-annotations" title="Permanent link">&para;</a></h3>
+<p><code>uses feature flag: content.code.annotate</code></p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[Section]</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#comment (1)</span><span class="w"></span>
+</code></pre></div>
+</div>
+<ol>
+<li>this a code annotation, it can be placed anywhere where a comment can be placed in that language</li>
+</ol>
+<h3 id="line-numbers">Line numbers<a class="headerlink" href="#line-numbers" title="Permanent link">&para;</a></h3>
+<p><code>uses extension: pymdownx.highlight</code></p>
+<div class="admonition note">
+<p>can start from any line<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">[Section]</span><span class="w"></span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="c1">#comment</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table><br />
+you can also mark them<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[Section]</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="hll"><span class="na">key</span><span class="o">=</span><span class="s">value</span><span class="w"></span>
+</span><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="hll"><span class="na">key2</span><span class="o">=</span><span class="s">value2</span><span class="w"></span>
+</span><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">#comment</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table></p>
+</div>
+<h3 id="embedding-external-files">Embedding external files<a class="headerlink" href="#embedding-external-files" title="Permanent link">&para;</a></h3>
+<p><code>uses extension: pymdownx.snippets</code></p>
+<div class="admonition note">
+<div class="highlight"><span class="filename">_mapdata.ini</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">--8&lt;--​ &quot;LinumDefault\levels\example\leveldata\_mapdata.ini&quot;</span><span class="w"></span>
+</code></pre></div>
+</div>
 
   <hr>
 <div class="md-source-file">
@@ -901,7 +1104,7 @@ You can do blocks too!<br />
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.top", "search.highlight", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
       <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
