@@ -93,7 +93,7 @@ markdown_extensions:
     - pymdownx.emoji:       # :emoji: and mkdocs icons :material-lightbulb-outline: (/ with -) and custom too??
         emoji_index: !!python/name:materialx.emoji.twemoji 
         emoji_generator: !!python/name:materialx.emoji.to_svg
-    - pymdownx.highlight    # syntax highlighting in code blocks, line numbers
+    - pymdownx.highlight:    # syntax highlighting in code blocks, line numbers
         anchor_linenums: true
     - pymdownx.inlinehilite # also highlights syntax in `inline code blocks`
     - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
