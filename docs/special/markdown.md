@@ -186,7 +186,8 @@ Also known as call-outs
 `uses feature flag: content.code.annotate`
 !!! note ""
 	``` yaml
-	# (1)
+	features:
+		- content.code.annotate # (1)
 	```
 
 1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
@@ -201,7 +202,7 @@ Also known as call-outs
 	# comment
 	```
 	you can also mark them:
-	```{.ini .hl_lines="2 3" .linenums="1 1 2"}
+	``` ini hl_lines="2 3"
 	[Section]
 	key=value
 	key2=value2
