@@ -13,7 +13,7 @@ a[href^="mailto:"] {
   height: 1em;
   padding-right: 1em;
   background-size: 1em;
-  background-color: #1b95f8;
+  color: #1b95f8;
   mask-size: 1em;
   mask-repeat: no-repeat;
   mask-position: 0.2em;
@@ -23,7 +23,7 @@ a[href^="mailto:"]::before {
   mask-image: url("svg/fontawesome/envelope.svg");
 }
 .magiclink-commit::before {
-  mask-image: svg-load("@primer/octicons/build/svg/git-commit-24.svg");
+  background-image: url("svg/octicons/git-commit.svg");
 }
 .magiclink-compare::before {
   mask-image: url("svg/octicons/git-compare.svg");
