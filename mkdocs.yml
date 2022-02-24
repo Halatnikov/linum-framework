@@ -126,7 +126,7 @@ markdown_extensions:
     - pymdownx.tilde        # ~~striked-through~~ and ~small\ down\ symbols~
      
     # EXPERIMENTAL
-    - grid-table
+    #- grid-table
     - nl2br                 # snaps markdown rules in half by not requiring a new paragraph everytime
     - sane_lists            # makes (un)ordered lists more manageable and also being able to start not from 1
     - smarty:               # replaces symbols for you: << >>, ..., -- ---
