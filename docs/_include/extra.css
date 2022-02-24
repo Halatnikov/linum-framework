@@ -1,53 +1,109 @@
 
-/* ================================ */
-/* MAGICLINK ICONS (GitHub, Twitter, links) */
+/* ================================================================ */
+/* LINK ICONS (mainly GitHub) */
+/* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_magiclink.scss*/
+/* And also from https://gitter.im/squidfunk/mkdocs-material?at=5e5418907e2bff0dd0685520 */
 
-:root > * {
-	--icons-baseurl: "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/";
-	--magiclink-commit: var(--icons-baseurl) "octicons/git-commit-24.svg";
+/* Icon URL definitions */
+/* this is kinda ugly but i can't find any other way :( */
+:root {
+	--magiclink-mention: /* octicons/person-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/person-24.svg");
+	--magiclink-repository: /* octicons/repo-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/repo-24.svg");
+	--magiclink-issue: /* octicons/issue-opened-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/issue-opened-24.svg");
+	--magiclink-pull: /* octicons/git-pull-request-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/git-pull-request-24.svg");
+	--magiclink-discussion: /* octicons/comment-discussion-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/comment-discussion-24.svg");
+	--magiclink-commit: /* octicons/commit-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/commit-24.svg");
+	--magiclink-compare: /* octicons/file-diff-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/file-diff-24.svg");
+	
+	--magiclink-twitter: /* fontawesome/brands/twitter.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/fontawesome/brands/twitter.svg");
 }
 
+/* Placing the icon before link */
+.magiclink-mention::before,
 .magiclink-repository::before, 
-.magiclink-compare::before, 
-.magiclink-commit::before, 
-.magiclink-pull::before, 
 .magiclink-issue::before,
-a[href^="mailto:"] {
-  position: relative;
-  width: 1em;
-  height: 1em;
-  padding-right: 1em;
-  background-size: 1em;
-  color: #1b95f8;
-  mask-size: 1em;
-  -webkit-mask-size: 1em;
+.magiclink-pull::before,
+.magiclink-discussion::before,
+.magiclink-commit::before,
+.magiclink-compare::before,
+.magiclink-twitter::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25em;
+  height: 1.25em;
+  background-size: 1.25em;
+  background-color: var(--md-typeset-a-color);
+  transition: background-color 125ms;
+  mask-size: contain;
   mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
-  mask-position: 0.2em;
-  -webkit-mask-position: 0.2em;
   content: "";
 }
-a[href^="mailto:"]::before {
-  mask-image: url("svg/fontawesome/envelope.svg");
-}
-.magiclink-commit::before {
-  mask-image: url(var(--icons-baseurl) "octicons/git-commit-24.svg");
-  -webkit-mask-image: url(var(--icons-baseurl) "octicons/git-commit-24.svg");
-}
-.magiclink-compare::before {
-  mask-image: url("svg/octicons/git-compare.svg");
-}
-.magiclink-pull::before {
-  mask-image: url("svg/octicons/git-pull-request.svg");
-}
-.magiclink-issue::before {
-  mask-image: url("svg/octicons/issue-opened.svg");
-}
-.magiclink-repository::before {
-  mask-image: url("svg/fontawesome/github.svg");
+
+/* Highlighting icon with the link */
+.magiclink-mention:hover::before,
+.magiclink-repository:hover::before, 
+.magiclink-issue:hover::before,
+.magiclink-pull:hover::before,
+.magiclink-discussion:hover::before,
+.magiclink-commit:hover::before,
+.magiclink-compare:hover::before,
+.magiclink-twitter:hover::before {
+  background-color: var(--md-accent-fg-color);
 }
 
-/* ================================ */
+/* Move link out of the way */
+.magiclink-mention,
+.magiclink-repository, 
+.magiclink-issue,
+.magiclink-pull,
+.magiclink-discussion,
+.magiclink-commit,
+.magiclink-compare,
+.magiclink-twitter {
+  position: relative;
+  padding-left: 1.375em;
+}
+
+/* And here's where the thing happens*/
+/* Github: */
+.magiclink-mention::before {
+  mask-image: var(--magiclink-mention);
+  -webkit-mask-image: var(--magiclink-mention);
+}
+.magiclink-repository::before {
+  mask-image: var(--magiclink-repository);
+  -webkit-mask-image: var(--magiclink-repository);
+}
+.magiclink-issue::before {
+  mask-image: var(--magiclink-issue);
+  -webkit-mask-image: var(--magiclink-issue);
+}
+.magiclink-pull::before {
+  mask-image: var(--magiclink-pull);
+  -webkit-mask-image: var(--magiclink-pull);
+}
+.magiclink-discussion::before {
+  mask-image: var(--magiclink-discussion);
+  -webkit-mask-image: var(--magiclink-discussion);
+}
+.magiclink-commit::before {
+  mask-image: var(--magiclink-commit);
+  -webkit-mask-image: var(--magiclink-commit);
+}
+.magiclink-compare::before {
+  mask-image: var(--magiclink-compare);
+  -webkit-mask-image: var(--magiclink-compare);
+}
+/* Others: */
+.magiclink-twitter::before {
+  mask-image: var(--magiclink-twitter);
+  -webkit-mask-image: var(--magiclink-twitter);
+}
+
+/* ================================================================ */
 /* PROGRESS BARS */
 /* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_progressbar.scss */
 
