@@ -16,6 +16,7 @@
 	--magiclink-compare: /* octicons/file-diff-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/file-diff-24.svg");
 	
 	--magiclink-twitter: /* fontawesome/brands/twitter */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/fontawesome/brands/twitter.svg");
+	--link-version: /* octicons/tag-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/tag-24.svg");
 }
 
 /* Placing the icon before link */
@@ -26,7 +27,8 @@
 .magiclink-discussion::before,
 .magiclink-commit::before,
 .magiclink-compare::before,
-.magiclink-twitter::before {
+.magiclink-twitter::before,
+.ver {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,7 +52,8 @@
 .magiclink-discussion:hover::before,
 .magiclink-commit:hover::before,
 .magiclink-compare:hover::before,
-.magiclink-twitter:hover::before {
+.magiclink-twitter:hover::before,
+.ver {
   background-color: var(--md-accent-fg-color);
 }
 
@@ -62,9 +65,10 @@
 .magiclink-discussion,
 .magiclink-commit,
 .magiclink-compare,
-.magiclink-twitter {
+.magiclink-twitter,
+.ver {
   position: relative;
-  padding-left: 1.375em;
+  padding-left: 1.45em;
 }
 
 /* And here's where the thing happens*/
@@ -101,6 +105,10 @@
 .magiclink-twitter::before {
   mask-image: var(--magiclink-twitter);
   -webkit-mask-image: var(--magiclink-twitter);
+}
+.ver::before {
+  mask-image: var(--link-version);
+  -webkit-mask-image: var(--link-version);
 }
 
 /* ================================================================ */
