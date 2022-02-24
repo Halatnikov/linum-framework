@@ -2,7 +2,41 @@
 /* ================================ */
 /* GITHUB LINKS ICONS (and twitter) */
 
-
+.magiclink-repository::before, 
+.magiclink-compare::before, 
+.magiclink-commit::before, 
+.magiclink-pull::before, 
+.magiclink-issue::before,
+a[href^="mailto:"] {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  padding-right: 1em;
+  background-size: 1em;
+  background-color: #1b95f8;
+  mask-size: 1em;
+  mask-repeat: no-repeat;
+  mask-position: 0.2em;
+  content: "";
+}
+a[href^="mailto:"]::before {
+  mask-image: url("svg/fontawesome/envelope.svg");
+}
+.magiclink-commit::before {
+  mask-image: url("svg/octicons/git-commit.svg");
+}
+.magiclink-compare::before {
+  mask-image: url("svg/octicons/git-compare.svg");
+}
+.magiclink-pull::before {
+  mask-image: url("svg/octicons/git-pull-request.svg");
+}
+.magiclink-issue::before {
+  mask-image: url("svg/octicons/issue-opened.svg");
+}
+.magiclink-repository::before {
+  mask-image: url("svg/fontawesome/github.svg");
+}
 
 /* ================================ */
 
