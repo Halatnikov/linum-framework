@@ -1,85 +1,18 @@
-.md-typeset {
-  /* Progress Bars */
-}
-.md-typeset .progress-label {
-  position: absolute;
-  width: 100%;
-  margin: 0;
-  color: var(--md-text-color);
-  font-weight: 700;
-  line-height: 1.8rem;
-  white-space: nowrap;
-  text-align: center;
-  text-shadow: -0.063em -0.063em 0.3em var(--md-default-bg-color--light), 0.06em -0.063em 0.3em var(--md-default-bg-color--light), -0.063em 0.06em 0.3em var(--md-default-bg-color--light), 0.06em 0.06em 0.3em var(--md-default-bg-color--light);
-}
-.md-typeset .progress-bar {
-  float: left;
-  height: 1.5rem;
-  background-color: #2979FF;
-  /* Stripe animation */
-}
-.md-typeset .candystripe-animate .progress-bar {
-  animation: animate-stripes 3s linear infinite;
-}
-.md-typeset .progress {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 1.5rem;
-  margin: 0.6rem 0;
-  background-color: var(--md-default-fg-color--lightest);
-}
-.md-typeset .progress.thin {
-  height: 0.5rem;
-  margin-top: 1.1rem;
-}
-.md-typeset .progress.thin .progress-label {
-  margin-top: -0.5rem;
-}
-.md-typeset .progress.thin .progress-bar {
-  height: 0.5rem;
-}
-.md-typeset .progress.candystripe .progress-bar {
-  background-image: linear-gradient(135deg, var(--md-progress-stripe) 27%, transparent 27%, transparent 52%, var(--md-progress-stripe) 52%, var(--md-progress-stripe) 77%, transparent 77%, transparent);
-  background-size: 3rem 3rem;
-}
-.md-typeset .progress-100plus .progress-bar {
-  background-color: var(--md-progress-100);
-}
-.md-typeset .progress-80plus .progress-bar {
-  background-color: var(--md-progress-80);
-}
-.md-typeset .progress-60plus .progress-bar {
-  background-color: var(--md-progress-60);
-}
-.md-typeset .progress-40plus .progress-bar {
-  background-color: var(--md-progress-40);
-}
-.md-typeset .progress-20plus .progress-bar {
-  background-color: var(--md-progress-20);
-}
-.md-typeset .progress-0plus .progress-bar {
-  background-color: var(--md-progress-0);
-}
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 7.5rem 0;
-  }
-}
 
+/* ================================ */
+/* PROGRESS BARS */
+/* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_progressbar.scss */
+
+/* Colors for light and dark themes */
 [data-md-color-scheme="default"] {
 	--md-progress-stripe: var(--md-default-bg-color--lighter);
 	--md-progress-100: #00E676;
 	--md-progress-80: #6DF990;
 	--md-progress-60: #FBC02D;
 	--md-progress-40: #FF9100;
-	--md-progress-20: #FF5252;
+	--md-progress-20: #FF7884;
 	--md-progress-0: #FF1744;
 }
-
 [data-md-color-scheme="slate"] {
 	--md-progress-stripe: var(--md-default-bg-color--lightest);
 	--md-progress-100: #52FA7C;
@@ -90,3 +23,79 @@
 	--md-progress-0: #FF5757;
 }
 
+/* Basic progress bar */
+.progress-bar {
+  float: left;
+  height: 1.5rem;
+  background-color: #2979FF;
+}
+.progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  margin: 0.6rem 0;
+  background-color: var(--md-default-fg-color--lightest);
+}
+.progress-label {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  color: var(--md-text-color);
+  font-weight: 700;
+  line-height: 1.7rem;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: -0.063em -0.063em 0.3em var(--md-default-bg-color--light), 0.06em -0.063em 0.3em var(--md-default-bg-color--light), -0.063em 0.06em 0.3em var(--md-default-bg-color--light), 0.06em 0.06em 0.3em var(--md-default-bg-color--light);
+}
+
+/* Striped (static and animated) */
+.progress.candystripe .progress-bar {
+  background-image: linear-gradient(135deg, var(--md-progress-stripe) 27%, transparent 27%, transparent 52%, var(--md-progress-stripe) 52%, var(--md-progress-stripe) 77%, transparent 77%, transparent);
+  background-size: 3rem 3rem;
+}
+.candystripe-animate .progress-bar {
+  animation: animate-stripes 4s linear infinite;
+}
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 7.5rem 0;
+  }
+}
+
+/* Thin */
+.progress.thin {
+  height: 0.5rem;
+  margin-top: 1.1rem;
+}
+.progress.thin .progress-label {
+  margin-top: -0.5rem;
+}
+.progress.thin .progress-bar {
+  height: 0.5rem;
+}
+
+/* Progress colors */
+.progress-100plus .progress-bar {
+  background-color: var(--md-progress-100);
+}
+.progress-80plus .progress-bar {
+  background-color: var(--md-progress-80);
+}
+.progress-60plus .progress-bar {
+  background-color: var(--md-progress-60);
+}
+.progress-40plus .progress-bar {
+  background-color: var(--md-progress-40);
+}
+.progress-20plus .progress-bar {
+  background-color: var(--md-progress-20);
+}
+.progress-0plus .progress-bar {
+  background-color: var(--md-progress-0);
+}
+
+/* ================================ */
