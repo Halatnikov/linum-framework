@@ -5,12 +5,12 @@
   position: absolute;
   width: 100%;
   margin: 0;
-  color: var(--md-text-color);
+  color: --md-text-color;
   font-weight: 700;
   line-height: px2rem(28px);
   white-space: nowrap;
   text-align: center;
-  text-shadow: px2em(-1px) px2em(-1px) px2em(6px) var(--md-default-bg-color--light), px2em(1px) px2em(-1px) px2em(6px) var(--md-default-bg-color--light), px2em(-1px) px2em(1px) px2em(6px) var(--md-default-bg-color--light), px2em(1px) px2em(1px) px2em(6px) var(--md-default-bg-color--light);
+  text-shadow: px2em(-1px) px2em(-1px) px2em(6px) --md-default-bg-color--light, px2em(1px) px2em(-1px) px2em(6px) --md-default-bg-color--light, px2em(-1px) px2em(1px) px2em(6px) --md-default-bg-color--light, px2em(1px) px2em(1px) px2em(6px) --md-default-bg-color--light;
 }
 .md-typeset .progress-bar {
   float: left;
@@ -27,7 +27,7 @@
   width: 100%;
   height: px2rem(24px);
   margin: px2rem(10px) 0;
-  background-color: var(--md-default-fg-color--lightest);
+  background-color: --md-default-fg-color--lightest;
 }
 .md-typeset .progress.thin {
   height: px2rem(8px);
@@ -40,26 +40,26 @@
   height: px2rem(8px);
 }
 .md-typeset .progress.candystripe .progress-bar {
-  background-image: linear-gradient(135deg, var(--md-progress-stripe) 27%, transparent 27%, transparent 52%, var(--md-progress-stripe) 52%, var(--md-progress-stripe) 77%, transparent 77%, transparent);
+  background-image: linear-gradient(135deg, --md-default-bg-color--lightest 27%, transparent 27%, transparent 52%, --md-default-bg-color--lightest) 52%, --md-default-bg-color--lightest 77%, transparent 77%, transparent);
   background-size: px2rem(40px) px2rem(40px);
 }
 .md-typeset .progress-100plus .progress-bar {
-  background-color: var(--md-progress-100);
+  background-color: #00e676;
 }
 .md-typeset .progress-80plus .progress-bar {
-  background-color: var(--md-progress-80);
+  background-color: #fbc02d;
 }
 .md-typeset .progress-60plus .progress-bar {
-  background-color: var(--md-progress-60);
+  background-color: #ff9100;
 }
 .md-typeset .progress-40plus .progress-bar {
-  background-color: var(--md-progress-40);
+  background-color: #ff5252;
 }
 .md-typeset .progress-20plus .progress-bar {
-  background-color: var(--md-progress-20);
+  background-color: #ff1744;
 }
 .md-typeset .progress-0plus .progress-bar {
-  background-color: var(--md-progress-0);
+  background-color: #f50057;
 }
 @keyframes animate-stripes {
   0% {
