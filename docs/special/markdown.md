@@ -333,4 +333,4 @@ Every table can also be sorted by clicking on it
 	|5|M|0.1.1|30-Apr-2023
 	|10|Z|1.0.0|02/Dec/2022|
 
---8<-- "docs/_assets/include.md"
+--8<-- "docs/_include/include.md"

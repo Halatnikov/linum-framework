@@ -23,7 +23,7 @@ a[href^="mailto:"]::before {
   mask-image: url("svg/fontawesome/envelope.svg");
 }
 .magiclink-commit::before {
-  background-image: url("@primer/octicons/build/svg/git-commit-16.svg");
+  background-image: url(".icons/octicons-commit-24.svg");
 }
 .magiclink-compare::before {
   mask-image: url("svg/octicons/git-compare.svg");

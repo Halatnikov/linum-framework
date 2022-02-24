@@ -59,7 +59,7 @@ theme:
 
 # Extra CSS
 extra_css:
-  - _assets/extra.css
+  - _include/extra.css
 
 # Plugins
 plugins:
@@ -77,7 +77,7 @@ extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.dotsep.min.js
     - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.filesize.min.js
     - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.number.min.js
-    - _assets/extra.js
+    - _include/extra.js
 
 # Markdown extensions
 # there's a lot, but how could i not??
