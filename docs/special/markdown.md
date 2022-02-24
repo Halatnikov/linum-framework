@@ -9,6 +9,8 @@ Click "Edit" to see how all of the things here are written
 
 # Basic syntax
 
+[:octicons-tag-16: 0.1.0]
+
 ---
 
 # Extended syntax
@@ -61,7 +63,7 @@ Quick rundown through syntax available with extensions, which can be explained q
 	> https://github.com/STJr/SRB2/issues/206
 	> https://github.com/ppy/osu/discussions/13096
 	
-	Also supports :fontawesome-brands-twitter: Twitter mentions: @twitter:holatnikov
+	Also supports Twitter mentions: @twitter:holatnikov
 
 ## Marking
 `uses extension: pymdownx.mark`

@@ -6,3 +6,5 @@
 [:octicons-tag-16: 0.2.0]: https://github.com/Halatnikov/linum-framework/blob/master/CHANGELOG.md#020-starts-
 
 [index]: ../index.md
+[markdown]: ../special/markdown.md
+[tags]: ../special/tags.md
