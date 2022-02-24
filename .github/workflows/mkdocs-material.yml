@@ -19,5 +19,6 @@ jobs:
       - run: pip install mkdocs-material 
 #       --- additional plugins ---
       - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install markdown-grid-tables
 #       --- additional plugins ---
       - run: mkdocs gh-deploy --force
