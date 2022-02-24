@@ -325,7 +325,7 @@ Also known as call-outs
 	|1|2|3|
 
 ## Sorted table
-Every table can also be sorted by clicking on it
+Every table can also be sorted by clicking on headers
 `uses javascript: tablesort`
 !!! note ""
 	|Number|Alphabetical|Version|Date|

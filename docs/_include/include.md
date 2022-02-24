@@ -8,3 +8,4 @@
 [index]: ../index.md
 [markdown]: ../special/markdown.md
 [tags]: ../special/tags.md
+[skinmetadata]: ../files/skinmetadata.md
