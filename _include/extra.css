@@ -2,6 +2,11 @@
 /* ================================ */
 /* MAGICLINK ICONS (GitHub, Twitter, links) */
 
+:root > * {
+	--icons-baseurl: "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/";
+	--magiclink-commit: var(--icons-baseurl) "octicons/git-commit-24.svg";
+}
+
 .magiclink-repository::before, 
 .magiclink-compare::before, 
 .magiclink-commit::before, 
@@ -15,15 +20,19 @@ a[href^="mailto:"] {
   background-size: 1em;
   color: #1b95f8;
   mask-size: 1em;
+  -webkit-mask-size: 1em;
   mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
   mask-position: 0.2em;
+  -webkit-mask-position: 0.2em;
   content: "";
 }
 a[href^="mailto:"]::before {
   mask-image: url("svg/fontawesome/envelope.svg");
 }
 .magiclink-commit::before {
-  background-image: url(".icons/octicons-commit-24.svg");
+  mask-image: url(var(--icons-baseurl) "octicons/git-commit-24.svg");
+  -webkit-mask-image: url(var(--icons-baseurl) "octicons/git-commit-24.svg");
 }
 .magiclink-compare::before {
   mask-image: url("svg/octicons/git-compare.svg");
@@ -110,7 +119,7 @@ a[href^="mailto:"]::before {
     background-position: 0 0;
   }
   100% {
-    background-position: 4rem 0;
+    background-position: 7rem 0;
   }
 }
 
