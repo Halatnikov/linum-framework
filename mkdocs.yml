@@ -24,6 +24,8 @@ extra:
 theme:
     name: material
     
+    static_templates:
+        - 404.html
     # feature flags
     features:
         - content.code.annotate
