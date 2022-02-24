@@ -65,6 +65,10 @@ plugins:
     - tags:
         tags_file: special/tags.md
 
+# Extra JS
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js     #sort tables
+
 # Markdown extensions
 # there's a lot, but how could i not??
 markdown_extensions:
@@ -115,7 +119,7 @@ markdown_extensions:
         smart_quotes: false
         smart_angled_quotes: true
     - pymdownx.escapeall    # you can escape any character with \, even \\
-    - pymdownx.magiclink:
+    - pymdownx.magiclink:   # formats regular links, also adds syntax for github and social(twitter) links
         hide_protocol: true
         repo_url_shortener: true
         repo_url_shorthand: true

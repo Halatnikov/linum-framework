@@ -3,6 +3,7 @@ title: Markdown template
 ---
 
 Click "Edit" to see how all of the things here are written
+`Note: every preview is placed in admonitions`
 
 ---
 
@@ -42,18 +43,19 @@ Quick rundown through syntax available with extensions, which can be explained q
 	A ~~word~~ can be ~~striked-through~~ too
 
 ## Emoji and icons
+Full list can be found [here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)
 `uses extension: pymdownx.emoji`
-Full list of supported emoji and icons can be found [here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)
 !!! note ""
 	emoji: :smile:
 	icon (replace all / with -): :fontawesome-regular-face-smile:
 
 ## Buttons
+Just a regular link but with an attribute attached
 `uses extension: attr_list`
 !!! note ""
-	[Empty button](../index.md){ .md-button }
+	[Empty button][index]{ .md-button }
 	
-	[Filled button](../index.md){ .md-button .md-button--primary }
+	[Filled button][index]{ .md-button .md-button--primary }
 
 ## Keyboard keys
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
@@ -89,6 +91,18 @@ This has a somewhat limited use scope
 	You can do blocks too!
 	==}
 
+## Tabs
+`uses extension: pymdownx.tabbed`
+!!! note ""
+	=== "Tab 1"
+		this is a tab
+		- it can contain *anything*
+	=== "Tab 2"
+		```
+		this is a code block in a tab
+		which is kinda a primary target for these
+		```
+
 ---
 
 # Abbreviations
@@ -102,11 +116,10 @@ Only plain text is supported
 *[any word]: Yes, this one
 
 ## With a glossary
+See bottom of this file in editor
 `uses extension: pymdownx.snippets`
 !!! note ""
 	The INI files that Linum uses are actually converted to JSON in-engine
-
---8<-- "docs/_assets/abbreviations.md"
 
 ---
 
@@ -201,7 +214,7 @@ Also known as call-outs
 	# comment
 	```
 	you can also mark them:
-	``` ini hl_lines="2 3" linenums="1 1 2"
+	``` ini hl_lines="2 3" linenums="1"
 	[Section]
 	key=value
 	key2=value2
@@ -211,6 +224,30 @@ Also known as call-outs
 ## Embedding external files
 `uses extension: pymdownx.snippets`
 !!! note ""
-	``` ini title="_mapdata.ini"
+	``` ini title="LinumDefault/levels/example/leveldata/_mapdata.ini"
 	--8<-- "LinumDefault/levels/example/leveldata/_mapdata.ini"
 	```
+
+# Tables
+`uses extension: tables`
+
+## Regular
+!!! note ""
+	|this|is a|table|
+	|:-|:-:|-:|
+	|left-aligned|middle-aligned|right-aligned|
+	|1|2|3|
+
+## Sorted table
+Every table can also be sorted by clicking on it
+`uses javascript: tablesort`
+!!! note ""
+	|Number|Alphabetical|Version|Month|Date|
+	|-|-|-|-|-|
+	|0|C|0.1.0|January|01/Jan/2022|
+	|1|B|0.7.8|February|10/Feb/2022|
+	|2|A|0.2.3|December|20-Mar-2022|
+	|5|M|0.1.1|September|30-Apr-2023
+	|10|Z|1.0.0|March|02/Dec/2022|
+
+--8<-- "docs/_assets/include.md"
