@@ -43,10 +43,10 @@
   margin: 0;
   color: var(--md-text-color);
   font-weight: 700;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
   white-space: nowrap;
   text-align: center;
-  text-shadow: -0.063em -0.063em 0.3em var(--md-default-bg-color--light), 0.06em -0.063em 0.3em var(--md-default-bg-color--light), -0.063em 0.06em 0.3em var(--md-default-bg-color--light), 0.06em 0.06em 0.3em var(--md-default-bg-color--light);
+  text-shadow: -0.06em -0.06em 0.3em var(--md-default-bg-color--light),	0.06em -0.06em 0.3em var(--md-default-bg-color--light), -0.06em 0.06em 0.3em var(--md-default-bg-color--light), 0.06em 0.06em 0.3em var(--md-default-bg-color--light);
 }
 
 /* Striped (static and animated) */
@@ -55,7 +55,7 @@
   background-size: 3rem 3rem;
 }
 .candystripe-animate .progress-bar {
-  animation: animate-stripes 4s linear infinite;
+  animation: animate-stripes 2s linear infinite;
 }
 @keyframes animate-stripes {
   0% {
@@ -69,7 +69,7 @@
 /* Thin */
 .progress.thin {
   height: 0.5rem;
-  margin-top: 1.1rem;
+  margin-top: 1rem;
 }
 .progress.thin .progress-label {
   margin-top: -0.5rem;
