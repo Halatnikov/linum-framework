@@ -1,4 +1,13 @@
 
+
+[data-md-color-scheme="default"] {
+	--md-table-headers: #f0ffff;
+}
+
+[data-md-color-scheme="slate"] {
+	--md-table-headers: #1e2029;
+}
+
 .md-typeset table:not([class]) {
   box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 30%), 0 0 0.05rem rgb(0 0 0 / 20%);
 }
@@ -7,11 +16,11 @@
 }
 .md-typeset table:not([class]) th {
   color: var(--md-text-color);
-  background-color: var(--md-default-bg-color--darkest);
-  border-bottom: 0.075rem solid var(--md-primary-fg-color);
+  background-color: var(--md-table-headers);
+  border-bottom: 0.05rem solid var(--md-primary-fg-color);
 }
 .md-typeset table:not([class]) td {
-  border-top: 0.075rem solid var(--md-default-fg-color--lighter);
+  border-top: 0.05rem solid var(--md-default-fg-color--lighter);
 }
 
 
