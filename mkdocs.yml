@@ -26,6 +26,7 @@ theme:
     
     static_templates:
         - 404.html
+    
     # feature flags
     features:
         - content.code.annotate
@@ -43,14 +44,14 @@ theme:
 
         - scheme: slate     # dark bg
           primary: blue
-          accent: blue
+          accent: teal
           toggle:
             icon: material/lightbulb-outline
             name: Switch to light mode
 
         - scheme: default   # light bg
           primary: blue
-          accent: blue
+          accent: teal
           toggle:
             icon: material/lightbulb
             name: Switch to dark mode
