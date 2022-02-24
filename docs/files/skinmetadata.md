@@ -5,7 +5,7 @@ title: Skin metadata
 |Option|Required?|Value type|Description|Version added|Default value|
 |:-|:-:|:-:|:-|:-:|-:|
 |`GameVersion`|:material-checkbox-marked-circle:|String|Minimum required Linum version to be able <br> to play with this skin|[0.2.0]{.ver}|`-`|
-|`Version`|:material-checkbox-blank-circle:|Integer|Skin’s own version, up this by 1 when you make a change, <br> this is for multiplayer lobbies to differentiate <br> if someone has an outdated version of a skin|[0.2.0]{.ver}|`1`|
+|`Version`|:material-checkbox-blank-circle:|Integer|Skin’s own version, up this by 1 when you make <br> a change, this is for multiplayer lobbies to <br> differentiate if someone has an outdated version <br> of a skin|[0.2.0]{.ver}|`1`|
 
 
 +---------------+---------------+-----------------+
@@ -20,14 +20,13 @@ title: Skin metadata
 +--------------+----------------------------------+-----------+------------------------------------------------+--------------+--------------+
 |Option        |Required?                         |Value type |Description                                     |Version added |Default value |
 +==============+==================================+===========+================================================+==============+==============+
-|`GameVersion` |:material-checkbox-marked-circle: |String     |Minimum required Linum version to be able       |[0.2.0]{.ver} |`-`           |
-+--------------+----------------------------------+-----------+to play with this skin                          +--------------+--------------+
-|                                                             |                                                |                             |
+|`GameVersion` |:material-checkbox-marked-circle: |String     |Minimum required Linum version to be able to    |[0.2.0]{.ver} |`-`           |
+|              |                                  |           |play with this skin                             |              |              |
 +--------------+----------------------------------+-----------+------------------------------------------------+--------------+--------------+
 |`Version`     |:material-checkbox-blank-circle:  |Integer    |Skin’s own version, up this by 1 when you make a|[0.2.0]{.ver} |`1`           |
-+--------------+----------------------------------+-----------+change, this is for multiplayer lobbies to      +--------------+--------------+
-|                                                             |differentiate if someone has an outdated version|                             |
-|                                                             |of a skin                                       |                             |
-+-------------------------------------------------------------+------------------------------------------------+-----------------------------+
+|              |                                  |           |change, this is for multiplayer lobbies to      |              |              |
+|              |                                  |           |differentiate if someone has an outdated version|              |              |
+|              |                                  |           |of a skin                                       |              |              |
++--------------+----------------------------------+-----------+------------------------------------------------+--------------+--------------+
 
 --8<-- "docs/_include/include.md"
