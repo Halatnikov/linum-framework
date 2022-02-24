@@ -40,7 +40,7 @@
   height: px2rem(8px);
 }
 .md-typeset .progress.candystripe .progress-bar {
-  background-image: linear-gradient(135deg, --md-default-bg-color--lightest 27%, transparent 27%, transparent 52%, --md-default-bg-color--lightest) 52%, --md-default-bg-color--lightest 77%, transparent 77%, transparent);
+  background-image: linear-gradient(135deg, --md-default-bg-color--lightest 27%, transparent 27%, transparent 52%, --md-default-bg-color--lightest 52%, --md-default-bg-color--lightest 77%, transparent 77%, transparent);
   background-size: px2rem(40px) px2rem(40px);
 }
 .md-typeset .progress-100plus .progress-bar {
