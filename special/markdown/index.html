@@ -944,9 +944,9 @@ this is<sub>a subscript</sub></p>
 <div class="admonition note">
 <p>You can make <del class="critic">striked-through text red</del> and <ins class="critic">underscored text green</ins><br />
 And also <span class="critic comment">make comments inline</span></p>
-<p><mark class="critic"><br />
-You can do blocks too!<br />
-</mark></p>
+<mark class="critic block">
+<p>You can do blocks too!</p>
+</mark>
 </div>
 <h3 id="tabs">Tabs<a class="headerlink" href="#tabs" title="Permanent link">&para;</a></h3>
 <p><code>uses extension: pymdownx.tabbed</code></p>
@@ -954,8 +954,10 @@ You can do blocks too!<br />
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Tab 1</label><label for="__tabbed_1_2">Tab 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>this is a tab<br />
-- it can contain <em>anything</em></p>
+<p>this is a tab</p>
+<ul>
+<li>it can contain <em>anything</em></li>
+</ul>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>this is a code block in a tab
@@ -1152,7 +1154,6 @@ you can also mark them:<br />
 <th>Number</th>
 <th>Alphabetical</th>
 <th>Version</th>
-<th>Month</th>
 <th>Date</th>
 </tr>
 </thead>
@@ -1161,35 +1162,30 @@ you can also mark them:<br />
 <td>0</td>
 <td>C</td>
 <td>0.1.0</td>
-<td>January</td>
 <td>01/Jan/2022</td>
 </tr>
 <tr>
 <td>1</td>
 <td>B</td>
 <td>0.7.8</td>
-<td>February</td>
 <td>10/Feb/2022</td>
 </tr>
 <tr>
 <td>2</td>
 <td>A</td>
 <td>0.2.3</td>
-<td>December</td>
 <td>20-Mar-2022</td>
 </tr>
 <tr>
 <td>5</td>
 <td>M</td>
 <td>0.1.1</td>
-<td>September</td>
 <td>30-Apr-2023</td>
 </tr>
 <tr>
 <td>10</td>
 <td>Z</td>
 <td>1.0.0</td>
-<td>March</td>
 <td>02/Dec/2022</td>
 </tr>
 </tbody>
@@ -1287,8 +1283,6 @@ you can also mark them:<br />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.dotsep.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.filesize.min.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.monthname.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.number.min.js"></script>
       
