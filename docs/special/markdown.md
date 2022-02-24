@@ -147,7 +147,7 @@ Usually these are at the bottom of page, but for now they're here
 	[^1]: This is the content of a first footnote
 	[^2]: That's the 2nd footnote's content
 	
-	[FOOTNOTES]
+[FOOTNOTES]
 
 ## Highlighting changes
 This has a somewhat limited use scope
