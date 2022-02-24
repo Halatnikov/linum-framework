@@ -1,7 +1,7 @@
 
 /* ================================================================ */
 /* BETTER TABLES */
-/* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_tables.scss */
+/* Taken, converted and heavily edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_tables.scss */
 
 /* Colors for light and dark themes */
 [data-md-color-scheme="default"] {
@@ -25,7 +25,7 @@
 .md-typeset table:not([class]) td {
   border-top: 0.05rem solid var(--md-default-fg-color--lighter);
 }
-/* Shadow underneath the table and also remove border*/
+/* Shadow underneath the table and also remove border */
 .md-typeset table:not([class]) {
   box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 30%), 0 0 0.05rem rgb(0 0 0 / 20%);
   border: 0
@@ -45,7 +45,7 @@
 
 /* ================================================================ */
 /* LINK ICONS (mainly GitHub) */
-/* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_magiclink.scss*/
+/* Taken, converted and heavily edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_magiclink.scss*/
 /* And also from https://gitter.im/squidfunk/mkdocs-material?at=5e5418907e2bff0dd0685520 */
 
 /* Icon URL definitions */
@@ -156,7 +156,7 @@
 
 /* ================================================================ */
 /* PROGRESS BARS */
-/* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_progressbar.scss */
+/* Taken, converted and heavily edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_progressbar.scss */
 
 /* Colors for light and dark themes */
 [data-md-color-scheme="default"] {
