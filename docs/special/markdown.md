@@ -110,31 +110,18 @@ Colored according to their progress
 `uses extensions: pymdownx.progressbar, attr_list`
 !!! note ""
 	Regular:
-	
 	[=0% "Can use titles"]
-	
 	[=50% "50%"]
-	
 	[=100% "Full"]
-	
 	Striped:
-	
 	[=75% "Striped static"]{ .candystripe }
-	
 	[=50% "Striped animated"]{ .candystripe .candystripe-animate }
-	
 	Thin:
-	
 	[=5%]{ .thin }
-	
 	[=25%]{ .thin }
-	
 	[=45%]{ .thin }
-	
 	[=65%]{ .thin }
-	
 	[=85%]{ .thin }
-	
 	[=100%]{ .thin }
 
 ## Superscript 
