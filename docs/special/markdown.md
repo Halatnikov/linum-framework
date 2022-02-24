@@ -88,7 +88,9 @@ This has a somewhat limited use scope
 	And also {>>make comments inline<<}
 	
 	{==
+	
 	You can do blocks too!
+	
 	==}
 
 ## Tabs
@@ -96,7 +98,9 @@ This has a somewhat limited use scope
 !!! note ""
 	=== "Tab 1"
 		this is a tab
+		
 		- it can contain *anything*
+
 	=== "Tab 2"
 		```
 		this is a code block in a tab
@@ -242,12 +246,12 @@ Also known as call-outs
 Every table can also be sorted by clicking on it
 `uses javascript: tablesort`
 !!! note ""
-	|Number|Alphabetical|Version|Month|Date|
-	|-|-|-|-|-|
-	|0|C|0.1.0|January|01/Jan/2022|
-	|1|B|0.7.8|February|10/Feb/2022|
-	|2|A|0.2.3|December|20-Mar-2022|
-	|5|M|0.1.1|September|30-Apr-2023
-	|10|Z|1.0.0|March|02/Dec/2022|
+	|Number|Alphabetical|Version|Date|
+	|-|-|-|-|
+	|0|C|0.1.0|01/Jan/2022|
+	|1|B|0.7.8|10/Feb/2022|
+	|2|A|0.2.3|20-Mar-2022|
+	|5|M|0.1.1|30-Apr-2023
+	|10|Z|1.0.0|02/Dec/2022|
 
 --8<-- "docs/_assets/include.md"
