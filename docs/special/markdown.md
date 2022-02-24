@@ -9,8 +9,6 @@ Click "Edit" to see how all of the things here are written
 
 # Basic syntax
 
-[0.1.0]{.ver}
-
 ---
 
 # Extended syntax
@@ -64,6 +62,9 @@ Quick rundown through syntax available with extensions, which can be explained q
 	> https://github.com/ppy/osu/discussions/13096
 	
 	Also supports Twitter mentions: @twitter:holatnikov
+	
+	A few custom links:
+	> Changelog for versions: [0.1.0]{.ver} [0.2.0]{.ver}
 
 ## Marking
 `uses extension: pymdownx.mark`
@@ -94,9 +95,9 @@ Full list can be found [here](https://squidfunk.github.io/mkdocs-material/refere
 Just a regular link but with an attribute attached
 `uses extension: attr_list`
 !!! note ""
-	[Empty button][index]{ .md-button }
+	[Empty button][index]{.md-button}
 	
-	[Filled button][index]{ .md-button .md-button--primary }
+	[Filled button][index]{.md-button .md-button--primary}
 
 ## Keyboard keys
 A full list can be found [here](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index)
@@ -119,22 +120,22 @@ Colored according to their progress
 	[=100% "Full"]
 	
 	Striped:
-	[=75% "Striped static"]{ .candystripe }
+	[=75% "Striped static"]{.candystripe}
 	
-	[=50% "Striped animated"]{ .candystripe .candystripe-animate }
+	[=50% "Striped animated"]{.candystripe .candystripe-animate}
 	
 	Thin:
-	[=5%]{ .thin }
+	[=5%]{.thin}
 	
-	[=25%]{ .thin }
+	[=25%]{.thin}
 	
-	[=45%]{ .thin }
+	[=45%]{.thin}
 	
-	[=65%]{ .thin }
+	[=65%]{.thin}
 	
-	[=85%]{ .thin }
+	[=85%]{.thin}
 	
-	[=100%]{ .thin }
+	[=100%]{.thin}
 
 ## Superscript 
 Small symbols facing up
