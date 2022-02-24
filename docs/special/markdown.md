@@ -35,7 +35,7 @@ Quick rundown through syntax available with extensions, which can be explained q
 	1st 2nd 3rd 4th
 	<< >>
 	...
-	--\ ---\
+	-- ---\
 
 ## GitHub links
 `uses extension: pymdownx.magiclink`
@@ -61,7 +61,7 @@ Quick rundown through syntax available with extensions, which can be explained q
 	> https://github.com/STJr/SRB2/issues/206
 	> https://github.com/ppy/osu/discussions/13096
 	
-	Also supports :fontawesome-brands-twitter:{ .color-twitter } Twitter mentions: @twitter:holatnikov
+	Also supports :fontawesome-brands-twitter: Twitter mentions: @twitter:holatnikov
 
 ## Marking
 `uses extension: pymdownx.mark`
@@ -113,15 +113,15 @@ Colored according to their progress
 	
 	[=0% "Can use titles"]
 	
-	[=50% "50%"]
+[=50% "50%"]
 	
 	[=100% "Full"]
 	
 	Striped:
 	
-	[=75% "Striped static"]{ .candystripe }
+[=75% "Striped static"]{ .candystripe }
 	
-	[=50% "Striped animated"]{ .candystripe .candystripe-animate }
+[=50% "Striped animated"]{ .candystripe .candystripe-animate }
 	
 	Thin:
 	
@@ -133,7 +133,7 @@ Colored according to their progress
 	
 	[=65%]{ .thin }
 	
-	[=85%]{ .thin }
+[=85%]{ .thin }
 	
 	[=100%]{ .thin }
 
