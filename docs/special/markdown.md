@@ -9,7 +9,7 @@ Click "Edit" to see how all of the things here are written
 
 # Basic syntax
 
-[:octicons-tag-16: 0.1.0]
+[0.1.0]{.ver}
 
 ---
 
