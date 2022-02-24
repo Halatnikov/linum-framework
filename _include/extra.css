@@ -25,9 +25,10 @@
 .md-typeset table:not([class]) td {
   border-top: 0.05rem solid var(--md-default-fg-color--lighter);
 }
-/* Shadow underneath the table */
+/* Shadow underneath the table and also remove border*/
 .md-typeset table:not([class]) {
   box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 30%), 0 0 0.05rem rgb(0 0 0 / 20%);
+  border: 0
 }
 
 /* Quick fix of tablesorting icon breaking everything if table is aligned center or right*/
