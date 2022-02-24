@@ -68,6 +68,7 @@ plugins:
 # Extra JS
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js     #sort tables
+  - docs/_assets/extra.js
 
 # Markdown extensions
 # there's a lot, but how could i not??
