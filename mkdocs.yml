@@ -109,7 +109,7 @@ markdown_extensions:
     - pymdownx.keys         # keyboard keys ++ctrl+alt+del++
     - pymdownx.mark         # ==fill with color==
     - pymdownx.smartsymbols # replaces symbols for you: (tm) (c) (r), c/o +/- =/=, --> <-- <-->, 1/2, 1st 2nd 5th
-    - pymdownx.snippets     # --8<-- "path", can embed external files (use with abbr to add glossary)
+    - pymdownx.snippets     # --8<-- "path", can embed external files (use with abbr to add dictionary)
     - pymdownx.superfences: # allows nesting of elements in other elements (can do diagrams and etc with mermaid) 
         preserve_tabs: true
     - pymdownx.tabbed:      # === "tabs"

@@ -17,12 +17,51 @@ Quick rundown through syntax available with extensions, which can be explained q
 ## Nesting elements
 `uses extension: pymdownx.superfcences`
 !!! note ""
-	> this is a quote
+	> This is a quote
 	> ```
-	> this is a code block
+	> This is a code block
 	> 
 	> inside a quote
 	> ```
+
+## Converting special symbols
+`uses extensions: smarty, pymdownx.smartsymbols`
+!!! note ""
+	These are the symbols that get replaced:
+	(tm) (c) (r)
+	c/o +/- =/=
+	--> <-- <-->
+	1/2 2/4 5/8
+	1st 2nd 3rd 4th
+	<< >>
+	...
+	-- ---
+
+## GitHub links
+`uses extension: pymdownx.magiclink`
+!!! note ""
+	User mention: @halatnikov
+	Repository link: @halatnikov/linum-framework
+	
+	> Links for Linum:
+	> Issue: #1
+	> Pull request: !1
+	> Discussion: ?1
+	> Commit: 7dbdb07abf74277bca146c26b995eacb627d239a
+	> Diff/Compare: d2e1bec5cdd722d7bbe6f180ca415737823d9ffc...3fdc4e6a2e919e1efee08221685c232c556c49f3
+	
+	> Links for other repositories:
+	> Issue: STJr/SRB2#206
+	> Pull request: alemart/opensurge!49
+	> Discussion: ppy/osu?13096
+	> Commit: STJr/Kart-Public@7ab1c4a2df835cd08fc2cfb1be7743e6a7bad6d7
+	> Diff/Compare: mmatyas/supermariowar@3917df2881b489b49672901366397ca4f67a6a5a...57b639cc9f2088687cf482a547a3c0ff59c2349b
+	
+	> Converting of existing links:
+	> https://github.com/STJr/SRB2/issues/206
+	> https://github.com/ppy/osu/discussions/13096
+	
+	Also supports Twitter mentions: @twitter:holatnikov
 
 ## Marking
 `uses extension: pymdownx.mark`
@@ -46,8 +85,8 @@ Quick rundown through syntax available with extensions, which can be explained q
 Full list can be found [here](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search)
 `uses extension: pymdownx.emoji`
 !!! note ""
-	emoji: :smile:
-	icon (replace all / with -): :fontawesome-regular-face-smile:
+	Emoji: :smile:
+	Icon (replace all / with -): :fontawesome-regular-face-smile:
 
 ## Buttons
 Just a regular link but with an attribute attached
@@ -66,19 +105,49 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 	++alt+f4++
 	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
 
+## Progress bar
+Colored according to their progress
+`uses extensions: pymdownx.progressbar, attr_list`
+!!! note ""
+	Regular:
+	[=0% "Can use titles"]
+	[=50% "50%"]
+	[=100% "Full"]
+	Striped:
+	[=75% "Striped static"]{: .candystripe}
+	[=50% "Striped animated"]{: .candystripe .candystripe-animate}
+	Thin:
+	[=5%]{: .thin}
+	[=25%]{: .thin}
+	[=45%]{: .thin}
+	[=65%]{: .thin}
+	[=85%]{: .thin}
+	[=100%]{: .thin}
+
 ## Superscript 
 Small symbols facing up
 `uses extension: pymdownx.caret`
 !!! note ""
 	H^2^0
-	this is^a\ superscript^
+	This is ^a\ superscript^
 
 ## Subscript
 Small symbols facing down
 `uses extension: pymdownx.tilde`
 !!! note ""
 	CH~3~CH~2~OH
-	this is~a\ subscript~
+	This is ~a\ subscript~
+
+## Footnotes
+Usually these are at the bottom of page, but for now they're here
+`uses extension: footnotes`
+!!! note ""
+	This is a text[^1] that contains 2 footnotes[^2]
+	
+	[^1]: This is the content of a first footnote
+	[^2]: That's the 2nd footnote's content
+	
+	[FOOTNOTES]
 
 ## Highlighting changes
 This has a somewhat limited use scope
@@ -119,7 +188,7 @@ Only plain text is supported
 
 *[any word]: Yes, this one
 
-## With a glossary
+## With a dictionary
 See bottom of this file in editor
 `uses extension: pymdownx.snippets`
 !!! note ""
