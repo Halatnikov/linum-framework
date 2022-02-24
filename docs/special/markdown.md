@@ -113,15 +113,15 @@ Colored according to their progress
 	
 	[=0% "Can use titles"]
 	
-[=50% "50%"]
+	[=50% "50%"]
 	
 	[=100% "Full"]
 	
 	Striped:
 	
-[=75% "Striped static"]{ .candystripe }
+	[=75% "Striped static"]{ .candystripe }
 	
-[=50% "Striped animated"]{ .candystripe .candystripe-animate }
+	[=50% "Striped animated"]{ .candystripe .candystripe-animate }
 	
 	Thin:
 	
@@ -133,7 +133,7 @@ Colored according to their progress
 	
 	[=65%]{ .thin }
 	
-[=85%]{ .thin }
+	[=85%]{ .thin }
 	
 	[=100%]{ .thin }
 
