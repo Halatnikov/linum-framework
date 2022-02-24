@@ -44,22 +44,22 @@
   background-size: 3rem 3rem;
 }
 .md-typeset .progress-100plus .progress-bar {
-  background-color: #00e676;
+  background-color: #52FA7C;
 }
 .md-typeset .progress-80plus .progress-bar {
-  background-color: #fbc02d;
+  background-color: #98FBB1;
 }
 .md-typeset .progress-60plus .progress-bar {
-  background-color: #ff9100;
+  background-color: #F1FA89;
 }
 .md-typeset .progress-40plus .progress-bar {
-  background-color: #ff5252;
+  background-color: #FFB86B;
 }
 .md-typeset .progress-20plus .progress-bar {
-  background-color: #ff1744;
+  background-color: #FF7AC6;
 }
 .md-typeset .progress-0plus .progress-bar {
-  background-color: #f50057;
+  background-color: #40424F;
 }
 @keyframes animate-stripes {
   0% {
