@@ -147,6 +147,8 @@ markdown_extensions:
 # --- Navigation bar ---
 nav:
     - index.md
+    - Random dump:
+        - files/skinmetadata.md
     - Special pages:
         - special/tags.md
         - special/markdown.md

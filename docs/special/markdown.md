@@ -284,13 +284,11 @@ Also known as call-outs
 ## Code annotations
 `uses feature flag: content.code.annotate`
 !!! note ""
-	`#!js //(1)`
 	``` ini
 	# comment (1)
 	```
 
 	1.	this a code annotation, it can be placed anywhere where a comment can be placed in that language
-	2.  will this work????
 
 ## Line numbers
 `uses extension: pymdownx.highlight`
