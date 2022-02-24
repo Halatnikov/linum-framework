@@ -57,6 +57,10 @@ theme:
     icon:
         repo: fontawesome/brands/github
 
+# Extra CSS
+extra_css:
+  - _assets/extra.css
+
 # Plugins
 plugins:
     - git-revision-date-localized
@@ -84,7 +88,7 @@ markdown_extensions:
     - attr_list             # [Can do buttons](){ .md-button } and also { align=right } images
     - def_list              # `word` : definition
     - footnotes:            # footnote[^1] and [^1]: it's content, insert [FOOTNOTES] to place anywhere
-        PLACE_MARKER: ///FOOTNOTES///
+        PLACE_MARKER: '[FOOTNOTES]'
     - md_in_html            # image caption <figcaption> and idk, other html stuff
     - meta                  # add variables at start of file to customise stuff (use with tags plugin to do tags)
     - tables                # well tables |:-:|-|
@@ -133,7 +137,7 @@ markdown_extensions:
         social_url_shorthand: true
         user: halatnikov
         repo: linum-framework
-    - pymdownx.progressbar  # progress bar [=start% "end%"]{: .thin} or {: .candystripe} (with attr_list)
+    - pymdownx.progressbar  # progress bar [=50% "title"]{: .thin} or {: .candystripe} (with attr_list)
     - pymdownx.saneheaders  # makes it so github issues don't detect as a header
         
 

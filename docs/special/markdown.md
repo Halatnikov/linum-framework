@@ -35,7 +35,7 @@ Quick rundown through syntax available with extensions, which can be explained q
 	1st 2nd 3rd 4th
 	<< >>
 	...
-	-- ---
+	--\ ---\
 
 ## GitHub links
 `uses extension: pymdownx.magiclink`
@@ -43,25 +43,25 @@ Quick rundown through syntax available with extensions, which can be explained q
 	User mention: @halatnikov
 	Repository link: @halatnikov/linum-framework
 	
-	> Links for Linum:
+	Links for Linum:
 	> Issue: #1
 	> Pull request: !1
 	> Discussion: ?1
 	> Commit: 7dbdb07abf74277bca146c26b995eacb627d239a
-	> Diff/Compare: d2e1bec5cdd722d7bbe6f180ca415737823d9ffc...3fdc4e6a2e919e1efee08221685c232c556c49f3
+	> Diff/Compare: 3fdc4e6a2e919e1efee08221685c232c556c49f3...d2e1bec5cdd722d7bbe6f180ca415737823d9ffc
 	
-	> Links for other repositories:
+	Links for other repositories:
 	> Issue: STJr/SRB2#206
 	> Pull request: alemart/opensurge!49
 	> Discussion: ppy/osu?13096
 	> Commit: STJr/Kart-Public@7ab1c4a2df835cd08fc2cfb1be7743e6a7bad6d7
-	> Diff/Compare: mmatyas/supermariowar@3917df2881b489b49672901366397ca4f67a6a5a...57b639cc9f2088687cf482a547a3c0ff59c2349b
+	> Diff/Compare: mmatyas/supermariowar@57b639cc9f2088687cf482a547a3c0ff59c2349b...3917df2881b489b49672901366397ca4f67a6a5a
 	
-	> Converting of existing links:
+	Converting of existing links:
 	> https://github.com/STJr/SRB2/issues/206
 	> https://github.com/ppy/osu/discussions/13096
 	
-	Also supports Twitter mentions: @twitter:holatnikov
+	Also supports :fontawesome-brands-twitter:{ .color-twitter } Twitter mentions: @twitter:holatnikov
 
 ## Marking
 `uses extension: pymdownx.mark`
@@ -110,19 +110,32 @@ Colored according to their progress
 `uses extensions: pymdownx.progressbar, attr_list`
 !!! note ""
 	Regular:
+	
 	[=0% "Can use titles"]
+	
 	[=50% "50%"]
+	
 	[=100% "Full"]
+	
 	Striped:
-	[=75% "Striped static"]{: .candystripe}
-	[=50% "Striped animated"]{: .candystripe .candystripe-animate}
+	
+	[=75% "Striped static"]{ .candystripe }
+	
+	[=50% "Striped animated"]{ .candystripe .candystripe-animate }
+	
 	Thin:
-	[=5%]{: .thin}
-	[=25%]{: .thin}
-	[=45%]{: .thin}
-	[=65%]{: .thin}
-	[=85%]{: .thin}
-	[=100%]{: .thin}
+	
+	[=5%]{ .thin }
+	
+	[=25%]{ .thin }
+	
+	[=45%]{ .thin }
+	
+	[=65%]{ .thin }
+	
+	[=85%]{ .thin }
+	
+	[=100%]{ .thin }
 
 ## Superscript 
 Small symbols facing up
@@ -147,7 +160,7 @@ Usually these are at the bottom of page, but for now they're here
 	[^1]: This is the content of a first footnote
 	[^2]: That's the 2nd footnote's content
 	
-///FOOTNOTES///
+	[FOOTNOTES]
 
 ## Highlighting changes
 This has a somewhat limited use scope
