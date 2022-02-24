@@ -1,6 +1,6 @@
 
 /* ================================ */
-/* GITHUB LINKS ICONS (and twitter) */
+/* MAGICLINK ICONS (GitHub, Twitter, links) */
 
 .magiclink-repository::before, 
 .magiclink-compare::before, 
@@ -23,7 +23,7 @@ a[href^="mailto:"]::before {
   mask-image: url("svg/fontawesome/envelope.svg");
 }
 .magiclink-commit::before {
-  mask-image: url("svg/octicons/git-commit.svg");
+  mask-image: svg-load("@primer/octicons/build/svg/git-commit-24.svg");
 }
 .magiclink-compare::before {
   mask-image: url("svg/octicons/git-compare.svg");
