@@ -7,14 +7,14 @@
   margin: 0;
   color: --md-text-color;
   font-weight: 700;
-  line-height: px2rem(28px);
+  line-height: 1.8rem;
   white-space: nowrap;
   text-align: center;
-  text-shadow: px2em(-1px) px2em(-1px) px2em(6px) --md-default-bg-color--light, px2em(1px) px2em(-1px) px2em(6px) --md-default-bg-color--light, px2em(-1px) px2em(1px) px2em(6px) --md-default-bg-color--light, px2em(1px) px2em(1px) px2em(6px) --md-default-bg-color--light;
+  text-shadow: -0.063em -0.063em 0.3em --md-default-bg-color--light, 0.06em -0.063em 0.3em --md-default-bg-color--light, -0.063em 0.06em 0.3em --md-default-bg-color--light, 0.06em 0.06em 0.3em --md-default-bg-color--light;
 }
 .md-typeset .progress-bar {
   float: left;
-  height: px2rem(24px);
+  height: 1.5rem;
   background-color: #2979FF;
   /* Stripe animation */
 }
@@ -25,23 +25,23 @@
   position: relative;
   display: block;
   width: 100%;
-  height: px2rem(24px);
-  margin: px2rem(10px) 0;
+  height: 1.5rem;
+  margin: 0.6rem 0;
   background-color: --md-default-fg-color--lightest;
 }
 .md-typeset .progress.thin {
-  height: px2rem(8px);
-  margin-top: px2rem(18px);
+  height: 0.5rem;
+  margin-top: 1.1rem;
 }
 .md-typeset .progress.thin .progress-label {
-  margin-top: px2rem(-8px);
+  margin-top: -0.5rem;
 }
 .md-typeset .progress.thin .progress-bar {
-  height: px2rem(8px);
+  height: 0.5rem;
 }
 .md-typeset .progress.candystripe .progress-bar {
   background-image: linear-gradient(135deg, --md-default-bg-color--lightest 27%, transparent 27%, transparent 52%, --md-default-bg-color--lightest 52%, --md-default-bg-color--lightest 77%, transparent 77%, transparent);
-  background-size: px2rem(40px) px2rem(40px);
+  background-size: 3rem 3rem;
 }
 .md-typeset .progress-100plus .progress-bar {
   background-color: #00e676;
@@ -66,7 +66,7 @@
     background-position: 0 0;
   }
   100% {
-    background-position: px2rem(120px) 0;
+    background-position: 7.5rem 0;
   }
 }
 
