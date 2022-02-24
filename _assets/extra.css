@@ -1,26 +1,33 @@
 
 /* ================================ */
+/* GITHUB LINKS ICONS (and twitter) */
+
+
+
+/* ================================ */
+
+/* ================================ */
 /* PROGRESS BARS */
 /* Taken, converted and edited from https://github.com/facelessuser/pymdown-extensions/blob/main/docs/src/scss/extensions/_progressbar.scss */
 
 /* Colors for light and dark themes */
 [data-md-color-scheme="default"] {
-	--md-progress-stripe: var(--md-default-bg-color--lighter);
-	--md-progress-100: #00E676;
-	--md-progress-80: #6DF990;
-	--md-progress-60: #FBC02D;
-	--md-progress-40: #FF9100;
-	--md-progress-20: #FF7884;
-	--md-progress-0: #FF1744;
+	--progressbar-stripe: var(--md-default-bg-color--lighter);
+	--progressbar-100: #00E676;
+	--progressbar-80: #6DF990;
+	--progressbar-60: #FBC02D;
+	--progressbar-40: #FF9100;
+	--progressbar-20: #FF7884;
+	--progressbar-0: #FF1744;
 }
 [data-md-color-scheme="slate"] {
-	--md-progress-stripe: var(--md-default-bg-color--lightest);
-	--md-progress-100: #52FA7C;
-	--md-progress-80: #98FBB1;
-	--md-progress-60: #F1FA89;
-	--md-progress-40: #FFB86B;
-	--md-progress-20: #FF7AC6;
-	--md-progress-0: #FF5757;
+	--progressbar-stripe: var(--md-default-bg-color--lightest);
+	--progressbar-100: #52FA7C;
+	--progressbar-80: #98FBB1;
+	--progressbar-60: #F1FA89;
+	--progressbar-40: #FFB86B;
+	--progressbar-20: #FF7AC6;
+	--progressbar-0: #FF5757;
 }
 
 /* Basic progress bar */
@@ -46,12 +53,21 @@
   line-height: 1.5rem;
   white-space: nowrap;
   text-align: center;
-  text-shadow: -0.06em -0.06em 0.3em var(--md-default-bg-color--light),	0.06em -0.06em 0.3em var(--md-default-bg-color--light), -0.06em 0.06em 0.3em var(--md-default-bg-color--light), 0.06em 0.06em 0.3em var(--md-default-bg-color--light);
+  text-shadow: 
+	-0.06em -0.06em 0.3em var(--md-default-bg-color--light),	
+	0.06em -0.06em 0.3em var(--md-default-bg-color--light),
+	-0.06em 0.06em 0.3em var(--md-default-bg-color--light),
+	0.06em 0.06em 0.3em var(--md-default-bg-color--light);
 }
 
 /* Striped (static and animated) */
 .progress.candystripe .progress-bar {
-  background-image: linear-gradient(135deg, var(--md-progress-stripe) 27%, transparent 27%, transparent 52%, var(--md-progress-stripe) 52%, var(--md-progress-stripe) 77%, transparent 77%, transparent);
+  background-image:
+	linear-gradient(135deg, 
+	var(--progressbar-stripe) 27%, transparent 27%,
+	transparent 52%, var(--progressbar-stripe) 52%,
+	var(--progressbar-stripe) 77%, transparent 77%,
+	transparent);
   background-size: 3rem 3rem;
 }
 .candystripe-animate .progress-bar {
@@ -80,22 +96,22 @@
 
 /* Progress colors */
 .progress-100plus .progress-bar {
-  background-color: var(--md-progress-100);
+  background-color: var(--progressbar-100);
 }
 .progress-80plus .progress-bar {
-  background-color: var(--md-progress-80);
+  background-color: var(--progressbar-80);
 }
 .progress-60plus .progress-bar {
-  background-color: var(--md-progress-60);
+  background-color: var(--progressbar-60);
 }
 .progress-40plus .progress-bar {
-  background-color: var(--md-progress-40);
+  background-color: var(--progressbar-40);
 }
 .progress-20plus .progress-bar {
-  background-color: var(--md-progress-20);
+  background-color: var(--progressbar-20);
 }
 .progress-0plus .progress-bar {
-  background-color: var(--md-progress-0);
+  background-color: var(--progressbar-0);
 }
 
 /* ================================ */
