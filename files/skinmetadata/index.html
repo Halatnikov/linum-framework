@@ -414,15 +414,43 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code>+---------------+---------------+-----------------+
-| First Header  | Second Header | Third Header    |
-+===============+===============+=================+
-| A cell that   | A cell that spans multiple      |
-| spans         | columns.                        |
-| multiple rows +---------------+-----------------+
-|               | One, two cell | Red &amp; blue cell |
-+---------------+---------------+-----------------+
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>First Header</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Second Header</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Third Header</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="2">
+<p>A cell that<br />
+spans<br />
+multiple rows<br />
+</p>
+</td>
+<td colspan="2" rowspan="1">
+<p>A cell that spans multiple<br />
+columns.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>One, two cell</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Red &amp; blue cell</p>
+</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
