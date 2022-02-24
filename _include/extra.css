@@ -7,15 +7,15 @@
 /* Icon URL definitions */
 /* this is kinda ugly but i can't find any other way :( */
 :root {
-	--magiclink-mention: /* octicons/person-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/person-24.svg");
-	--magiclink-repository: /* octicons/repo-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/repo-24.svg");
-	--magiclink-issue: /* octicons/issue-opened-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/issue-opened-24.svg");
-	--magiclink-pull: /* octicons/git-pull-request-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/git-pull-request-24.svg");
-	--magiclink-discussion: /* octicons/comment-discussion-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/comment-discussion-24.svg");
-	--magiclink-commit: /* octicons/commit-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/commit-24.svg");
-	--magiclink-compare: /* octicons/file-diff-24.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/file-diff-24.svg");
+	--magiclink-mention: /* octicons/person-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/person-24.svg");
+	--magiclink-repository: /* octicons/repo-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/repo-24.svg");
+	--magiclink-issue: /* octicons/issue-opened-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/issue-opened-24.svg");
+	--magiclink-pull: /* octicons/git-pull-request-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/git-pull-request-24.svg");
+	--magiclink-discussion: /* octicons/comment-discussion-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/comment-discussion-24.svg");
+	--magiclink-commit: /* octicons/commit-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/commit-24.svg");
+	--magiclink-compare: /* octicons/file-diff-24 */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/octicons/file-diff-24.svg");
 	
-	--magiclink-twitter: /* fontawesome/brands/twitter.svg */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/fontawesome/brands/twitter.svg");
+	--magiclink-twitter: /* fontawesome/brands/twitter */ url("https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/fontawesome/brands/twitter.svg");
 }
 
 /* Placing the icon before link */
