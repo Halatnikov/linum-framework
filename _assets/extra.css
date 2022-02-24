@@ -71,14 +71,14 @@
   background-size: 3rem 3rem;
 }
 .candystripe-animate .progress-bar {
-  animation: animate-stripes 2s linear infinite;
+  animation: animate-stripes 3s linear infinite;
 }
 @keyframes animate-stripes {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 7.5rem 0;
+    background-position: 4rem 0;
   }
 }
 
