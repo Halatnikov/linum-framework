@@ -28,7 +28,7 @@
 .magiclink-commit::before,
 .magiclink-compare::before,
 .magiclink-twitter::before,
-.ver {
+.ver::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -53,7 +53,7 @@
 .magiclink-commit:hover::before,
 .magiclink-compare:hover::before,
 .magiclink-twitter:hover::before,
-.ver {
+.ver:hover::before {
   background-color: var(--md-accent-fg-color);
 }
 
