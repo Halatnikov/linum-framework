@@ -284,7 +284,7 @@ Also known as call-outs
 ## Code annotations
 `uses feature flag: content.code.annotate`
 !!! note ""
-	`#!ini #(2)`
+	`#!ini # (2)`
 	``` ini
 	# comment (1)
 	```
