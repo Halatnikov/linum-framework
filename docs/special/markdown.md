@@ -31,11 +31,11 @@ Quick rundown through syntax available with extensions, which can be explained q
 	(tm) (c) (r)
 	c/o +/- =/=
 	--> <-- <-->
-	1/2 2/4 5/8
+	1/2 1/4 5/8
 	1st 2nd 3rd 4th
 	<< >>
 	...
-	-- ---\
+	--\ ---
 
 ## GitHub links
 `uses extension: pymdownx.magiclink`
@@ -105,7 +105,7 @@ A full list can be found [here](https://facelessuser.github.io/pymdown-extension
 	++alt+f4++
 	++arrow-up+arrow-up+arrow-down+arrow-down+arrow-left+arrow-right+arrow-left+arrow-right+b+a+enter++
 
-## Progress bar
+## Progress bars
 Colored according to their progress
 `uses extensions: pymdownx.progressbar, attr_list`
 !!! note ""
