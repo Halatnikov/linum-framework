@@ -118,7 +118,7 @@
         <instance type="JSON_EditorState" uid="157" />
         <instance type="JSON_ConfigFiles" uid="160">
             <instance-variables>
-                <ResourcesFolder>LinumDefault</ResourcesFolder>
+                <ResourcesFolder>LinumResources</ResourcesFolder>
                 <TempWindowSize>3</TempWindowSize>
                 <TempVolume>11</TempVolume>
                 <TempGamepadID>1</TempGamepadID>

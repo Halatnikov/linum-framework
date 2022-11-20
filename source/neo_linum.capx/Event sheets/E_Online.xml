@@ -1681,7 +1681,7 @@
                         <event-block any="1" sid="148488152019505">
                             <conditions>
                                 <condition id="3" name="OnFocused" sid="954685789798664" type="NWjsGUI" />
-                                <condition id="3" name="OnFocused" sid="738442327028705" type="NWjsGUI" />
+                                <condition id="6" name="OnRestore" sid="738442327028705" type="NWjsGUI" />
                             </conditions>
                             <actions>
                                 <action id="-13" name="Set boolean" sid="504952978078039" type="Var_Online">

@@ -546,34 +546,6 @@
                 </event-group>
                 <event-group description="" sid="945224896321445" title="Audio">
                     <sub-events>
-                        <event-block sid="641670140879386">
-                            <conditions>
-                                <condition id="3" name="On ticked" sid="537787739924908" type="Ease">
-                                    <param id="0" name="Ease tag">&quot;Music_FadeIn&quot;</param>
-                                    <param id="1" name="Ease parameter {n}"></param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="3" name="Set volume" sid="473856438750544" type="BetterAudio">
-                                    <param id="0" name="Tag">&quot;Music&quot;</param>
-                                    <param id="1" name="dB">Ease.TickedValue</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="329262519231918">
-                            <conditions>
-                                <condition id="3" name="On ticked" sid="612705230563013" type="Ease">
-                                    <param id="0" name="Ease tag">&quot;Music_FadeOut&quot;</param>
-                                    <param id="1" name="Ease parameter {n}"></param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="3" name="Set volume" sid="781386801607166" type="BetterAudio">
-                                    <param id="0" name="Tag">&quot;Music&quot;</param>
-                                    <param id="1" name="dB">Ease.TickedValue</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="808703122098250">
                             <conditions>
                                 <condition id="-2" name="On start of layout" sid="685577268369587" type="System" />
@@ -587,6 +559,24 @@
                                     <param id="0" name="JSON">Function.ReturnValue</param>
                                     <param id="1" name="Reference point">0</param>
                                     <param id="2" name="Key {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="641670140879386">
+                            <conditions>
+                                <condition id="3" name="On ticked" sid="537787739924908" type="Ease">
+                                    <param id="0" name="Ease tag">&quot;Music_FadeIn&quot;</param>
+                                    <param id="1" name="Ease parameter {n}"></param>
+                                </condition>
+                                <condition id="3" name="On ticked" sid="612705230563013" type="Ease">
+                                    <param id="0" name="Ease tag">&quot;Music_FadeOut&quot;</param>
+                                    <param id="1" name="Ease parameter {n}"></param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set volume" sid="473856438750544" type="BetterAudio">
+                                    <param id="0" name="Tag">&quot;Music&quot;</param>
+                                    <param id="1" name="dB">Ease.TickedValue</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1155,6 +1145,9 @@
                         <action behavior="LiteTween" id="14" name="Stop" sid="824020990205738" type="TransitionIn">
                             <param id="0" name="Stop Mode">1</param>
                         </action>
+                        <action behavior="LiteTween" id="14" name="Stop" sid="532281944818425" type="TransitionOut">
+                            <param id="0" name="Stop Mode">1</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="966784426335047" type="TransitionOut">
                             <param id="0" name="Visibility">1</param>
                         </action>
@@ -1176,13 +1169,22 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="690953085153230" type="TransitionFadeIn">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action behavior="Fade" id="0" name="Restart fade" sid="727137838312880" type="TransitionFadeIn" />
                         <action id="-13" name="Set boolean" sid="812829666738854" type="Var_Menus">
                             <param id="0" name="Instance variable">TransitionActive</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="260918302822376" type="Sprite12">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="LiteTween" id="14" name="Stop" sid="577793478222177" type="Sprite12">
+                            <param id="0" name="Stop Mode">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="789507319272703" type="Sprite12">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="10" name="Start" sid="914721694345771" type="Sprite12">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1193,16 +1195,22 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="514707224869742" type="TransitionFadeIn">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="361192640825141" type="TransitionFadeOut">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action behavior="Fade" id="0" name="Restart fade" sid="868426974488159" type="TransitionFadeOut" />
                         <action id="-13" name="Set boolean" sid="235157171374998" type="Var_Menus">
                             <param id="0" name="Instance variable">TransitionActive</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="270710264647008" type="Sprite12">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="LiteTween" id="14" name="Stop" sid="119216341839176" type="Sprite12">
+                            <param id="0" name="Stop Mode">2</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="103448644879180" type="Sprite12">
+                            <param id="0" name="Width">48</param>
+                        </action>
+                        <action behavior="LiteTween2" id="10" name="Start" sid="959971711892738" type="Sprite12">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">1</param>
                         </action>
                     </actions>
                 </event-block>

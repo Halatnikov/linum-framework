@@ -1,7 +1,7 @@
 # Linum Framework
 [![repo link](https://img.shields.io/static/v1?logo=github&label=GitHub&message=linum-framework&color=white)](https://github.com/Halatnikov/linum-framework)
 
-# 0.2.0-7 `(2022-02-24)`
+# 0.2.0-7 `(unreleased)`
 ### Docs:
 - Added, powered by `Material for MKDocs`
 
@@ -23,7 +23,7 @@
 
 # 0.2.0-4 `(2022-01-20)`
 ### Added:
-- **New level** - *Green Hill Zone 1* from Sonic 1
+- **New level** - *Green Hill 1* from Sonic 1
 ### Changed:
 - Made special objects a bit transparent
 - You can now press **D** to toggle sensors visibility

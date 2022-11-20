@@ -1556,15 +1556,6 @@
                     </object-type>
                 </object-folder>
                 <object-folder name="Transitions">
-                    <object-type name="TransitionFadeOut" sid="785515503907422">
-                        <plugin id="TiledBg" />
-                        <behaviors>
-                            <behavior-type name="Fade" sid="145443265303122">
-                                <behavior id="Fade" />
-                            </behavior-type>
-                        </behaviors>
-                        <texture />
-                    </object-type>
                     <object-type name="TransitionIn" sid="826204210303392">
                         <plugin id="Sprite" />
                         <behaviors>
@@ -1590,15 +1581,6 @@
                                 <frame duration="1" hotspotX="0.502347" hotspotY="0.502347" />
                             </animation>
                         </animation-folder>
-                    </object-type>
-                    <object-type name="TransitionFadeIn" sid="662240215469670">
-                        <plugin id="TiledBg" />
-                        <behaviors>
-                            <behavior-type name="Fade" sid="885254042054849">
-                                <behavior id="Fade" />
-                            </behavior-type>
-                        </behaviors>
-                        <texture />
                     </object-type>
                 </object-folder>
             </object-folder>
@@ -3836,6 +3818,22 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="884018229345438" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite12" sid="109080527022344">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="LiteTween" sid="969243379679362">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+                <behavior-type name="LiteTween2" sid="916029016634293">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521032283177862" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" />
                 </animation>
             </animation-folder>
         </object-type>

@@ -3,7 +3,6 @@
 ###### IGNORE
 
 # Savefiles, configs and whatever
-LinumFramework/api.ini
 LinumFramework/_latest_*
 LinumFramework/logs/*
 LinumFramework/temp/*
@@ -27,6 +26,7 @@ swiftshader/
 browser_userdata/
 
 # Other files from my other projects :eyes:
+SRBftp/
 savedata/
 warioware/
 
