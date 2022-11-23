@@ -2,6 +2,10 @@
 
 ###### IGNORE
 
+# Temporary dev files
+LinumFramework/.buildcount
+LinumDefault/
+
 # Savefiles, configs and whatever
 LinumFramework/_latest_*
 LinumFramework/logs/*
