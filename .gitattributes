@@ -1,7 +1,21 @@
 ## Linum Framework .gitattributes
 
 # auto-handle text stuff
-* text=auto
-* text eol=lf
+*.caproj text=auto
+*.caproj text eol=lf
+*.xml text=auto
+*.xml text eol=lf
+*.ini text=auto
+*.ini text eol=lf
+*.txt text=auto
+*.txt text eol=lf
+*.md text=auto
+*.md text eol=lf
+*.css text=auto
+*.css text eol=lf
+*.js text=auto
+*.js text eol=lf
+*.yml text=auto
+*.yml text eol=lf
 
 *.caproj text diff=xml
