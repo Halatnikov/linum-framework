@@ -83,7 +83,7 @@ extra_javascript:
     - _include/extra.js
 
 # Markdown extensions
-# there's a lot, but how could i not??
+# there's a lot, but how could i resist??
 markdown_extensions:
     # BUILT-IN
     - abbr                  # *[SCA]: Super Cool Abbreviation, but can be any words
